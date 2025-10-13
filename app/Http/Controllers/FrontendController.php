@@ -1,0 +1,72 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class FrontendController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function startseite()
+    {
+        return view('website-template.startseite');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function entstehungsgeschichte()
+    {
+        return view('website-template.entstehungsgeschichte');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function vorstand()
+    {
+        return view('website-template.vorstand');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function derTraumVomHoren()
+    {
+        return view('website-template.derTraumVomHoren');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function turkeiErdbebenprojekt()
+    {
+        return view('website-template.turkeiErdbebenprojekt');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function werdeAktiv()
+    {
+        return view('website-template.werdeAktiv');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function spenden()
+    {
+        return view('website-template.spenden');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function kontakt()
+    {
+        return view('website-template.kontakt');
+    }
+}
