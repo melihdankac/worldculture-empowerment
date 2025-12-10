@@ -1,3 +1,5 @@
+@extends('website-template.layouts.app')
+
 @section('meta&title')
     <title>WORLDCULTURE EMPOWERMENT</title>
     {{-- <meta name="description" content="Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.">
@@ -7,58 +9,10 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ url()->current() }}">
   <meta property="og:image" content="{{ asset('frontend/assets/style/images/home-page/bg-image/bg.jpg') }}"> --}}
-
-    <style>
-        .hero {
-            height: 70vh;
-            width: 100%;
-            background: url('{{ asset('website-template/images/slider/1.jpg') }}');
-            /* position: relative; */
-            /* display: flex; */
-            /* align-items: center; */
-            /* justify-content: center; */
-            /* color: white; */
-            /* text-align: center; */
-        }
-
-        .projects {
-            position: absolute;
-            bottom: -100px;
-            left: 0;
-            width: 100%;
-            padding: 2rem 1rem;
-            box-sizing: border-box;
-            background: white;
-            z-index: 10;
-        }
-
-        .project-list {
-            display: flex;
-            gap: 1rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 1rem;
-        }
-
-        .project-card {
-            min-width: 250px;
-            flex: 0 0 auto;
-            background: #f5f5f5;
-            border-radius: 10px;
-            padding: 1rem;
-            scroll-snap-align: start;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-card h3 {
-            margin-top: 0;
-        }
-    </style>
 @endsection
 
 @section('content')
-    {{-- <section class="rev_slider_wrapper">
+    <section class="rev_slider_wrapper">
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 <li data-transition="fade">
@@ -159,34 +113,6 @@
 
                 </li>
             </ul>
-        </div>
-    </section> --}}
-
-    <div class="hero"></div>
-    <section class="rev_slider_wrapper">
-        <div class="slide-content-box">
-            <h4>Thousand of children are waiting for help!</h4>
-            <h1>help the <span>poor</span> people</h1>
-            <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
-                doloremque la<br>udantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p>
-        </div>
-    </section>
-
-    <section class="projects">
-        <div class="project-list">
-            <div class="project-card">
-                <h3>Proje 1</h3>
-                <p>Kısa açıklama...</p>
-            </div>
-            <div class="project-card">
-                <h3>Proje 2</h3>
-                <p>Kısa açıklama...</p>
-            </div>
-            <div class="project-card">
-                <h3>Proje 3</h3>
-                <p>Kısa açıklama...</p>
-            </div>
-            <!-- Daha fazla kart eklenebilir -->
         </div>
     </section>
 
@@ -1370,7 +1296,4 @@
             </div>
         </div>
     </section>
-@endsection
-
-@section('customScript')
 @endsection

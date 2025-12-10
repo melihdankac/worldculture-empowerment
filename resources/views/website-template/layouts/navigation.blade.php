@@ -16,20 +16,9 @@
         <div class="column right">
             <ul class="login-info">
                 <li>
-                    <div class="language dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            DE
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">DE (Default)</a></li>
-                            <li><a href="#">EN</a></li>
-                            <li><a href="#">TR</a></li>
-                        </ul>
-                    </div>
+                    <i class="icon flaticon-world-1"></i>
+                    <a href="#">DE</a> | <a href="#">EN</a>
                 </li>
-
                 {{-- <li><a href="#"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
                 <li><a href="#"><i class="icon fa fa-user"></i>signup</a></li> --}}
             </ul>
@@ -64,6 +53,7 @@
                                 <ul>
                                     <li><a href="{{ route('entstehungsgeschichte') }}">Entstehungsgeschichte</a></li>
                                     <li><a href="{{ route('vorstand') }}">Vorstand</a></li>
+                                    <li><a href="{{ route('team') }}">Team</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="#">Projekte</a>

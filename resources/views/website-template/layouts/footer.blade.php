@@ -212,7 +212,12 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="text">
-                <p><span>MY D</span>@2025. All Right Reserved</p>
+                <a href="{{ route('agb') }}" style="margin-right: 20px;" target="_blank">AGB</a>
+                <a href="{{ route('impressum') }}" style="margin-right: 20px;" target="_blank"> Impressum</a>
+                <a href="{{ route('datenschutzerklarung') }}"> Datenschutzerklärung</a>
+                <p>
+                    <span>MY D</span>@2025. All Right Reserved
+                </p>
             </div>
         </div>
         <!-- /.container -->

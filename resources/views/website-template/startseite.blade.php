@@ -119,7 +119,7 @@
     </section>
     <!-- !SECTION Hero Banner -->
 
-    <section class="urgent-cause">
+    {{-- <section class="urgent-cause">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-sm-12 col-md-offset-1">
@@ -196,13 +196,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
-    <section>
-        <div class="container"></div>
-    </section>
-
-    {{-- <section class="our-missions">
+    <section class="our-missions">
         <div class="container">
             <div class="section-title">
                 <h1>our <span>missions</span></h1>
@@ -254,7 +250,7 @@
 
             </div>
         </div>
-    </section> --}}
+    </section>
 
     {{-- <section class="recent-causes">
         <div class="container">
@@ -677,8 +673,8 @@
     </section>
     <!--end parallax-sec-one-->
 
-    <!--start upcoming-event-->
-    {{-- <section class="upcoming-event">
+    {{-- <!--start upcoming-event-->
+    <section class="upcoming-event">
         <div class="container">
             <div class="section-title">
                 <h5>going to raise humanity</h5>
@@ -763,10 +759,10 @@
 
             </div>
         </div>
-    </section> --}}
-    <!--end upcoming-event-->
+    </section>
+    <!--end upcoming-event--> --}}
 
-    <!--start our-team-->
+    {{-- <!--start our-team-->
     <section class="our-team">
         <div class="container">
             <div class="section-title">
@@ -918,9 +914,9 @@
 
         </div>
     </section>
-    <!--end our-team-->
+    <!--end our-team--> --}}
 
-    <!--start our features-->
+    {{-- <!--start our features-->
     <section class="our-features">
         <div class="container">
             <div class="section-title">
@@ -996,8 +992,9 @@
             </div>
         </div>
     </section>
-    <!--end our features-->
+    <!--end our features--> --}}
 
+    {{-- <!--start news update-->
     <section class="news-update">
         <div class="container">
             <div class="section-title">
@@ -1277,8 +1274,9 @@
             </div>
         </div>
     </section>
+    <!--end news update--> --}}
 
-    <section class="clients-section">
+    {{-- <section class="clients-section">
         <div class="container">
             <div class="clients-carousel">
                 <div class="item">
@@ -1306,5 +1304,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection

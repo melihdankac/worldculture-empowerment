@@ -7,7 +7,6 @@
     @yield('styles')
 </head>
 
-
 <body>
     <div class="boxed_wrapper">
         @include('website-template.layouts.navigation')
@@ -22,7 +21,6 @@
         </button>
         <!-- pre loader  -->
         <div class="preloader"></div>
-
 
         @include('website-template.layouts.scripts')
         @yield('customScript')

@@ -13,13 +13,13 @@
 @media (max-width: 1199px) {}
 
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
 	.mobile-menu {
 		display: none;
 	}
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
 
 	/*=================== mobile-menu ======================*/
 
@@ -61,7 +61,7 @@
 	}
 
 	.main-menu .navbar-toggle .icon-bar {
-		background: #ff2e3d;
+		background: #555879;
 		width: 30px;
 	}
 
@@ -126,7 +126,7 @@
 	}
 
 	.theme_menu {
-		background: #333;
+		background: #F4EBD3;
 		position: relative;
 		z-index: 99;
 	}

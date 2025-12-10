@@ -33,6 +33,14 @@ class FrontendController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function team()
+    {
+        return view('website-template.team');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
     public function derTraumVomHoren()
     {
         return view('website-template.derTraumVomHoren');
@@ -68,5 +76,29 @@ class FrontendController extends Controller
     public function kontakt()
     {
         return view('website-template.kontakt');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function agb()
+    {
+        return view('website-template.policy.agb');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function impressum()
+    {
+        return view('website-template.policy.impressum');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function datenschutzerklarung()
+    {
+        return view('website-template.policy.datenschutzerklarung');
     }
 }
