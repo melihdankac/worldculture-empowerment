@@ -52,7 +52,7 @@
                             <li class="dropdown"><a href="#">Über Uns</a>
                                 <ul>
                                     <li><a href="{{ route('entstehungsgeschichte') }}">Entstehungsgeschichte</a></li>
-                                    <li><a href="{{ route('vorstand') }}">Vorstand</a></li>
+                                    {{-- <li><a href="{{ route('vorstand') }}">Vorstand</a></li> --}}
                                     <li><a href="{{ route('team') }}">Team</a></li>
                                 </ul>
                             </li>
@@ -60,6 +60,7 @@
                                 <ul>
                                     <li><a href="{{ route('derTraumVomHoren') }}">Der Traum vom Hören</a></li>
                                     <li><a href="{{ route('turkeiErdbebenprojekt') }}">Türkei Erdbebenprojekt</a></li>
+                                    <li><a href="{{ route('patenschaft') }}">Patenschaft</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ route('werdeAktiv') }}">Werde Aktiv</a></li>

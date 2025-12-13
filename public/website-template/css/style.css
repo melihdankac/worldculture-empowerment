@@ -92,6 +92,24 @@
 ============================================ 
 */
 
+/* Logodaki Mavi renk */
+/* color: #83a7d9; */
+
+/* Logodaki Turuncu renk */
+/* color: #c2552d; */
+
+/* Logodaki Yeşil renk */
+/* color: #175c52; */
+
+/* Logodaki Sarı renk */
+/* color: #dddf98; */
+
+/* Logodaki Kırmızı renk */
+/* color: #722e29; */
+
+/* renk paleti - https://colorhunt.co/palette/55587998a1bcded3c4f4ebd3 */
+
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #555555;
@@ -341,13 +359,15 @@ textarea {
 
 .thm-btn {
   position: relative;
-  background: #ff2e3d;
+  /* background: #ff2e3d; */
+  background: #98A1BC;
   font-size: 11px;
   line-height: 34px;
   font-weight: 600;
   border-radius: 18px;
   color: #ffffff;
-  border: 2px solid #ff2e3d;
+  /* border: 2px solid #ff2e3d; */
+  border: 2px solid #555879;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   display: inline-block;
@@ -357,25 +377,32 @@ textarea {
 
 .thm-btn:hover {
   background: transparent;
-  color: #ff2e3d;
+  /* color: #ff2e3d; */
+  color: #98A1BC;
   transition: all .5s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .thm-btn.style-2 {
   background: transparent;
   border: 2px solid #e1e1e1;
-  color: #ff2e3d;
+  /* color: #ff2e3d; */
+  color: #83a7d9;
 }
 
 .thm-btn.style-2:hover {
-  border-color: #ff2e3d;
+  /* border-color: #ff2e3d;
   background: #ff2e3d;
+  color: #fff; */
+
+  border-color: #722e29;
+  background: #83a7d9;
   color: #fff;
 }
 
 .thm-btn.style-3 {
   background: none;
   border: none;
+  /* color: #ff2e3d; */
   color: #ff2e3d;
   border-radius: 0px;
   padding: 0px;
@@ -422,7 +449,7 @@ textarea {
 }
 
 .section-title span {
-  color: #ff2e3d;
+  color: #83a7d9;
 }
 
 .section-title p {
@@ -1000,7 +1027,8 @@ textarea {
 }
 
 .rev_slider_wrapper .slide-content-box h1 span {
-  color: #ff2e3d;
+  /* color: #ff2e3d; */
+  color: #83a7d9;
 }
 
 .rev_slider_wrapper .slide-content-box h4 {
@@ -1315,7 +1343,8 @@ textarea {
 }
 
 .page-banner .title span {
-  color: #ff2e3d;
+  /* color: #ff2e3d; */
+  color: #dddf98;
 }
 
 .page-banner .text {
@@ -1342,7 +1371,8 @@ textarea {
   padding: 0;
   list-style: none;
   font-size: 14px;
-  color: #ff2e3d;
+  /* color: #ff2e3d; */
+  color: #dddf98;
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
 }
@@ -2666,7 +2696,8 @@ default-form style-two
 }
 
 .default-form .form-control:focus {
-  border-color: #ff2e3d;
+  /* border-color: #ff2e3d; */
+  border-color: #c2552d;
   box-shadow: none;
 }
 
@@ -4501,7 +4532,8 @@ Project styles
 .contact_details .item .text h5 {
   margin-top: 15px;
   font-size: 14px;
-  color: #fe2e3c;
+  /* color: #fe2e3c; */
+  color: #83a7d9;
 }
 
 .contact_details .item span {
@@ -4514,7 +4546,8 @@ Project styles
   height: 105px;
   width: 105px;
   border-radius: 50%;
-  background: #ff2e3d;
+  /* background: #ff2e3d; */
+  background: #83a7d9;
   margin: 0 auto;
 }
 
@@ -5265,7 +5298,7 @@ Project styles
   top: 0px;
   width: 0px;
   height: 3px;
-  background: #ff2e3d;
+  background: #83a7d9;
   border-radius: 0px;
   -moz-transition: all 2000ms ease 300ms;
   -webkit-transition: all 2000ms ease 300ms;
@@ -5870,6 +5903,11 @@ Project styles
   /* background: #0d0d0d; */
   border-top: 1px solid #252525;
   padding: 26px 0;
+}
+
+.footer-bottom .text a {
+  text-align: center;
+  color: #722e29;
 }
 
 .footer-bottom .text p {
@@ -6587,7 +6625,11 @@ Project styles
 }
 
 .single-cause .content-box .title span {
-  color: #ff2e3d;
+  /* Sitedeki orjinal renk */
+  /* color: #ff2e3d; */
+
+  /* Logodaki Mavi renk */
+  color: #83a7d9;
 }
 
 .single-cause .content-box .text {

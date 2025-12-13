@@ -43,7 +43,7 @@ class FrontendController extends Controller
      */
     public function derTraumVomHoren()
     {
-        return view('website-template.derTraumVomHoren');
+        return view('website-template.projects.velid');
     }
 
     /**
@@ -51,7 +51,15 @@ class FrontendController extends Controller
      */
     public function turkeiErdbebenprojekt()
     {
-        return view('website-template.turkeiErdbebenprojekt');
+        return view('website-template.projects.turkeiErdbebenprojekt');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function patenschaft()
+    {
+        return view('website-template.projects.patenschaft');
     }
 
     /**
@@ -81,9 +89,9 @@ class FrontendController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function agb()
+    public function satzungDesVereins()
     {
-        return view('website-template.policy.agb');
+        return view('website-template.policy.satzung-des-vereins');
     }
 
     /**

@@ -802,7 +802,6 @@ class StripeWebhookController extends Controller
     }
 
     // ----- yardımcı metodlar -----
-
     protected function createInvoiceForDonation(Donation $donation, $amount = null, $stripeInvoiceId = null)
     {
         $amount = $amount ?? $donation->amount;

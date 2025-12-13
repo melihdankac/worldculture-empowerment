@@ -212,12 +212,15 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="text">
-                <a href="{{ route('agb') }}" style="margin-right: 20px;" target="_blank">AGB</a>
+                <a href="{{ route('satzungDesVereins') }}" style="margin-right: 20px;" target="_blank">Satzung Des
+                    Vereins</a>
                 <a href="{{ route('impressum') }}" style="margin-right: 20px;" target="_blank"> Impressum</a>
                 <a href="{{ route('datenschutzerklarung') }}"> Datenschutzerklärung</a>
-                <p>
-                    <span>MY D</span>@2025. All Right Reserved
-                </p>
+                {{-- <p> --}}
+                <span style="float: right;">
+                    <span>SPIXION</span>@2025. All Right Reserved
+                </span>
+                {{-- </p> --}}
             </div>
         </div>
         <!-- /.container -->

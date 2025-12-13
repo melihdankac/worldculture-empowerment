@@ -11,8 +11,6 @@
   <meta property="og:image" content="{{ asset('frontend/assets/style/images/home-page/bg-image/bg.jpg') }}"> --}}
     <style>
         :root {
-            /* --primary-color: #43374e;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            --primary-hover: #646e8f; */
             --primary-color: #203364;
             --primary-hover: #838ba5;
 

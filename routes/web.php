@@ -9,7 +9,6 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\DonationReceipt;
 use App\Models\Donation;
-use Illuminate\Support\Facades\Artisan;
 
 // Route::get('/', function () {
 //     return view('website-template.home-page');
@@ -20,16 +19,18 @@ Route::get('/', [FrontendController::class, 'startseite'])->name('startseite');
 Route::get('/entstehungsgeschichte', [FrontendController::class, 'entstehungsgeschichte'])->name('entstehungsgeschichte');
 Route::get('/vorstand', [FrontendController::class, 'vorstand'])->name('vorstand');
 Route::get('/team', [FrontendController::class, 'team'])->name('team');
+
 Route::get('/derTraumVomHoren', [FrontendController::class, 'derTraumVomHoren'])->name('derTraumVomHoren');
 Route::get('/turkeiErdbebenprojekt', [FrontendController::class, 'turkeiErdbebenprojekt'])->name('turkeiErdbebenprojekt');
+Route::get('/patenschaft', [FrontendController::class, 'patenschaft'])->name('patenschaft');
+
 Route::get('/werdeAktiv', [FrontendController::class, 'werdeAktiv'])->name('werdeAktiv');
 Route::get('/spenden', [FrontendController::class, 'spenden'])->name('spenden');
 Route::get('/kontakt', [FrontendController::class, 'kontakt'])->name('kontakt');
 
-Route::get('/agb', [FrontendController::class, 'agb'])->name('agb');
+Route::get('/satzungDesVereins', [FrontendController::class, 'satzungDesVereins'])->name('satzungDesVereins');
 Route::get('/impressum', [FrontendController::class, 'impressum'])->name('impressum');
 Route::get('/datenschutzerklarung', [FrontendController::class, 'datenschutzerklarung'])->name('datenschutzerklarung');
-
 
 
 // Donation Route
