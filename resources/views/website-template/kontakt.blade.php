@@ -2,6 +2,26 @@
 
 @section('meta&title')
     <title>KONTAKT || WORLDCULTURE EMPOWERMENT</title>
+
+    <style>
+        .social-links-fa {
+            margin-top: 10px;
+        }
+
+        .social-links-fa a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #666;
+            font-size: 22px;
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .social-links-fa a:hover {
+            color: #337ab7;
+            /* Bootstrap primary */
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -28,41 +48,86 @@
     </section>
     <!-- !SECTION Page Banner -->
 
+    <div class="container" style="margin-top: 5rem;">
+        <h4 class="text-muted">
+            Sie können uns auch auf unseren sozialen Medien folgen, um über unsere Projekte und Aktivitäten informiert zu
+            bleiben.
+        </h4>
+
+        <div class="social-links-fa">
+            <a href="https://www.instagram.com/worldculture_empowerment" target="_blank" title="Instagram">
+                <i class="fa fa-instagram"></i>
+            </a>
+
+            {{-- <a href="https://www.linkedin.com/company/YOUR_PAGE" target="_blank" title="LinkedIn">
+                <i class="fa fa-linkedin"></i>
+            </a>
+
+            <a href="https://www.twitter.com/YOUR_PAGE" target="_blank" title="X / Twitter">
+                <i class="fa fa-twitter"></i>
+            </a>
+
+            <a href="https://www.facebook.com/YOUR_PAGE" target="_blank" title="Facebook">
+                <i class="fa fa-facebook"></i>
+            </a> --}}
+        </div>
+    </div>
+
     <!-- SECTION Contact Form & Map -->
     <section class="contact_us" style="margin-top: 5rem;">
         <div class="container">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul style="margin:0;">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div class="section-title text-center">
                 <h2>Schreiben Sie uns eine Nachricht</h2>
             </div>
             <div class="default-form-area">
-                <form id="contact-form" name="contact_form" class="default-form"
-                    action="https://webheady.com/Charity-sympathy/sendmail.php" method="post">
+                <form id="contact-form" name="contact_form" class="default-form" method="POST"
+                    action="{{ route('contact.send') }}">
+                    @csrf
+
                     <div class="row clearfix">
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" value="" placeholder="Ihr Name"
-                                    required="">
+                                <input type="text" name="name" class="form-control" value=""
+                                    placeholder="Ihr Name" required="">
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <input type="email" class="form-control required email" value=""
+                                <input type="email" name="email" class="form-control required email" value=""
                                     placeholder="Ihre E-Mail" required="">
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" value="" placeholder="Telefon">
+                                <input type="text" name="phone" class="form-control" value=""
+                                    placeholder="Telefon" name="">
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <input type="text" class="form-control" value="" placeholder="Betreff">
+                                <input type="text" name="subject" class="form-control" value=""
+                                    placeholder="Betreff">
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <textarea class="form-control textarea required" placeholder="Ihre Nachricht..."></textarea>
+                                <textarea name="message" class="form-control textarea required" placeholder="Ihre Nachricht..."></textarea>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">

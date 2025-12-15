@@ -24,14 +24,11 @@ return new class extends Migration
             $table->string('payment_status')->default('pending');
             $table->string('stripe_payment_id')->nullable()->index();
             $table->string('stripe_customer_id')->nullable()->index();
-
-            $table->enum('recurring_interval', ['one_time', 'month', 'year', 'membership'])->nullable();
-            $table->boolean('is_recurring')->default(false);
-
+            $table->string('stripe_invoice_id')->nullable()->index();
             $table->boolean('wants_invoice')->default(false);
+            $table->timestamp('receipt_sent_at')->nullable();
             $table->foreignId('invoice_address_id')->nullable()->constrained()->nullOnDelete();
             $table->text('message')->nullable();
-
             $table->timestamps();
         });
     }

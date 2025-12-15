@@ -27,7 +27,7 @@
     <section class="our-team style-two">
         <div class="container">
             <div class="section-title">
-                <h5>Lernen Sie unser Team kennen</h5>
+                {{-- <h5>Lernen Sie unser Team kennen</h5> --}}
                 <h1>UNSER<span> TEAM</span></h1>
                 {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua. Ut enim ad minim veniam,</p> --}}
@@ -35,7 +35,6 @@
 
             <div class="item-box">
                 <div class="row">
-
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="item">
                             <div class="bg-area">
@@ -59,9 +58,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="text">
+                                    {{-- <div class="text">
                                         <p>Gründerin - Reiseagentur Worldculture Travels</p>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -129,16 +128,14 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4 col-sm-6 col-xs-12"></div>
-
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="item">
                             <div class="bg-area">
                                 <div class="custom-image-box">
-                                    <img src="{{ asset('website-template/images/team/arzu.jpg') }}" alt="Arzu" />
+                                    <img src="{{ asset('website-template/images/team/arzu2.jpg') }}" alt="Arzu" />
                                 </div>
                                 <div class="content-box">
-                                    <h4>Arzu
+                                    <h4>Arzu Çot
                                         <br><br>
                                         Sozialpädagogin
                                     </h4>
@@ -161,9 +158,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-6 col-xs-12"></div>
-
                 </div>
             </div>
         </div>

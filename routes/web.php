@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
@@ -23,10 +24,15 @@ Route::get('/team', [FrontendController::class, 'team'])->name('team');
 Route::get('/derTraumVomHoren', [FrontendController::class, 'derTraumVomHoren'])->name('derTraumVomHoren');
 Route::get('/turkeiErdbebenprojekt', [FrontendController::class, 'turkeiErdbebenprojekt'])->name('turkeiErdbebenprojekt');
 Route::get('/patenschaft', [FrontendController::class, 'patenschaft'])->name('patenschaft');
+Route::get('/children-in-village', [FrontendController::class, 'childrenVillage'])->name('children-in-village');
+Route::get('/autonomy-foundation', [FrontendController::class, 'autonomyFoundation'])->name('autonomy-foundation');
 
 Route::get('/werdeAktiv', [FrontendController::class, 'werdeAktiv'])->name('werdeAktiv');
 Route::get('/spenden', [FrontendController::class, 'spenden'])->name('spenden');
 Route::get('/kontakt', [FrontendController::class, 'kontakt'])->name('kontakt');
+
+Route::post('/contact/send', [ContactController::class, 'send'])
+    ->name('contact.send');
 
 Route::get('/satzungDesVereins', [FrontendController::class, 'satzungDesVereins'])->name('satzungDesVereins');
 Route::get('/impressum', [FrontendController::class, 'impressum'])->name('impressum');
@@ -35,10 +41,12 @@ Route::get('/datenschutzerklarung', [FrontendController::class, 'datenschutzerkl
 
 // Donation Route
 Route::post('/donate', [DonationController::class, 'process'])->name('donation.process');
-Route::post('/donate-success', [DonationController::class, 'success'])->name('donation.success');
+Route::get('/donate-success', [DonationController::class, 'success'])->name('donation.success');
+
 Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle'])
     ->withoutMiddleware([VerifyCsrfToken::class])
     ->name('stripe.webhook');
+
 
 Route::get('/test-mail', function () {
     $donation = Donation::first();

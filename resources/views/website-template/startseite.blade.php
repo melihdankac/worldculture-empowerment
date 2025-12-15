@@ -69,7 +69,7 @@
                 <p style="font-size: 1.8rem; max-width: 800px; margin: 0 auto;">
                     Wir setzen uns für eine Welt ein, in der kulturelle Vielfalt geschätzt, Gleichberechtigung
                     selbstverständlich und jedes Kind geschützt und gefördert wird. Wir möchten ethnischen Minderheiten eine
-                    starke Stimme geben, Frauen weltweit in ihrer Selbstbestimmung stärken und Kindern, die unter Armut,
+                    starke Stimme geben, Frauen weltweit in ihrer Selbstbestimmung stärken und Kindern die unter Armut,
                     Krisen oder Diskriminierung leiden, faire Zukunftschancen eröffnen.
                     Gemeinsam mit Partnern weltweit arbeiten wir daran, nachhaltige Strukturen zu schaffen und Menschen zu
                     befähigen, ihr Leben und ihre Gemeinschaften selbstbestimmt zu gestalten - für eine gerechte, friedliche
@@ -83,8 +83,8 @@
                         <div class="item">
                             <div class="content-box">
                                 <h2>Mitglieder</h2>
-                                <p>Werden Sie Teil unserer Gemeinschaft und geben Sie Minderheiten, Frauen und Kindern eine
-                                    starke Stimme. Gemeinsam sind wir stärker!</p>
+                                <p>Werden Sie Teil unseres Vereins und geben Sie Minderheiten, Frauen und
+                                    Kindern eine Stimme.</p>
                             </div>
                             <div class="link"><a href="{{ route('spenden') }}" class="thm-btn style-2">Jetzt mitmachen</a>
                             </div>
@@ -93,9 +93,9 @@
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="item">
                             <div class="content-box">
-                                <h2>Donation</h2>
-                                <p>Ihre Spende verändert Leben. Schon ein kleiner Beitrag schafft große Chancen für Kinder
-                                    in Not.</p>
+                                <h2>Spenden</h2>
+                                <p>Jede Spende zählt. Gemeinsam schaffen wir Chancen, verändern Leben und gestalten eine
+                                    bessere Zukunft für alle.</p>
                             </div>
                             <div class="link"><a href="{{ route('spenden') }}" class="thm-btn style-2">Jetzt spenden</a>
                             </div>
@@ -105,8 +105,8 @@
                         <div class="item">
                             <div class="content-box">
                                 <h2>Freiwillige</h2>
-                                <p>Schenken Sie Ihre Zeit und Ihr Wissen - helfen Sie direkt vor Ort und gestalten Sie eine
-                                    gerechte Zukunft mit.</p>
+                                <p>Ihr Einsatz zählt. Teilen Sie Ihr Wissen, schenken Sie Ihre Zeit und schaffen Sie
+                                    gemeinsam Chancen für eine gerechtere Zukunft.</p>
                             </div>
                             <div class="link"><a href="{{ route('werdeAktiv') }}" class="thm-btn style-2">Jetzt helfen</a>
                             </div>

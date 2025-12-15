@@ -65,6 +65,22 @@ class FrontendController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function childrenVillage()
+    {
+        return view('website-template.projects.children-in-village');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function autonomyFoundation()
+    {
+        return view('website-template.projects.autonomy-foundation');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
     public function werdeAktiv()
     {
         return view('website-template.werdeAktiv');

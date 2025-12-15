@@ -12,7 +12,9 @@
 @endsection
 
 @section('content')
-    <div>
-        impressum
+    <div class="container">
+        <img src="{{ asset('website-template/images/policys/impressum/1.png') }}" alt="">
+        <img src="{{ asset('website-template/images/policys/impressum/2.png') }}" alt="">
+        <img src="{{ asset('website-template/images/policys/impressum/3.png') }}" alt="">
     </div>
 @endsection

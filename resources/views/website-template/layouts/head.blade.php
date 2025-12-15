@@ -62,4 +62,41 @@
     .banner-content h4 {
         padding-bottom: 1.2rem;
     }
+
+
+    /* Footer links */
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 6px;
+    }
+
+    .footer-links a {
+        color: #555879;
+        text-decoration: none;
+    }
+
+    .footer-links a:hover {
+        color: #83a7d9;
+    }
+
+    /* Footer Social Media */
+
+    .social-links-fa a {
+        display: inline-block;
+        margin: 0 10px;
+        color: #555879;
+        font-size: 22px;
+        transition: color 0.2s ease;
+        text-decoration: none;
+    }
+
+    .social-links-fa a:hover {
+        color: #337ab7;
+        /* Bootstrap primary */
+    }
 </style>

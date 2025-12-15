@@ -19,11 +19,11 @@ class Donation extends Model
         'payment_status',
         'stripe_payment_id',
         'stripe_customer_id',
-        'recurring_interval',
-        'is_recurring',
+        'stripe_invoice_id',
         'wants_invoice',
         'invoice_address_id',
         'message',
+        'receipt_sent_at',
     ];
 
     /**
@@ -37,8 +37,13 @@ class Donation extends Model
     /**
      * Bağışın faturası (Donation -> Invoice)
      */
-    public function invoice()
+    // public function invoice()
+    // {
+    //     return $this->hasOne(Invoice::class);
+    // }
+
+    public function invoices()
     {
-        return $this->hasOne(Invoice::class);
+        return $this->morphMany(Invoice::class, 'invoiceable');
     }
 }

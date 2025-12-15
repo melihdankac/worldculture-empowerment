@@ -72,39 +72,21 @@
                             <div class="footer-widget contact-widget">
                                 <h3 class="footer-title">contact us</h3>
                                 <div class="widget-content">
-                                    <div class="default-form-area">
-                                        <form id="contact-form2" name="contact_form" class="default-form style-two"
-                                            action="https://webheady.com/Charity-sympathy/sendmail.php" method="post">
-                                            <div class="row clearfix">
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <div class="form-group style-two">
-                                                        <input type="text" name="form_name" class="form-control"
-                                                            value="" placeholder="Your name" required="" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <div class="form-group style-two">
-                                                        <input type="email" name="form_email"
-                                                            class="form-control required email" value=""
-                                                            placeholder="Your mail" required="" />
-                                                    </div>
-                                                </div>
 
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <div class="form-group style-two">
-                                                        <textarea name="form_message" class="form-control textarea required" placeholder="Text..."></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <div class="form-group style-two">
-                                                        <button class="thm-btn2" type="submit"
-                                                            data-loading-text="Please wait...">
-                                                            send<i class="fa fa-angle-right"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
+                                    <ul class="footer-links">
+                                        <li><a href="{{ route('entstehungsgeschichte') }}">Entstehungsgeschichte</a>
+                                        </li>
+                                        <li><a href="{{ route('derTraumVomHoren') }}">
+                                            </a></li>
+                                        <li><a href="{{ route('spenden') }}">Spenden</a></li>
+                                        <li><a href="{{ route('kontakt') }}">Kontakt</a></li>
+                                    </ul>
+
+                                    <div class="social-links-fa">
+                                        <a href="https://www.instagram.com/worldculture_empowerment" target="_blank"
+                                            title="Instagram">
+                                            <i style="font-size: 3rem;" class="fa fa-instagram"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +107,8 @@
                                                 <div class="overlay">
                                                     <div class="box">
                                                         <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                                            <a href="https://www.instagram.com/worldculture_empowerment"
+                                                                target="_blank"><i class="fa fa-link"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -139,7 +122,8 @@
                                                 <div class="overlay">
                                                     <div class="box">
                                                         <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                                            <a href="https://www.instagram.com/worldculture_empowerment"
+                                                                target="_blank"><i class="fa fa-link"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -153,7 +137,8 @@
                                                 <div class="overlay">
                                                     <div class="box">
                                                         <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                                            <a href="https://www.instagram.com/worldculture_empowerment"
+                                                                target="_blank"><i class="fa fa-link"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -166,7 +151,8 @@
                                                 <div class="overlay">
                                                     <div class="box">
                                                         <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                                            <a href="https://www.instagram.com/worldculture_empowerment"
+                                                                target="_blank"><i class="fa fa-link"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -179,7 +165,8 @@
                                                 <div class="overlay">
                                                     <div class="box">
                                                         <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                                            <a href="https://www.instagram.com/worldculture_empowerment"
+                                                                target="_blank"><i class="fa fa-link"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -192,7 +179,8 @@
                                                 <div class="overlay">
                                                     <div class="box">
                                                         <div class="content">
-                                                            <a href="#"><i class="fa fa-link"></i></a>
+                                                            <a href="https://www.instagram.com/worldculture_empowerment"
+                                                                target="_blank"><i class="fa fa-link"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -212,7 +200,7 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="text">
-                <a href="{{ route('satzungDesVereins') }}" style="margin-right: 20px;" target="_blank">Satzung Des
+                <a href="{{ route('satzungDesVereins') }}" style="margin-right: 20px;" target="_blank">Satzung des
                     Vereins</a>
                 <a href="{{ route('impressum') }}" style="margin-right: 20px;" target="_blank"> Impressum</a>
                 <a href="{{ route('datenschutzerklarung') }}"> Datenschutzerklärung</a>

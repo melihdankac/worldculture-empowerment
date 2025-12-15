@@ -15,18 +15,21 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('donor_id')->nullable()->constrained()->nullOnDelete();
-            $table->foreignId('donation_id')->nullable()->constrained()->nullOnDelete();
-            $table->foreignId('membership_id')->nullable()->constrained()->nullOnDelete();
-            $table->foreignId('invoice_addresses_id')->nullable()->constrained()->nullOnDelete();
 
-            $table->string('invoice_number')->nullable(); // Örn: 2025-0001
+            // Polymorphic ilişki: invoiceable
+            $table->morphs('invoiceable');
+            // invoiceable_id + invoiceable_type (Donation, MembershipPayment, SubscriptionDonation)
+
+            $table->foreignId('invoice_address_id')->nullable()->constrained()->nullOnDelete();
+
+            $table->string('invoice_number')->nullable();
             $table->enum('status', ['pending', 'issued', 'canceled'])->default('pending');
             $table->date('issue_date')->nullable();
 
             $table->decimal('amount', 10, 2)->default(0);
             $table->string('currency', 10)->default('EUR');
 
-            $table->string('file_path')->nullable(); // PDF dosya yolu
+            $table->string('file_path')->nullable();
 
             $table->timestamps();
         });

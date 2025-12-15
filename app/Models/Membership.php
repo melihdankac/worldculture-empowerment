@@ -11,9 +11,7 @@ class Membership extends Model
 
     protected $fillable = [
         'donor_id',
-        'donation_id',
         'stripe_subscription_id',
-        'payment_status',
         'membership_status',
         'start_date',
         'end_date',
@@ -31,6 +29,14 @@ class Membership extends Model
     ];
 
     /* ------------------------- Relationships ------------------------- */
+
+    /**
+     * Üyelikle ilişkili ödemeler
+     */
+    public function payments()
+    {
+        return $this->hasMany(MembershipPayment::class);
+    }
 
     /**
      * Üyeliğin sahibi (Donor)

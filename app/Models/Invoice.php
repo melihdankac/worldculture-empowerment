@@ -11,9 +11,7 @@ class Invoice extends Model
 
     protected $fillable = [
         'donor_id',
-        'donation_id',
-        'membership_id',
-        'invoice_addresses_id',
+        'invoice_address_id',
         'invoice_number',
         'status', // pending | issued | canceled
         'issue_date',
@@ -27,24 +25,41 @@ class Invoice extends Model
         'amount' => 'decimal:2',
     ];
 
-    // İlişkiler
+    /**
+     * Polymorphic ilişki: invoiceable
+     * Donation, MembershipPayment veya SubscriptionDonation olabilir
+     */
+    public function invoiceable()
+    {
+        return $this->morphTo();
+    }
+
+    /**
+     * Donor ilişkisi
+     */
     public function donor()
     {
         return $this->belongsTo(Donor::class);
     }
 
-    public function donation()
+    /**
+     * Fatura adresi ilişkisi
+     */
+    public function address()
     {
-        return $this->belongsTo(Donation::class);
+        return $this->belongsTo(InvoiceAddress::class, 'invoice_address_id');
     }
 
-    public function membership()
-    {
-        return $this->belongsTo(Membership::class);
-    }
+    /**
+     * Fatura adresi ilişkisi
+     */
+    // public function donation()
+    // {
+    //     return $this->belongsTo(Donation::class);
+    // }
 
-    public function invoiceAddress()
-    {
-        return $this->belongsTo(InvoiceAddress::class);
-    }
+    // public function membership()
+    // {
+    //     return $this->belongsTo(Membership::class);
+    // }
 }

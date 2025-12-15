@@ -94,7 +94,7 @@
             <p>
                 Thank you for your
                 <span class="highlight">
-                    {{ $donation->recurring_interval === 'one_time' ? 'one-time' : 'recurring' }}
+                    one-time
                 </span>
                 donation of
                 <span class="highlight">{{ number_format($donation->amount, 2) }} EUR</span>.
@@ -113,7 +113,7 @@
 
             <p>
                 We truly appreciate your contribution.
-                You can find your official receipt attached to this email.
+                {{-- You can find your official receipt attached to this email. --}}
             </p>
 
             <a href="{{ url('/') }}" class="btn">Visit our website</a>

@@ -37,6 +37,14 @@ class Donor extends Model
     }
 
     /**
+     * Abonelik (Donor -> subscribe)
+     */
+    public function subscriptionDonations()
+    {
+        return $this->hasMany(SubscriptionDonation::class);
+    }
+
+    /**
      * Faturalar (Donor -> Invoices)
      */
     public function invoices()

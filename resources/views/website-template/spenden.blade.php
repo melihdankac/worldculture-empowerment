@@ -254,7 +254,7 @@
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
-        <form id="payment-form" method="POST" action="{{ route('donation.process') }}">
+        {{-- <form id="payment-form" method="POST" action="{{ route('donation.process') }}">
             @csrf
 
             <!-- Desteklenen Proje -->
@@ -411,6 +411,169 @@
             <button id="submit-button" type="submit" class="thm-btn style-2">
                 Bağış Yap
             </button>
+        </form> --}}
+
+        <form id="payment-form" action="{{ route('donation.process') }}">
+            @csrf
+
+            <!-- Unterstütztes Projekt -->
+            <div class="form-group">
+                <label for="supported_project">Ich möchte unterstützen</label>
+                <select name="supported_project" id="supported_project" class="form-control">
+                    <option value="project1">Projekt 1</option>
+                    <option value="project2">Projekt 2</option>
+                    <option value="project3">Projekt 3</option>
+                </select>
+            </div>
+
+            <!-- Betrag -->
+            <div class="form-group">
+                <label for="amount">Betrag (€)</label>
+                <input type="number" name="amount" id="amount" class="form-control" min="1"
+                    placeholder="Eigenen Betrag eingeben">
+            </div>
+
+            <!-- Vorgefertigte Beträge -->
+            <div class="form-group">
+                <label>Wählen Sie einen Betrag</label>
+                <div class="radio-buttons">
+                    <input type="radio" name="ready_amount" value="50" id="amount50">
+                    <label for="amount5">€50</label>
+
+                    <input type="radio" name="ready_amount" value="75" id="amount75">
+                    <label for="amount75">€75</label>
+
+                    <input type="radio" name="ready_amount" value="100" id="amount100">
+                    <label for="amount100">€100</label>
+
+                    <input type="radio" name="ready_amount" value="200" id="amount200">
+                    <label for="amount200">€200</label>
+                </div>
+            </div>
+
+            <!-- Spendenart -->
+            <label>Spendenart</label>
+            <div class="radio-buttons">
+                <input type="radio" name="donation_type" id="individual" value="individual" checked>
+                <label for="individual">Privatperson</label>
+
+                <input type="radio" name="donation_type" id="company" value="company">
+                <label for="company">Unternehmen</label>
+            </div>
+
+            <!-- Spendentyp -->
+            <label>Spendentyp</label>
+            <div class="radio-buttons">
+                <input type="radio" name="recurring_interval" id="membership" value="membership" checked>
+                <label for="membership">Membership</label>
+
+                <input type="radio" name="recurring_interval" id="one_time" value="one_time">
+                <label for="one_time">Einmalig</label>
+
+                <input type="radio" name="recurring_interval" id="month" value="month">
+                <label for="month">Monatlich</label>
+
+                <input type="radio" name="recurring_interval" id="year" value="year">
+                <label for="year">Jährlich</label>
+            </div>
+
+            <div id="company-fields" style="display:none;">
+                <div class="form-group">
+                    <label>Unternehmensname</label>
+                    <input type="text" name="company_name" id="company_name" class="form-control">
+                </div>
+            </div>
+
+            <!-- Name / E-Mail -->
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label for="first_name">Vorname *</label>
+                    <input type="text" name="first_name" id="first_name" class="form-control">
+                </div>
+
+                <div class="col-sm-6 form-group">
+                    <label for="last_name">Nachname *</label>
+                    <input type="text" name="last_name" id="last_name" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="email">E-Mail-Adresse *</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+            </div>
+
+            <!-- Steuerabzug (für Spender in Deutschland) -->
+            <div class="form-group" style="margin-top: 25px;">
+                <p style="font-size: 15px; color: var(--primary-color);">
+                    Wenn Sie in Deutschland wohnen, ist diese Spende steuerlich absetzbar.
+                    Bitte geben Sie unten Ihre Daten an, um eine Spendenbescheinigung von uns zu erhalten.
+                </p>
+
+                <div class="checkbox-buttons">
+                    <input type="hidden" name="wants_invoice" value="0">
+                    <input type="checkbox" id="wants_invoice" name="wants_invoice" value="1">
+                    <label for="wants_invoice">
+                        <span class="checkmark">✓</span>
+                        Ich möchte eine Spendenbescheinigung für den Steuerabzug erhalten
+                    </label>
+                </div>
+            </div>
+
+            <!-- Adressfelder (sichtbar bei Auswahl) -->
+            <div id="address-fields" style="display: none; margin-top: 20px;">
+                <div class="row">
+                    <div class="col-sm-8 form-group">
+                        <label for="street">Straße *</label>
+                        <input type="text" name="street" id="street" class="form-control">
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="street_number">Hausnummer *</label>
+                        <input type="text" name="street_number" id="street_number" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label for="zip">PLZ *</label>
+                        <input type="text" name="zip" id="zip" class="form-control">
+                    </div>
+                    <div class="col-sm-8 form-group">
+                        <label for="city">Stadt *</label>
+                        <input type="text" name="city" id="city" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Land</label>
+                    <select name="country" id="country" class="form-control">
+                        <option value="project1">Türkei</option>
+                        <option value="project2">Deutschland</option>
+                        <option value="project3">England</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Nachricht -->
+            <div class="form-group">
+                <label for="message">Ihre Nachricht</label>
+                <textarea name="message" class="form-control" rows="3"></textarea>
+            </div>
+
+            <input type="hidden" name="stripe_payment_method" id="stripe_payment_method">
+
+            <!-- Kreditkartenfeld -->
+            <div class="form-group">
+                <label>Kreditkarteninformationen</label>
+                <div id="card-element" class="form-control"></div>
+            </div>
+
+            <input type="hidden" name="stripeToken" id="stripeToken">
+
+            <button id="submit-button" class="thm-btn style-2">
+                Jetzt spenden
+            </button>
         </form>
     </div>
 @endsection
@@ -418,19 +581,24 @@
 @section('customScript')
     <!-- Stripe JS -->
     <script src="https://js.stripe.com/v3/"></script>
+
     <script>
         const stripe = Stripe("{{ config('services.stripe.key') }}");
         const elements = stripe.elements();
-        const card = elements.create('card');
+
+        const card = elements.create('card', {
+            hidePostalCode: true
+        });
         card.mount('#card-element');
 
         const form = document.getElementById('payment-form');
         const submitButton = document.getElementById('submit-button');
 
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault();
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
             submitButton.disabled = true;
 
+            /* 1️⃣ Payment Method oluştur */
             const {
                 paymentMethod,
                 error
@@ -438,9 +606,9 @@
                 type: 'card',
                 card: card,
                 billing_details: {
-                    name: form.first_name?.value || '',
+                    name: `${form.first_name?.value || ''} ${form.last_name?.value || ''}`,
                     email: form.email.value,
-                },
+                }
             });
 
             if (error) {
@@ -449,8 +617,81 @@
                 return;
             }
 
-            document.getElementById('stripeToken').value = paymentMethod.id;
-            form.submit();
+            /* 2️⃣ Backend'e gönder */
+            const formData = new FormData(form);
+            formData.set('stripe_payment_method', paymentMethod.id);
+
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                    'Accept': 'application/json',
+                },
+                body: formData
+            });
+
+            // const result = await response.json();
+
+            // if (!result.success) {
+            //     alert(result.message || 'Ödeme başlatılamadı');
+            //     submitButton.disabled = false;
+            //     return;
+            // }
+
+            // /* 3️⃣ Ödemeyi CONFIRM et */
+            // const {
+            //     error: confirmError,
+            //     paymentIntent
+            // } =
+            // await stripe.confirmCardPayment(result.client_secret);
+
+            // if (confirmError) {
+            //     alert(confirmError.message);
+            //     submitButton.disabled = false;
+            //     return;
+            // }
+
+            // /* 4️⃣ Başarılı (Webhook çalışacak) */
+            // if (paymentIntent.status === 'succeeded' || paymentIntent.status === 'processing') {
+            //     window.location.href = "{{ route('donation.success') }}";
+            // }
+
+            // CORTtt
+            // CORTtt
+            // CORTtt
+            // CORTtt
+            // CORTtt
+            // CORTtt
+
+            const result = await response.json();
+
+            if (!result.success) {
+                alert(result.message || 'Ödeme başlatılamadı');
+                submitButton.disabled = false;
+                return;
+            }
+
+            // Eğer client_secret geldiyse → confirmCardPayment yap
+            if (result.client_secret) {
+                const {
+                    error: confirmError,
+                    paymentIntent
+                } =
+                await stripe.confirmCardPayment(result.client_secret);
+
+                if (confirmError) {
+                    alert(confirmError.message);
+                    submitButton.disabled = false;
+                    return;
+                }
+
+                if (paymentIntent.status === 'succeeded' || paymentIntent.status === 'processing') {
+                    window.location.href = "{{ route('donation.success') }}";
+                }
+            } else if (result.invoice_status === 'paid' || result.invoice_status === 'active') {
+                // client_secret yoksa → ödeme zaten başarılıdır
+                window.location.href = "{{ route('donation.success') }}";
+            }
         });
     </script>
 

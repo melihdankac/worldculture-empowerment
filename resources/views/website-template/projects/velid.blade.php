@@ -154,13 +154,13 @@
                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
-                            <h4>Thousand of children are waiting for help!</h4>
+                            {{-- <h4>Thousand of children are waiting for help!</h4> --}}
                             <h1><span>Velids</span> Traum vom Hören</h1>
-                            <p>
+                            {{-- <p>
                                 Sed ut perspiciatis, unde omnis iste natus error sit
                                 voluptatem accusantium doloremque la<br />udantium, totam
                                 rem aperiam eaque ipsa, quae ab illo inventore
-                            </p>
+                            </p> --}}
                         </div>
                     </div>
                     <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="750"
@@ -211,24 +211,21 @@
                             Möglichkeit
                             für
                             ihn, eine Therapie zu erhalten,
-                            und auch in der Türkei werden solche Therapien nicht staatlich unterstützt. In den letzten 14
-                            Monaten
-                            konnten wir als Worldculture Travels
-                            Velid mit einer privaten Sprachtherapie fördern dies war ein großer Hoffnungsschimmer in seinem
-                            Leben.
+                            und auch in der Türkei werden solche Therapien nicht staatlich unterstützt.
+                            In den vergangenen 14 Monaten wurde Velids Sprachtherapie durch private Spenden einer Familie
+                            ermöglicht. Diese Unterstützung stellte einen bedeutenden Hoffnungsschimmer und eine wertvolle
+                            Förderung für seine persönliche Sprachentwicklung dar.
                         </p>&nbsp;
                         <p>Die Fortschritte, die Velid seither gemacht hat, sind bemerkenswert.
                             Durch intensive Förderung hat er gelernt, sich besser auszudrücken und mit seiner Umwelt zu
                             kommunizieren. Die Therapie gibt ihm nicht nur neue Möglichkeiten,
                             sondern auch Selbstvertrauen. Doch das ist erst der Anfang seines Weges. </p>&nbsp;
-                        <p>Velid hat einen großen Traum: Er möchte hören und sprechen können. Dafür benötigt er dringend
-                            eine
-                            Operation,
-                            bei der ihm ein Cochlea-Implantat eingesetzt wird. Dieses Implantat würde es ihm ermöglichen,
-                            Töne
-                            und
-                            Stimmen wahrzunehmen – ein lebensverändernder Eingriff.
-                            Doch die Kosten für die OP und die weitere Therapie übersteigen unsere finanziellen Mittel.</p>
+                        <p>
+                            Velid hat einen großen Traum: Er möchte hören und sprechen können. Dafür benötigt er dringend
+                            eine langjährige Therapie und ein qualitativ gutes Hörgerät. Das Hörgerät wird es ihm
+                            ermöglichen Töne und Stimmen wahrzunehmen - diese Therapie wird sein Leben verändern. Doch die
+                            Kosten für die Therapie und das Hörgerät übersteigen unser finanzielles Mittel.
+                        </p>
                         &nbsp;
                     </div>
                 </div>
@@ -279,7 +276,7 @@
 
                 <figure class="media-item video-item">
                     <video class="video-cover" {{-- poster="{{ asset('website-template/images/projects/dream-of-hearing/2.webp') }}" --}} controls>
-                        <source src="{{ asset('website-template/images/projects/dream-of-hearing/video1.mp4') }}"
+                        <source src="{{ asset('website-template/images/projects/dream-of-hearing/video2.mp4') }}"
                             type="video/mp4" />
                         Tarayıcınız video etiketini desteklemiyor.
                     </video>
@@ -287,7 +284,7 @@
 
                 <figure class="media-item video-item">
                     <video class="video-cover" {{-- poster="{{ asset('website-template/images/projects/dream-of-hearing/3.webp') }}" --}} controls>
-                        <source src="{{ asset('website-template/images/projects/dream-of-hearing/video1.mp4') }}"
+                        <source src="{{ asset('website-template/images/projects/dream-of-hearing/video3.mp4') }}"
                             type="video/mp4" />
                         Tarayıcınız video etiketini desteklemiyor.
                     </video>

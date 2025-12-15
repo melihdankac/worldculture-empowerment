@@ -606,7 +606,9 @@ textarea {
 }
 
 .top-bar .social li a:hover {
-  color: #ff2e3d;
+  /* color: #ff2e3d; */
+  color: #c2552d;
+  /* cort */
   transition: .5s ease-in-out;
 }
 
