@@ -28,7 +28,6 @@ use Stripe\Stripe;
 
 class StripeWebhookController extends Controller
 {
-
     public function handle(Request $request)
     {
         Stripe::setApiKey(config('services.stripe.secret'));
@@ -121,12 +120,14 @@ class StripeWebhookController extends Controller
             'stripe_payment_id'  => $intent->id,
             'amount'             => $intent->amount_received / 100,
             'currency'           => strtoupper($intent->currency),
+            'receipt_sent_at'     => now(),
         ]);
 
         Log::info('✅ One-time donation paid', [
             'donation_id'    => $donation->id,
             'payment_intent' => $intent->id,
             'donor_id'       => $donorId,
+            '$donation->wants_invoice' => $donation->wants_invoice,
         ]);
 
         // event(new DonationSucceeded($donation));
@@ -136,21 +137,23 @@ class StripeWebhookController extends Controller
 
         // 🔖 Fatura oluştur
         if ($donation->wants_invoice) {
-            $invoiceAddress = $donation->donor->invoiceAddresses()->latest()->first();
-            Invoice::create([
-                'donor_id'          => $donation->donor_id,
-                'invoiceable_id'    => $donation->id,
-                'invoiceable_type'  => Donation::class,
-                'invoice_address_id' => $invoiceAddress?->id,
-                'invoice_number'    => $this->generateInvoiceNumber(),
-                'status'            => 'issued',
-                'issue_date'        => now(),
-                'amount'            => $donation->amount,
-                'currency'          => $donation->currency,
+            $donation->invoices()->create([
+                'donor_id'           => $donation->donor_id,
+                'invoice_address_id' => $donation->invoice_address_id,
+                'invoice_number'     => $this->generateInvoiceNumber(),
+                'status'             => 'issued',
+                'issue_date'         => now(),
+                'amount'             => $donation->amount,
+                'currency'           => $donation->currency,
             ]);
         }
     }
 
+    /**
+     * ---------------------------------------
+     * SUBSCRIPTION & MEMBERSHIP
+     * ---------------------------------------
+     */
     protected function handleInvoicePaymentSucceeded($invoice)
     {
         // Metadata'yı invoice.lines üzerinden al
@@ -158,22 +161,26 @@ class StripeWebhookController extends Controller
         $metadata = $lineItem?->metadata ?? [];
 
         $type = $metadata['type'] ?? null;
+        $invoiceAddress = $metadata['invoiceAddress'] ?? null;
 
         /**
          * 🏅 MEMBERSHIP PAYMENT
          */
         if ($type === 'membership') {
-
-            $membership = Membership::find($metadata->membership_id ?? null);
+            $membershipId = $metadata['membership_id'] ?? null;
+            $membership = Membership::find($membershipId);
             if (! $membership) return;
 
             $membershipPayment = MembershipPayment::create([
-                'membership_id'     => $membership->id,
+                'membership_id' => $membership->id,
+                'stripe_subscription_id' =>  $membership->stripe_subscription_id,
                 'stripe_invoice_id' => $invoice->id,
-                'amount'            => $invoice->amount_paid / 100,
-                'currency'          => strtoupper($invoice->currency),
-                'status'            => 'paid',
-                'paid_at'           => now(),
+                'stripe_payment_id' => $invoice->payment_intent,
+                'amount' => $invoice->amount_paid / 100,
+                'currency' => strtoupper($invoice->currency),
+                'status' => 'paid',
+                'paid_at' => now()->setTimestamp($invoice->status_transitions->paid_at),
+                'receipt_sent_at' => null,
             ]);
 
             $membership->update([
@@ -188,24 +195,21 @@ class StripeWebhookController extends Controller
                 new MembershipPaymentReceipt($membership)
             );
 
-
             Log::info('🏅 Membership payment succeeded', [
                 'membership_id' => $membership->id,
             ]);
 
             // 🔖 Fatura oluştur
             if ($membership->donor?->wants_invoice) {
-                $invoiceAddress = $membership->donor->invoiceAddresses()->latest()->first();
-                Invoice::create([
-                    'donor_id'          => $membership->donor_id,
-                    'invoiceable_id'    => $membershipPayment->id,
-                    'invoiceable_type'  => MembershipPayment::class,
-                    'invoice_address_id' => $invoiceAddress?->id,
-                    'invoice_number'    => $this->generateInvoiceNumber(),
-                    'status'            => 'issued',
-                    'issue_date'        => now(),
-                    'amount'            => $membershipPayment->amount,
-                    'currency'          => $membershipPayment->currency,
+                $invoiceAddress = $membership->donor()->invoiceAddresses()->latest()->first();
+                $membershipPayment->invoices()->create([
+                    'donor_id'           => $membership->donor_id,
+                    'invoice_address_id' => $invoiceAddress->id,
+                    'invoice_number'     => $this->generateInvoiceNumber(),
+                    'status'             => 'issued',
+                    'issue_date'         => now(),
+                    'amount'             => $membershipPayment->amount,
+                    'currency'           => $membershipPayment->currency,
                 ]);
             }
 
@@ -244,7 +248,6 @@ class StripeWebhookController extends Controller
                 ]);
 
                 // event(new SubscriptionPaymentSucceeded($subscriptionPayment));
-
                 Log::info('🔁 Subscription payment recorded', [
                     'subscription_id' => $invoice->subscription,
                     'invoice_id'      => $invoice->id,
@@ -256,18 +259,15 @@ class StripeWebhookController extends Controller
             );
 
             // 🔖 Fatura oluştur
-            if ($subscriptionDonation->donor?->wants_invoice) {
-                $invoiceAddress = $subscriptionDonation->donor->invoiceAddresses()->latest()->first();
-                Invoice::create([
-                    'donor_id'          => $subscriptionDonation->donor_id,
-                    'invoiceable_id'    => $subscriptionPayment->id,
-                    'invoiceable_type'  => SubscriptionPayment::class,
-                    'invoice_address_id' => $invoiceAddress?->id,
-                    'invoice_number'    => $this->generateInvoiceNumber(),
-                    'status'            => 'issued',
-                    'issue_date'        => now(),
-                    'amount'            => $subscriptionPayment->amount,
-                    'currency'          => $subscriptionPayment->currency,
+            if ($subscriptionDonation->wants_invoice) {
+                $subscriptionDonation->invoices()->create([
+                    'donor_id'           => $subscriptionDonation->donor_id,
+                    'invoice_address_id' => $invoiceAddress->id,
+                    'invoice_number'     => $this->generateInvoiceNumber(),
+                    'status'             => 'issued',
+                    'issue_date'         => now(),
+                    'amount'             => $subscriptionDonation->amount,
+                    'currency'           => $subscriptionDonation->currency,
                 ]);
             }
         }

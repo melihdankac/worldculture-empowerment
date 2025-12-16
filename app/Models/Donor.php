@@ -9,6 +9,8 @@ class Donor extends Model
 {
     use HasFactory;
 
+    protected $appends = ['address_single_line'];
+
     protected $fillable = [
         'first_name',
         'last_name',
@@ -73,4 +75,19 @@ class Donor extends Model
     {
         return $this->invoiceAddresses()->latest()->first();
     }
+
+    public function getAddressSingleLineAttribute(): string
+    {
+        return preg_replace("/\r\n|\r|\n/", ', ', $this->address);
+    }
+
+    // backend kullanımı
+    //     $donor->address;                // Satır sonlu
+    // $donor->address_single_line;    // Tek satır
+    // front kullanımı
+    // {!! nl2br(e($donor->address)) !!}
+    // {{ $donor->address_single_line }}
+
+
+
 }

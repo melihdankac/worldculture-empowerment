@@ -2,13 +2,6 @@
 
 @section('meta&title')
     <title>WORLDCULTURE EMPOWERMENT</title>
-    {{-- <meta name="description" content="Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.">
-  <meta name="keywords" content=" worldculture, travels, partner, kundenbewertungen">
-  <meta property="og:title" content="WORLDCULTURE TRAVELS">
-  <meta property="og:description" content="{{ Str::limit("Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.", 160) }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ url()->current() }}">
-  <meta property="og:image" content="{{ asset('frontend/assets/style/images/home-page/bg-image/bg.jpg') }}"> --}}
 
     <style>
         .rev_slider_wrapper .tparrows {
@@ -143,11 +136,11 @@
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 <li data-transition="fade">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/bg_image.jpg') }}" alt=""
+                    <img src="{{ asset('website-template/images/projects/dream-of-hearing/bg_image.webp') }}" alt=""
                         width="1920" height="882" data-bgposition="center center" data-bgfit="cover"
                         data-bgrepeat="no-repeat" data-bgparallax="1" />
 
-                    <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="150"
+                    <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="550"
                         data-transform_idle="o:1;"
                         data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
@@ -155,17 +148,10 @@
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
                             {{-- <h4>Thousand of children are waiting for help!</h4> --}}
-                            <h1>Zukunft gestalten:
-                                <br>
-                                Bildung & Jugendarbeit
-                                <br>
-                                in Istanbul
-                            </h1>
-                            {{-- <p>
-                                Sed ut perspiciatis, unde omnis iste natus error sit
-                                voluptatem accusantium doloremque la<br />udantium, totam
-                                rem aperiam eaque ipsa, quae ab illo inventore
-                            </p> --}}
+                            <h1>Frauenkooperative „Noyanlar Kültür Sanat Evi“</h1>
+                            <p>
+                                Schutz, Bildung und Selbstbestimmung ImMittelpunkt diesesProjektsstehtdieFrauenkooperative
+                            </p>
                         </div>
                     </div>
                 </li>
@@ -179,78 +165,47 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/2.jpg') }}"
+                    <img src="{{ asset('website-template/images/projects/dream-of-hearing/1.webp') }}"
                         class="img-responsive">
                 </div>
                 <div class="col-md-6">
                     <div class="section-title">
-                        <h2>
-                            Youth Re-Autonomy Foundation of Turkey, Istanbul
+                        <h2 style="text-align: justify">
+                            Frauenkooperative <br> „Noyanlar Kültür Sanat Evi“ – Schutz, Bildung und Selbstbestimmung
+                            ImMittelpunkt diesesProjektsstehtdieFrauenkooperative
                         </h2>
                     </div>
                     <div class="text-box">
-                        <p>Die Youth Re-Autonomy Foundation of Turkey ist eine Pionierorganisation der türkischen
-                            Zivilgesellschaft. Seit ihrer Gründung im Jahr 1992 engagiert sie sich gezielt im Bereich der
-                            Jugendgerichtsbarkeit und setzt sich konsequent für die Rechte von Kindern und Jugendlichen ein.
-                            Ein besonderer Fokus ihrer Arbeit liegt seit 1997 auf der Unterstützung sozial benachteiligter
-                            sowie inhaftierter junger Menschen. </p>&nbsp;
-
-                        <p>Im Mittelpunkt der gemeinsamen Arbeit steht die Prävention von Jugendkriminalität. Die
-                            Stiftung entwickelt Programme zur beruflichen Qualifizierung gefährdeter Jugendlicher und
-                            fördert deren psychosoziale Stabilisierung. Ziel ist es, belastende Risikofaktoren frühzeitig zu
-                            mindern und nachhaltige Rehabilitationsprozesse zu ermöglichen, die jungen Menschen neue
-                            Perspektiven eröffnen.
+                        <p>
+                            <strong>„Noyanlar Kültür Sanat Evi“</strong> in <br>
+                            Midyat, inder RegionMardin.DieZusammenarbeitbasiertaufeiner langjährigen, engen und
+                            ,dieseitvielenJahrenpersönlich vor Ort aktiv ist, .DiebeidenFrauensetzensich mit
+                            außergewöhnlichem Engagement und großerHingabefürFrauenundKinderinderRegion Mardin im Südosten
+                            der Türkei ein. GeradedurchSelinskontinuierlichePräsenzundMitarbeit vor Ort ist ein tiefes
+                            gegenseitiges Vertrauengewachsen.DiesesVertrauenistfürunsein zentraler Wert und die
+                            Grundlage unsererArbeit–dennnursokönnenwirsicherstellen,dass jede Unterstützung und
+                            jede Spende direktdortankommt,wosieamdringendstengebraucht wird: bei den Frauen und Familien
+                            selbst.
+                            Die KooperativesetztsichseitvielenJahrenfürFrauenrechte,Bildung und wirtschaftliche
+                            UnabhängigkeitvonFrauenein.DiesesProjektempowertFrauen und Kinder ganzheitlich,
+                            indem es Schutz,BildungundwirtschaftlicheUnabhängigkeitvereint und ihnen die Kraft gibt,
+                            führen und solidarische
                         </p>&nbsp;
 
-                        <p>
-                            Darüber hinaus setzt sich die Youth Re-Autonomy Foundation of Turkey aktiv für eine
-                            Weiterentwicklung des Jugendstrafrechts im Einklang mit internationalen Standards ein. Ein
-                            weiterer wichtiger Bestandteil ihrer Arbeit ist der Abbau gesellschaftlicher Stigmatisierung
-                            und negativer Zuschreibungen gegenüber straffällig gewordenen Kindern. <br>
-
-                            Der Hauptsitz der Organisation befindet sich in Istanbul (Kadıköy). Durch weitere
-                            Niederlassungen in Ankara (seit 1995) und Izmir (seit 1996) konnte ihr Wirkungsradius
-                            kontinuierlich ausgebaut werden.
-                        </p>
                     </div>
                 </div>
             </div>
-            <div class="text-box" style="margin-top:25px;">
-                <h4>
-                    <strong>
-                        Gemeinsame Vision
-                    </strong>
-                </h4>
 
-                <p>Uns verbindet die Vision einer Gesellschaft, in der Kinder geschützt aufwachsen, ihre Rechte gewahrt
-                    werden undsie sich frei von Gewalt, Ausgrenzung und Bedrohung gesund entwickeln können.</p>&nbsp;
-
-
-                <h4>
-                    <strong>
-                        Zusammenarbeit
-                    </strong>
-                </h4>
-
-                <p>
-                    Worldculture Empowerment e.V. begleitet und unterstützt die Youth Re-Autonomy Foundation of
-                    Turkeyinsbesondere in den Bereichen Jugendarbeit und Bildungsförderung. Die Kooperation wirdseit 2021
-                    intensiv von Selin Schäfer begleitet, die sich mehrfach über längere Zeiträume ehrenamtlich vor Ort
-                    engagiert hat.
-                </p>
-
-                <p>
-                    Im Jahr 2026 übernimmt Selin Schäfer zudem die Rolle der Projektmanagerin im Rahmen
-                    eines HelpAlliance-Projekts. In diesem Kontext erhält die Stiftung eine Förderung in Höhe
-                    von 15.000 Euro. Die Projektleitung sowie die Initiative zur Förderung liegen maßgeblich bei
-                    Selin Schäfer, die sich nachhaltig für den Ausbau der gemeinsamen Arbeit einsetzt. <br>
-
-                    Diese enge Partnerschaft steht beispielhaft für wirkungsvolle internationale Zusammenarbeit
-                    im Einsatz für Kinder- und Jugendrechte.
-
-                </p>
-            </div>
-
+            {{-- <p style="font-size: large;">Um Velid ein selbstbestimmtes Leben zu ermöglichen, sind wir auf Unterstützung
+                angewiesen.
+                Jeder Beitrag kann helfen, seinen Traum Wirklichkeit werden zu lassen. Velid hat bereits
+                bewiesen,
+                dass
+                er mit der richtigen Förderung unglaubliche Fortschritte
+                machen kann – jetzt braucht er eine Chance, sein volles Potenzial zu entfalten. Helfen Sie mit,
+                Velid
+                die Zukunft zu schenken, die er verdient. <br><br>
+                Januar 2025 </p>&nbsp; --}}
         </div>
     </section>
     <!-- !SECTION Content -->
@@ -261,48 +216,44 @@
             <div class="media-grid grid-3">
                 <!-- FOTOĞRAF -->
                 <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/3.jpg') }}" alt=""
+                    <img src="{{ asset('website-template/images/projects/dream-of-hearing/1.webp') }}" alt=""
                         data-caption="" class="img-cover">
                 </figure>
 
                 <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/5.jpg') }}" alt=""
+                    <img src="{{ asset('website-template/images/projects/dream-of-hearing/2.webp') }}" alt=""
                         data-caption="" class="img-cover">
                 </figure>
 
                 <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/6.jpg') }}" alt=""
+                    <img src="{{ asset('website-template/images/projects/dream-of-hearing/3.webp') }}" alt=""
                         data-caption="" class="img-cover">
                 </figure>
 
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/7.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
+                <!-- VİDEO -->
+
+                <figure class="media-item video-item">
+                    <video class="video-cover" {{-- poster="{{ asset('website-template/images/projects/dream-of-hearing/1.webp') }}" --}} controls>
+                        <source src="{{ asset('website-template/images/projects/dream-of-hearing/video1.mp4') }}"
+                            type="video/mp4" />
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
                 </figure>
 
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/8.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
+                <figure class="media-item video-item">
+                    <video class="video-cover" {{-- poster="{{ asset('website-template/images/projects/dream-of-hearing/2.webp') }}" --}} controls>
+                        <source src="{{ asset('website-template/images/projects/dream-of-hearing/video2.mp4') }}"
+                            type="video/mp4" />
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
                 </figure>
 
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/10.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/12.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/2.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/autonomy-foundation/bg_image.jpg') }}"
-                        alt="" data-caption="" class="img-cover">
+                <figure class="media-item video-item">
+                    <video class="video-cover" {{-- poster="{{ asset('website-template/images/projects/dream-of-hearing/3.webp') }}" --}} controls>
+                        <source src="{{ asset('website-template/images/projects/dream-of-hearing/video3.mp4') }}"
+                            type="video/mp4" />
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
                 </figure>
             </div>
         </div>

@@ -155,23 +155,12 @@
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
                             {{-- <h4>Thousand of children are waiting for help!</h4> --}}
-                            <h1><span>Velids</span> Traum vom Hören</h1>
+                            <h1>Velids Traum vom Hören</h1>
                             {{-- <p>
                                 Sed ut perspiciatis, unde omnis iste natus error sit
                                 voluptatem accusantium doloremque la<br />udantium, totam
                                 rem aperiam eaque ipsa, quae ab illo inventore
                             </p> --}}
-                        </div>
-                    </div>
-                    <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="750"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-start="2300">
-                        <div class="slide-content-box">
-                            <div class="button">
-                                <a class="thm-btn" href="#">join with us today</a>
-                            </div>
                         </div>
                     </div>
                 </li>
@@ -224,7 +213,7 @@
                             Velid hat einen großen Traum: Er möchte hören und sprechen können. Dafür benötigt er dringend
                             eine langjährige Therapie und ein qualitativ gutes Hörgerät. Das Hörgerät wird es ihm
                             ermöglichen Töne und Stimmen wahrzunehmen - diese Therapie wird sein Leben verändern. Doch die
-                            Kosten für die Therapie und das Hörgerät übersteigen unser finanzielles Mittel.
+                            Kosten für die Therapie und das Hörgerät übersteigen unsere finanziellen Mittel.
                         </p>
                         &nbsp;
                     </div>

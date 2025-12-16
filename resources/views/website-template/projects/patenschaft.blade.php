@@ -150,21 +150,10 @@
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
                             <h2 style="color: #fff;">Patenschaftsprogramm</h2>
-                            <h1> Bildung mit <span>persönlicher Verbindung </span> </h1>
+                            <h1> Bildung mit persönlicher Verbindung </h1>
                             <p>
                                 Möchtest du Patin oder Pate werden und ein Kind direkt in seiner Bildung unterstützen?
                             </p>
-                        </div>
-                    </div>
-                    <div class="tp-caption tp-resizeme" data-x="center" data-hoffset="15" data-y="top" data-voffset="350"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-start="2300">
-                        <div class="slide-content-box">
-                            <div class="button">
-                                <a class="thm-btn" href="{{ route('kontakt') }}">join with us today</a>
-                            </div>
                         </div>
                     </div>
                 </li>
@@ -190,12 +179,21 @@
 
                     <div class="text-box">
                         <p>
-                            Möchtest du Patin oder Pate werden und ein Kind direkt in seiner Bildung unterstützen?
-                            <br>
-                            Mit unserem Patenschaftsprogramm fördern wir Kinder, deren Bildungschancen stark eingeschränkt
-                            sind,
-                            und begleiten sie dort, wo sie Unterstützung benötigen - mit dem Ziel, ihnen den Zugang zu einem
-                            Studium oder einer Berufsausbildung zu ermöglichen.
+                            Mit unserem Patenschaftsprogramm im Südosten der Türkei setzen wir uns gezielt für Kinder ein,
+                            deren Bildungs- und Zukunftschancen stark eingeschränkt sind. Wir begleiten kurdische und
+                            türkische Kinder aus sozial benachteiligten Familien sowie jesidische Kinder aus dem Irak, die
+                            aufgrund von Krieg, Verfolgung und Flucht ihre Heimat verlassen mussten und nun vor großen
+                            Herausforderungen stehen.
+                        </p>
+
+                        <p>
+                            Viele dieser Kinder wachsen unter schwierigen Bedingungen auf: Armut, fehlender Zugang zu
+                            qualitätsvoller Bildung, sprachliche Barrieren, traumatische Erfahrungen und mangelnde soziale
+                            Unterstützung erschweren ihnen den Schulalltag erheblich. Genau hier setzt unser
+                            Patenschaftsprogramm an. Durch eine Patenschaft erhalten die Kinder individuelle Förderung, die
+                            sich an ihren konkreten Bedürfnissen orientiert - sei es Unterstützung bei Schulmaterialien,
+                            Nachhilfeunterricht, psychosoziale Begleitung oder die Stärkung ihrer persönlichen und
+                            sozialen Kompetenzen.
                         </p>
 
                         <p>
@@ -224,26 +222,31 @@
                             Schulbus und die Schuluniform.
                         </p>
 
-                        <p>
-                            Mit <strong>120 Euro monatlich</strong> ermöglichen wir darüber hinaus eine gezielte Förderung
-                            durch
-                            Nachhilfe, beispielsweise in Mathematik, Englisch und weiteren relevanten Fächern. Diese
-                            individuelle Unterstützung bereitet das Kind intensiv auf Abschlussprüfungen vor und erhöht
-                            somit
-                            die Chancen auf einen erfolgreichen Schulabschluss sowie auf einen Studienplatz an einer
-                            Universität.
-                        </p>
+
                     </div>
                 </div>
             </div>
-            <p style="font-size: large; margin-top: 20px;">
-                Unsere Patenschaften begleiten die Kinder in der Regel bis zum Abitur. Im Anschluss besteht die
-                Möglichkeit, die Unterstützung auf die Finanzierung eines Studiums auszuweiten. Dies ist
-                besonders
-                im Südosten der Türkei von großer Bedeutung, da dort noch immer viele Kinder - insbesondere
-                Mädchen
-                - aus finanziellen Gründen nicht an eine Universität gehen können, obwohl sie die fachlichen
-                Voraussetzungen erfüllen.
+
+            <div class="text-box">
+                <p>
+                    Mit <strong>120 Euro monatlich</strong> ermöglichen wir darüber hinaus eine gezielte Förderung
+                    durch
+                    Nachhilfe, beispielsweise in Mathematik, Englisch und weiteren relevanten Fächern. Diese
+                    individuelle Unterstützung bereitet das Kind intensiv auf Abschlussprüfungen vor und erhöht
+                    somit
+                    die Chancen auf einen erfolgreichen Schulabschluss sowie auf einen Studienplatz an einer
+                    Universität.
+                </p>
+
+                <p style="font-size: large; margin-top: 20px;">
+                    Unsere Patenschaften begleiten die Kinder in der Regel bis zum Abitur. Im Anschluss besteht die
+                    Möglichkeit, die Unterstützung auf die Finanzierung eines Studiums auszuweiten. Dies ist
+                    besonders
+                    im Südosten der Türkei von großer Bedeutung, da dort noch immer viele Kinder - insbesondere
+                    Mädchen
+                    - aus finanziellen Gründen nicht an eine Universität gehen können, obwohl sie die fachlichen
+                    Voraussetzungen erfüllen.</p>
+            </div>
         </div>
     </section>
     <!-- !SECTION Content -->

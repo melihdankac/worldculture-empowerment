@@ -18,11 +18,11 @@
                                 <h3 class="footer-title">Information</h3>
 
                                 <div class="widget-content">
-                                    <div class="text">
+                                    {{-- <div class="text">
                                         <p>
                                             Kontaktiere uns für einzigartige Erlebnisse!
                                         </p>
-                                    </div>
+                                    </div> --}}
                                     <ul class="contact-info">
                                         <li>
                                             <span class="fa fa-map-marker"></span>Am Rheinufer 18. 50999 Köln,
@@ -30,7 +30,7 @@
                                         </li>
                                         <li>
                                             <span class="fa fa-envelope-o"></span>
-                                            contact@worldculture-travels.com
+                                            contact@worldculture-empowerment.international
                                         </li>
                                         <li>
                                             <span class="fa fa-phone"></span>0049 - 1775446737

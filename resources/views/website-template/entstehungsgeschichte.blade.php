@@ -89,7 +89,7 @@
                     </p>
                 </div>
 
-                <div class="clients-section style-two">
+                {{-- <div class="clients-section style-two">
                     <div class="clients-carousel">
                         <div class="item">
                             <div class="image-box">
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

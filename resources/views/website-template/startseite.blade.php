@@ -41,21 +41,9 @@
                             <h4 style="padding-left: 10rem;">Wir können nicht das Leid der Weit verhindern,<br> aber wir
                                 können daran arbeiten, es
                                 zusammen zu mindern</h4>
-                            <h1>WORLDCULTURE <span>EMPOWERMENT</span> e.V.</h1>
+                            <h1>WORLDCULTURE EMPOWERMENT e.V.</h1>
                         </div>
                     </div>
-                    <div class="tp-caption tp-resizeme" data-x="center" data-hoffset="15" data-y="top" data-voffset="600"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-start="2300">
-                        <div class="slide-content-box">
-                            <div class="button">
-                                <a class="thm-btn" href="#">join with us today</a>
-                            </div>
-                        </div>
-                    </div>
-
                 </li>
             </ul>
         </div>

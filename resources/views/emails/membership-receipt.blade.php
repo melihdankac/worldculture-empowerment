@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Your Donation Confirmation</title>
+    <title>Mitgliedschaftsgenehmigung</title>
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -85,23 +85,33 @@
             @if ($logoBase64)
                 <img src="data:image/png;base64,{{ $logoBase64 }}" alt="Logo">
             @endif
-            <h1>Donation Confirmation</h1>
+            <h1>Mitgliedschaftsgenehmigung</h1>
         </div>
 
         <div class="content">
-            <p>Dear Supporter,</p>
-
             <p>
-                Thank you for your
-                {{-- <span class="highlight">
-                    one-time
-                </span>
-                donation of
-                <span class="highlight">{{ number_format($membership->amount, 2) }} EUR</span>. --}}
+                Schön das du Teil unseres Vereins bist.
+                <br><br>
+
+                Wir freuen uns sehr, dich in unserem Verein begrüßen zu dürfen. Mit deiner Mitgliedschaft setzt du ein
+                starkes Zeichen für Mitgefühl, Verantwortung und Zusammenhalt. Danke, dass du unsere Werte teilst und
+                gemeinsam mit uns für Menschen einstehst, die sonst oft ungehört bleiben.
+                <br><br>
+
+                Auch wenn wir die Welt nicht von heute auf morgen verändern können, so können wir doch gemeinsam
+                Hoffnung schenken.
+                <br><br>
+
+                Wenn du Fragen hast, Ideen einbringen oder dich aktiv engagieren möchtest, sind wir jederzeit gern für
+                dich da. Wir freuen uns auf alles, was wir zusammen bewegen werden.
+                <br><br>
+
+                Herzliche Grüße
+                Worldculture Empowerment e.V.
             </p>
 
             <p>
-                Your payment status:
+                Ihr Mitgliedschaftsstatus:
                 <strong>
                     {{ match ($membership->membership_status) {
                         'pending' => 'Pending',
@@ -114,16 +124,11 @@
                 </strong>
             </p>
 
-            <p>
-                We truly appreciate your contribution.
-                {{-- You can find your official receipt attached to this email. --}}
-            </p>
-
-            <a href="{{ url('/') }}" class="btn">Visit our website</a>
+            <a href="{{ url('/') }}" class="btn">Besuchen Sie unsere Website</a>
         </div>
 
         <div class="footer">
-            © {{ date('Y') }} World Culture Empowerment. All rights reserved.
+            © {{ date('Y') }} World Culture Empowerment. Alle Rechte vorbehalten.
         </div>
     </div>
 </body>

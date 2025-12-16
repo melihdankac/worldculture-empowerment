@@ -82,7 +82,7 @@
             <ul>
                 <li data-transition="fade">
                     <img src="{{ asset('website-template/images/projects/der-Traum-Vom-Horen/3.jpg') }}"
-                        alt="Soziale Projekte in der Türkei" width="1920" height="882" data-bgposition="top center"
+                        alt="Erdbebenprojekt Türkei" width="1920" height="882" data-bgposition="top center"
                         data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1" />
 
                     <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="150"
@@ -93,21 +93,10 @@
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
                             <h4>Tausende Kinder und Erdbebenopfer warten auf Hilfe!</h4>
-                            <h1>Soziale Projekte in <span>der</span> Türkei</h1>
+                            <h1>Erdbebenprojekt Türkei</h1>
                             <p>
                                 Möchten Sie die von uns in der Türkei durchgeführten Projekte direkt unterstützen ?
                             </p>
-                        </div>
-                    </div>
-                    <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="350"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-start="2300">
-                        <div class="slide-content-box">
-                            <div class="button">
-                                <a class="thm-btn" href="{{ route('kontakt') }}">join with us today</a>
-                            </div>
                         </div>
                     </div>
                 </li>
@@ -136,7 +125,7 @@
                         Menschen zu helfen.
                         Was mit einer kleinen Kampagne startete, entwickelte sich schnell zu etwas Großem. Es kamen bisher
                         mehr
-                        als 24.000 Euro zusammen. </p>&nbsp;
+                        als 29.800 Euro zusammen. </p>&nbsp;
                     <p>Dank Ihrer Hilfe habe ich fast 100 Familien mit Lebensmitteln, Medikamenten und
                         Sachspenden helfen können.
                         Zudem habe ich aus Deutschland sechs Kilo Medikamente in die Stadt Adana gebracht und dort der
@@ -144,14 +133,6 @@
                         Human Relief Organisation“ übergeben.
                         Diese Organisation arbeitet in der stark betroffenen Region Hatay und hilft dort medizinisch und
                         psychologisch. </p>&nbsp;
-                    <p>In Adana halfen wir Emres Familie, von dem drei Verwandte starben und die
-                        Eltern mussten ihre Wohnung durch starke Beschädigungen aufgeben.
-                        Von Adana aus fuhren wir weiter nach Mersin, weil es dort sicherer für uns war, da Mersin nicht als
-                        Erdbebenregion eingestuft wurde.
-                        Allerdings erlebten wir dort ein Nachbeben der Stärke 4.8. Das mag nicht stark klingen, aber da das
-                        Epizentrum nur 7 Kilometer von uns entfernt war,
-                        wackelte alles ziemlich stark, zum Glück nur sehr kurz. Der Schock war groß, zumal die Angst der
-                        Menschen überall zu spüren war.</p>
                 </div>
             </div>
         </section>
@@ -310,7 +291,7 @@
                 </div>
                 <div class="custom-image-box">
                     <figure>
-                        <img src="{{ asset('website-template/images/projects/der-Traum-Vom-Horen/7.png') }}" alt=""
+                        <img src="{{ asset('website-template/images/projects/der-Traum-Vom-Horen/8.jpg') }}" alt=""
                             class="img-responsive">
                     </figure>
                 </div>
@@ -321,7 +302,7 @@
             <div class="flex-row">
                 <div class="custom-image-box">
                     <figure>
-                        <img src="{{ asset('website-template/images/projects/der-Traum-Vom-Horen/8.jpg') }}" alt=""
+                        <img src="{{ asset('website-template/images/projects/der-Traum-Vom-Horen/9.png') }}" alt=""
                             class="img-responsive">
                     </figure>
                 </div>
@@ -344,36 +325,49 @@
                         einem
                         Hund oder einer Katze haben, bitte geben
                         Sie mir Bescheid, eine Freundin von mir und ich helfen Türkan bei der Vermittlung der Tiere an ihre
-                        neuen Besitzer.</p>
+                        neuen Besitzer.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Ich habe mich entschlossen, diese Projekte zwei Jahre weiterzuführen.
+                        Im Juli fliege ich in den Südosten der Türkei und besuche die Frauenkooperative und die Kinder.
+                        Auf meinem Instagram Kanal – worldculture_travels werde ich weiterhin über die Projekte informieren.
+                        Auch sammele ich weiterhin Spenden für die Projekte vor Ort und freue mich, wenn Sie mich die
+                        kommenden
+                        Jahre weiterhin begleiten,
+                        sodass ich die Projekte fortführen kann. Die Projekte sind handfest und ihre Spende geht nicht in
+                        eine
+                        anonyme Organisation.
+                        Es ist möglich, die Frauenkooperative und den Verein Karaot Tohum Dernegi zu besuchen und zu
+                        begleiten,
+                        lassen Sie es mich wissen,
+                        wenn Sie in der Zukunft planen in die Türkei zu reisen.Wir können nicht das Leid der Welt
+                        verhindern,
+                        aber wir können daran arbeiten,
+                        es zusammen zu mindern.
+                    </p>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="media-grid grid-2">
-                <figure><img src="{{ asset('website-template/images/projects/der-Traum-Vom-Horen/9.png') }}" alt=""
+                <figure><img src="{{ asset('website-template/images/projects/der-Traum-Vom-Horen/10.png') }}" alt=""
                         class="img-cover"></figure>
-                <figure><img src="{{ asset('website-template/images/projects/der-Traum-Vom-Horen/10.png') }}"
-                        alt="" class="img-cover"></figure>
+                <figure><img src="{{ asset('website-template/images/projects/der-Traum-Vom-Horen/7.png') }}" alt=""
+                        class="img-cover"></figure>
             </div>
         </section>
 
         <section class="section text-box">
-            <p>Ich habe mich entschlossen, diese Projekte zwei Jahre weiterzuführen.
-                Im Juli fliege ich in den Südosten der Türkei und besuche die Frauenkooperative und die Kinder.
-                Auf meinem Instagram Kanal – worldculture_travels werde ich weiterhin über die Projekte informieren.
-                Auch sammele ich weiterhin Spenden für die Projekte vor Ort und freue mich, wenn Sie mich die kommenden
-                Jahre weiterhin begleiten,
-                sodass ich die Projekte fortführen kann. Die Projekte sind handfest und ihre Spende geht nicht in eine
-                anonyme Organisation.
-                Es ist möglich, die Frauenkooperative und den Verein Karaot Tohum Dernegi zu besuchen und zu begleiten,
-                lassen Sie es mich wissen,
-                wenn Sie in der Zukunft planen in die Türkei zu reisen.Wir können nicht das Leid der Welt verhindern,
-                aber wir können daran arbeiten,
-                es zusammen zu mindern. </p>
-        </section>
+            <p>
+                Das Projekt „Help US!“ (06.02.2023) wurde im November 2025 erfolgreich abgeschlossen. Ein Teil der betreuten
+                Kinder werden weiterhin im Rahmen unseres Patenschaftsprogramms unterstützt.
+            </p>
+            <br>
 
-        <section class="section text-box">
             <p>Mit freundlichen Grüßen</p>
             <p>Selin Schäfer</p>
             <p>Stand 27.06.2023</p>

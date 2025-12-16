@@ -235,11 +235,42 @@
             }
         }
     </style>
+
+    <style>
+        .text-box {
+            margin-top: 25px;
+        }
+
+        .text-box p {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+    </style>
 @endsection
 
 @section('content')
     <div class="donation-container" style="zoom: 1.3; color: var(--primary-color)">
-        <h3>Bağış Yap</h3>
+        <div style="text-align: center">
+            <h1>ICH INTERESSIERE MICH <br><br> FÜR EINE <br><br> MITGLIEDSCHAFT!</h1>
+        </div>
+
+        <div class="text-box">
+            <p>
+                Vielen Dank für Ihr Interesse an einer Fördermitgliedschaft im DRK! Wir freuen uns, dass Sie das Deutsche
+                Rote Kreuz unterstützen wollen.
+            </p>
+
+            <p>
+                Um DRK-Fördermitglied zu werden, füllen Sie bitte unten stehendes Onlineformular aus. Wir leiten Ihre Daten
+                an den zuständigen Kreisverband in Ihrer Nähe weiter. Die KollegInnen dort werden sich schon bald bei Ihnen
+                melden und Ihnen alle erforderlichen Unterlagen für Ihre DRK-Fördermitgliedschaft zukommen lassen. Ihre
+                Daten werden selbstverständlich vertraulich behandelt und nicht an Dritte weitergegeben werden.
+            </p>
+
+            <p>
+                Die mit * gekennzeichneten Felder sind Pflichtfelder.
+            </p>
+        </div>
 
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
@@ -248,76 +279,8 @@
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
-        <form id="payment-form" action="{{ route('donation.process') }}">
+        <form id="payment-form" action="{{ route('membership.process') }}">
             @csrf
-
-            <!-- Unterstütztes Projekt -->
-            <div class="form-group">
-                <label for="supported_project">Ich möchte unterstützen</label>
-                <select name="supported_project" id="supported_project" class="form-control">
-                    <option value="frauenkooperative-noyanlar">Frauenkooperative Noyanlar</option>
-                    <option value="derTraumVomHoren">Der Traum vom Hören</option>
-                    <option value="children-in-village">Kinderförderung in abgelegenen Bergdörfern der Türkei</option>
-                    <option value="autonomy-foundation">Zukunft gestalten: Bildung & Jugendarbeit in Istanbul</option>
-                    <option value="patenschaftsprogramm">Patenschaftsprogramm</option>
-                    <option value="turkeiErdbebenprojekt">Erdbebenprojekt Türkei</option>
-                </select>
-            </div>
-
-            <!-- Betrag -->
-            <div class="form-group">
-                <label for="amount">Betrag (€)</label>
-                <input type="number" name="amount" id="amount" class="form-control" min="1"
-                    placeholder="Eigenen Betrag eingeben">
-            </div>
-
-            <!-- Vorgefertigte Beträge -->
-            <div class="form-group">
-                <label>Wählen Sie einen Betrag</label>
-                <div class="radio-buttons">
-                    <input type="radio" name="ready_amount" value="50" id="amount50">
-                    <label for="amount50">€50</label>
-
-                    <input type="radio" name="ready_amount" value="75" id="amount75">
-                    <label for="amount75">€75</label>
-
-                    <input type="radio" name="ready_amount" value="100" id="amount100">
-                    <label for="amount100">€100</label>
-
-                    <input type="radio" name="ready_amount" value="200" id="amount200">
-                    <label for="amount200">€200</label>
-                </div>
-            </div>
-
-            <!-- Spendenart -->
-            <label>Spendenart</label>
-            <div class="radio-buttons">
-                <input type="radio" name="donation_type" id="individual" value="individual" checked>
-                <label for="individual">Privatperson</label>
-
-                <input type="radio" name="donation_type" id="company" value="company">
-                <label for="company">Unternehmen</label>
-            </div>
-
-            <!-- Spendentyp -->
-            <label>Spendentyp</label>
-            <div class="radio-buttons">
-                <input type="radio" name="recurring_interval" id="one_time" value="one_time" checked>
-                <label for="one_time">Einmalig</label>
-
-                <input type="radio" name="recurring_interval" id="month" value="month">
-                <label for="month">Monatlich</label>
-
-                <input type="radio" name="recurring_interval" id="year" value="year">
-                <label for="year">Jährlich</label>
-            </div>
-
-            <div id="company-fields" style="display:none;">
-                <div class="form-group">
-                    <label>Unternehmensname</label>
-                    <input type="text" name="company_name" id="company_name" class="form-control">
-                </div>
-            </div>
 
             <!-- Name / E-Mail -->
             <div class="row">
@@ -333,43 +296,19 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-12 form-group">
+                <div class="col-sm-8 form-group">
                     <label for="email">E-Mail-Adresse *</label>
                     <input type="email" name="email" id="email" class="form-control" required>
                 </div>
-            </div>
 
-            <!-- Nachricht -->
-            <div class="form-group">
-                <label for="message">Ihre Nachricht</label>
-                <textarea name="message" class="form-control" rows="3"></textarea>
-            </div>
-
-            <!-- Kreditkartenfeld -->
-            <div class="form-group">
-                <label>Kreditkarteninformationen</label>
-                <div id="card-element" class="form-control"></div>
-            </div>
-
-            <p style="font-size: 15px; color: var(--primary-color);">
-                Wenn Sie in Deutschland wohnen, sind Spenden ab 50 € steuerlich absetzbar.
-                Um Ihre Spendenquittung zu erhalten, geben Sie bitte unten Ihre Daten ein.
-            </p>
-
-            <!-- Steuerabzug (für Spender in Deutschland) -->
-            <div id="wants-invoice-container" class="form-group" style="margin-top: 25px; display: none;">
-                <div class="checkbox-buttons">
-                    <input type="hidden" name="wants_invoice" value="0">
-                    <input type="checkbox" id="wants_invoice" name="wants_invoice" value="1">
-                    <label for="wants_invoice">
-                        <span class="checkmark">✓</span>
-                        Ich möchte eine Spendenbescheinigung für den Steuerabzug erhalten
-                    </label>
+                <div class="col-sm-4 form-group">
+                    <label for="phone">Telefonnummer *</label>
+                    <input type="text" name="phone" id="phone" class="form-control" required>
                 </div>
             </div>
 
             <!-- Adressfelder (sichtbar bei Auswahl) -->
-            <div id="address-fields" style="display: none; margin-top: 20px;">
+            <div id="address-fields">
                 <div class="row">
                     <div class="col-sm-8 form-group">
                         <label for="street">Straße *</label>
@@ -386,25 +325,35 @@
                         <label for="zip">PLZ *</label>
                         <input type="text" name="zip" id="zip" class="form-control">
                     </div>
-                    <div class="col-sm-8 form-group">
+                    <div class="col-sm-4 form-group">
                         <label for="city">Stadt *</label>
                         <input type="text" name="city" id="city" class="form-control">
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-sm-12 form-group">
-                        <label for="country">Stadt *</label>
-                        <input type="text" name="country" id="country" class="form-control">
+                    <div class="col-sm-4 form-group">
+                        <label for="country">Land *</label>
+                        <input type="text" name="country" id="country" class="form-control" required>
                     </div>
                 </div>
+            </div>
+
+            <!-- Kreditkartenfeld -->
+            <div class="form-group">
+                <label>Kreditkarteninformationen *</label>
+                <div id="card-element" class="form-control"></div>
             </div>
 
             <input type="hidden" name="stripeToken" id="stripeToken">
             <input type="hidden" name="stripe_payment_method" id="stripe_payment_method">
 
+            <div class="price-info"
+                style="text-align:center; margin:20px 0; font-size:18px; font-weight:bold; color:var(--primary-color)">
+                Jahresbeitrag: 120 € <br>
+                <span style="font-size:16px; color:#555">(entspricht nur 10 € pro Monat)</span>
+            </div>
+
             <button id="submit-button" class="thm-btn style-2">
-                Jetzt spenden
+                Jetzt Absenden
             </button>
         </form>
     </div>
@@ -485,11 +434,11 @@
                 }
 
                 if (paymentIntent.status === 'succeeded' || paymentIntent.status === 'processing') {
-                    window.location.href = "{{ route('donation.success') }}";
+                    window.location.href = "{{ route('membership.success') }}";
                 }
             } else if (result.invoice_status === 'paid' || result.invoice_status === 'active') {
                 // client_secret yoksa → ödeme zaten başarılıdır
-                window.location.href = "{{ route('donation.success') }}";
+                window.location.href = "{{ route('membership.success') }}";
             }
         });
     </script>
@@ -501,9 +450,6 @@
                 const amount = this.value;
                 const input = document.getElementById('amount');
                 input.value = amount;
-
-                document.getElementById('wants-invoice-container').style.display =
-                    amount >= 50 ? 'block' : 'none';
             });
         });
 
@@ -515,10 +461,6 @@
                 } else {
                     radio.checked = true;
                 }
-
-                const amount = Number(this.value); // <-- EKSİK OLAN BU
-                document.getElementById('wants-invoice-container').style.display =
-                    amount >= 50 ? 'block' : 'none';
             });
         });
 
@@ -537,6 +479,17 @@
             checkbox.addEventListener('change', function() {
                 addressFields.style.display = this.checked ? 'block' : 'none';
             });
+        });
+
+        // Abonelik tipi değiştiğinde amount'u güncelle
+        document.getElementById('recurring_interval').addEventListener('change', function() {
+            const amountInput = document.getElementById('amount');
+            if (this.value === 'membership') {
+                amountInput.value = 120;
+                amountInput.readOnly = true;
+            } else {
+                amountInput.readOnly = false;
+            }
         });
     </script>
 @endsection

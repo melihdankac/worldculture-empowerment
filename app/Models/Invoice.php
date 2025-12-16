@@ -11,6 +11,7 @@ class Invoice extends Model
 
     protected $fillable = [
         'donor_id',
+        'invoiceable',
         'invoice_address_id',
         'invoice_number',
         'status', // pending | issued | canceled

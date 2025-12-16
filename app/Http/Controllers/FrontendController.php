@@ -41,6 +41,24 @@ class FrontendController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function partnerschaften()
+    {
+        return view('website-template.partnerschaften');
+    }
+
+
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function frauenkooperativeNoyanlar()
+    {
+        return view('website-template.projects.frauenkooperative-noyanla');
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
     public function derTraumVomHoren()
     {
         return view('website-template.projects.velid');
@@ -93,6 +111,16 @@ class FrontendController extends Controller
     {
         return view('website-template.spenden');
     }
+
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function werdenSieMitglied()
+    {
+        return view('website-template.werden-sie-mitglied');
+    }
+
 
     /**
      * Display a listing of the resource.

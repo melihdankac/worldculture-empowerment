@@ -18,6 +18,7 @@
         .text-box p {
             text-align: justify;
             font-size: large;
+            margin-bottom: 15px;
         }
 
         .section {
@@ -143,9 +144,9 @@
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 <li data-transition="fade">
-                    <img src="{{ asset('website-template/images/projects/children-in-village/bg_image.jpg') }}" alt=""
-                        width="1920" height="882" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                        data-bgparallax="1" />
+                    <img src="{{ asset('website-template/images/projects/children-in-village/bg_image2.jpg') }}"
+                        alt="" width="1920" height="882" data-bgposition="top right" data-bgfit="cover"
+                        data-bgrepeat="no-repeat" data-bgparallax="1" />
 
                     <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="150"
                         data-transform_idle="o:1;"
@@ -155,23 +156,12 @@
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
                             {{-- <h4>Thousand of children are waiting for help!</h4> --}}
-                            <h1><span>Hoffnung</span> jenseits des Abhangs</h1>
+                            <h1>Hoffnung jenseits des Abhangs</h1>
                             {{-- <p>
                                 Sed ut perspiciatis, unde omnis iste natus error sit
                                 voluptatem accusantium doloremque la<br />udantium, totam
                                 rem aperiam eaque ipsa, quae ab illo inventore
                             </p> --}}
-                        </div>
-                    </div>
-                    <div class="tp-caption tp-resizeme" data-x="center" data-hoffset="15" data-y="top" data-voffset="250"
-                        data-transform_idle="o:1;"
-                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                        data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-splitin="none"
-                        data-splitout="none" data-responsive_offset="on" data-start="2300">
-                        <div class="slide-content-box">
-                            <div class="button">
-                                <a class="thm-btn" href="#">join with us today</a>
-                            </div>
                         </div>
                     </div>
                 </li>
@@ -201,7 +191,8 @@
                             </strong>
                         </h4>
                         <p>Zwischen schroffen Felsen, tiefen Tälern und schneebedeckten Gipfeln liegen die Bergdörfer des
-                            türkischen Ostens – Orte voller Einfachheit, Entbehrung und erstaunlicher Stärke.Eines dieser
+                            türkischen Ostens – Orte voller Einfachheit, Entbehrung und erstaunlicher Stärke. Eines
+                            dieser
                             Dörfer ist Hacımehmet in der Provinz Bitlis: abgelegen, schwer erreichbar, und doch erfüllt von
                             Leben. Hier, wo die Wege steinig und die Winter lang sind, strahlt etwas, das stärker ist als
                             jede Dunkelheit – das Lachen der Kinder.</p>&nbsp;
@@ -213,14 +204,17 @@
                         </h4>
 
                         <p>In den Augen dieser Kinder brennt eine Hoffnung, die größer ist als die Berge, die sie
-                            umgeben:die Hoffnung auf Bildung, auf Zukunft, auf ein Leben mit Möglichkeiten.
+                            umgeben:
+                            <br>die Hoffnung auf Bildung, auf Zukunft, auf ein Leben mit Möglichkeiten.
                         </p>&nbsp;
 
                         <p>
-                            Diese Vision endet nicht an den Grenzen eines Dorfes.Sie gilt für alle Kinder der abgelegenen
-                            Bergregionen im Südosten und Osten der Türkei – Kinder, die täglich gegen Armut und
+                            Diese Vision endet nicht an den Grenzen eines Dorfes. Sie gilt für alle Kinder der
+                            abgelegenen
+                            Bergregionen im Südosten und Osten der Türkei - Kinder, die täglich gegen Armut und
                             Vergessenwerden anlächeln.
                         </p>
+                        <br>
 
                         <h4>
                             <strong>
@@ -267,18 +261,20 @@
                     eingeschränkt. Die meisten Familien leben von dem, was die kargen Böden hergeben. Schulen liegen oft
                     weit entfernt, und Hilfsinitiativen erreichen diese Orte selten.</p>&nbsp;
                 <p>
-                    Doch dort, wo die Wege enden, beginnt unsere Aufgabe:mit Herz, Hand und echter Nähe.
+                    Doch dort, wo die Wege enden, beginnt unsere Aufgabe: <br> mit Herz, Hand und echter Nähe.
                 </p>
 
-                <h4>
+                <h4 style="margin-top: 40px;">
                     <strong>
                         Gemeinsam stark für viele Dörfer
                     </strong>
                 </h4>
                 <p>
-                    Lasst uns gemeinsam zeigen, dass Hoffnung keine Grenzen kennt.Lasst uns den Kindern von Hacımehmet – und
+                    Lasst uns gemeinsam zeigen, dass Hoffnung keine Grenzen kennt. Lasst uns den Kindern von Hacımehmet
+                    – und
                     all den anderen Kindern im Südosten und Osten der Türkei, die in den Bergen leben – die Hand
-                    reichen.Damit ihr Lachen über die Täler hinwegklingt und aus jedem Dorf ein Ort der Zukunft werden kann.
+                    reichen. Damit ihr Lachen über die Täler hinwegklingt und aus jedem Dorf ein Ort der Zukunft werden
+                    kann.
                 </p>
             </div>
 
@@ -292,11 +288,6 @@
             <div class="media-grid grid-3">
                 <!-- FOTOĞRAF -->
                 <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/children-in-village/1.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
                     <img src="{{ asset('website-template/images/projects/children-in-village/2.jpg') }}" alt=""
                         data-caption="" class="img-cover">
                 </figure>
@@ -308,11 +299,6 @@
 
                 <figure class="media-item photo-item">
                     <img src="{{ asset('website-template/images/projects/children-in-village/5.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/children-in-village/6.jpg') }}" alt=""
                         data-caption="" class="img-cover">
                 </figure>
 
@@ -337,22 +323,7 @@
                 </figure>
 
                 <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/children-in-village/11.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/children-in-village/12.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
                     <img src="{{ asset('website-template/images/projects/children-in-village/13.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/children-in-village/14.jpg') }}" alt=""
                         data-caption="" class="img-cover">
                 </figure>
 

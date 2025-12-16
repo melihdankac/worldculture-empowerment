@@ -13,6 +13,7 @@ class SubscriptionPayment extends Model
         'subscription_donation_id',
         'stripe_invoice_id',
         'stripe_payment_id',
+        'wants_invoice',
         'amount',
         'currency',
         'status',

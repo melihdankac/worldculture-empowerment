@@ -18,30 +18,36 @@ use App\Models\Donation;
 
 Route::get('/', [FrontendController::class, 'startseite'])->name('startseite');
 Route::get('/entstehungsgeschichte', [FrontendController::class, 'entstehungsgeschichte'])->name('entstehungsgeschichte');
-Route::get('/vorstand', [FrontendController::class, 'vorstand'])->name('vorstand');
 Route::get('/team', [FrontendController::class, 'team'])->name('team');
+Route::get('/partnerschaften', [FrontendController::class, 'partnerschaften'])->name('partnerschaften');
 
+Route::get('/werdeAktiv', [FrontendController::class, 'werdeAktiv'])->name('werdeAktiv');
+Route::get('/spenden', [FrontendController::class, 'spenden'])->name('spenden');
+Route::get('/werden-sie-mitglied', [FrontendController::class, 'werdenSieMitglied'])->name('werden-sie-mitglied');
+Route::get('/kontakt', [FrontendController::class, 'kontakt'])->name('kontakt');
+
+// Projects
+Route::get('/frauenkooperative-noyanlar', [FrontendController::class, 'frauenkooperativeNoyanlar'])->name('frauenkooperative-noyanlar');
 Route::get('/derTraumVomHoren', [FrontendController::class, 'derTraumVomHoren'])->name('derTraumVomHoren');
 Route::get('/turkeiErdbebenprojekt', [FrontendController::class, 'turkeiErdbebenprojekt'])->name('turkeiErdbebenprojekt');
 Route::get('/patenschaft', [FrontendController::class, 'patenschaft'])->name('patenschaft');
 Route::get('/children-in-village', [FrontendController::class, 'childrenVillage'])->name('children-in-village');
 Route::get('/autonomy-foundation', [FrontendController::class, 'autonomyFoundation'])->name('autonomy-foundation');
 
-Route::get('/werdeAktiv', [FrontendController::class, 'werdeAktiv'])->name('werdeAktiv');
-Route::get('/spenden', [FrontendController::class, 'spenden'])->name('spenden');
-Route::get('/kontakt', [FrontendController::class, 'kontakt'])->name('kontakt');
-
-Route::post('/contact/send', [ContactController::class, 'send'])
-    ->name('contact.send');
-
+// Policys
 Route::get('/satzungDesVereins', [FrontendController::class, 'satzungDesVereins'])->name('satzungDesVereins');
 Route::get('/impressum', [FrontendController::class, 'impressum'])->name('impressum');
 Route::get('/datenschutzerklarung', [FrontendController::class, 'datenschutzerklarung'])->name('datenschutzerklarung');
 
+// Send Contact Route
+Route::post('/contact/send', [ContactController::class, 'send'])
+    ->name('contact.send');
 
 // Donation Route
-Route::post('/donate', [DonationController::class, 'process'])->name('donation.process');
+Route::post('/donate', [DonationController::class, 'donateProcess'])->name('donation.process');
+Route::post('/membership', [DonationController::class, 'membershipProcess'])->name('membership.process');
 Route::get('/donate-success', [DonationController::class, 'success'])->name('donation.success');
+Route::get('/membership-success', [DonationController::class, 'membershipSuccess'])->name('membership.success');
 
 Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle'])
     ->withoutMiddleware([VerifyCsrfToken::class])

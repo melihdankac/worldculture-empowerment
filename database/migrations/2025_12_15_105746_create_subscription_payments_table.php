@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('stripe_payment_id')->nullable();
 
             // Ödeme detayları
+            $table->boolean('wants_invoice')->default(false);
             $table->decimal('amount', 10, 2);
             $table->string('currency', 10)->default('EUR');
             $table->enum('status', ['pending', 'paid', 'failed', 'refunded'])->default('pending');

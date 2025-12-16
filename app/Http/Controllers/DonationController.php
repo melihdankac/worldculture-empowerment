@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -13,18 +12,11 @@ use App\Models\InvoiceAddress;
 use App\Models\Membership;
 use App\Models\SubscriptionDonation;
 use Stripe\Stripe;
-use Stripe\Customer;
-use Stripe\PaymentIntent;
-use Stripe\Subscription;
-use Stripe\Product;
-use Stripe\Price;
-
-use Stripe\Checkout\Session as CheckoutSession;
 
 class DonationController extends Controller
 {
 
-    public function process(Request $request)
+    public function donateProcess(Request $request)
     {
         $request->validate([
             'donation_type'       => ['required', 'in:individual,anonymous,company'],
@@ -82,6 +74,21 @@ class DonationController extends Controller
             ]);
 
             $clientSecret = null;
+            $invoiceAddress = null;
+
+            /**
+             * Invoice Address
+             */
+            if ($request->wants_invoice) {
+                $invoiceAddress = InvoiceAddress::create([
+                    'donor_id'      => $donor->id,
+                    'street'        => $request->street,
+                    'street_number' => $request->street_number,
+                    'zip'           => $request->zip,
+                    'city'          => $request->city,
+                    'country'       => $request->country,
+                ]);
+            }
 
             /**
              * ONE-TIME DONATION
@@ -108,8 +115,10 @@ class DonationController extends Controller
                     'currency' => 'EUR',
                     'payment_method' => $request->stripe_payment_method,
                     'payment_status' => 'pending',
+                    'stripe_payment_id' => $intent->id,
                     'stripe_customer_id' => $customer->id,
                     'wants_invoice' => $request->wants_invoice,
+                    'invoice_address_id'    => $invoiceAddress->id ?? null,
                     'message' => $request->message,
                 ]);
 
@@ -137,6 +146,7 @@ class DonationController extends Controller
                     'Yearly donation subscription' :
                     'Monthly donation subscription';
 
+
                 // 2. Subscription oluştur
                 $subscription = \Stripe\Subscription::create([
                     'customer' => $customer->id,
@@ -160,6 +170,7 @@ class DonationController extends Controller
                     'currency'               => 'EUR',
                     'recurring_interval'     => $request->recurring_interval,
                     'stripe_subscription_id' => $subscription->id,
+                    'wants_invoice'          => $request->wants_invoice,
                     'status'                 => 'active',
                     'started_at'             => now(),
                 ]);
@@ -171,57 +182,6 @@ class DonationController extends Controller
                     ? $paymentIntent->client_secret
                     : null;
             }
-
-            /**
-             * MEMBERSHIP – FIXED 120 €
-             */
-            if ($request->recurring_interval === 'membership') {
-
-                $membership = Membership::create([
-                    'donor_id' => $donor->id,
-                    'membership_status' => 'pending',
-                    'start_date'        => null,
-                    'end_date'          => null,
-                ]);
-
-                $subscription = \Stripe\Subscription::create([
-                    'customer' => $customer->id,
-                    'expand' => ['latest_invoice.payment_intent'],
-                    'payment_settings' => ['save_default_payment_method' => 'on_subscription'],
-                    'payment_behavior' => 'error_if_incomplete',
-                    'items' => [['price' => config('services.stripe.prices.membership_year')]],
-                    'metadata' => [
-                        'type' => 'membership',
-                        'interval' => 'year',
-                        'membership_id' => (string) $membership->id,
-                    ],
-                    'description' => 'Association Membership',
-                ]);
-
-                // 3. Stripe subscription ID’yi Membership kaydına yaz
-                $membership->update([
-                    'stripe_subscription_id' => $subscription->id,
-                ]);
-
-                // 4. İlk ödeme için client_secret döndür (frontend için)
-                $invoice        = $subscription->latest_invoice;
-                $paymentIntent  = $invoice->payment_intent ?? null;
-                $clientSecret   = $paymentIntent && is_object($paymentIntent)
-                    ? $paymentIntent->client_secret
-                    : null;
-            }
-
-            if ($request->wants_invoice) {
-                InvoiceAddress::create([
-                    'donor_id'      => $donor->id,
-                    'street'        => $request->street,
-                    'street_number' => $request->street_number,
-                    'zip'           => $request->zip,
-                    'city'          => $request->city,
-                    'country'       => $request->country,
-                ]);
-            }
-
 
             DB::commit();
 
@@ -235,6 +195,7 @@ class DonationController extends Controller
                     'success' => true,
                     'invoice_status' =>  $invoice->status,
                     'client_secret' => $clientSecret,
+                    'invoiceAddress' => $invoiceAddress,
                 ]);
             }
         } catch (\Throwable $e) {
@@ -251,8 +212,147 @@ class DonationController extends Controller
         }
     }
 
+    public function membershipProcess(Request $request)
+    {
+        $request->validate([
+            'first_name'       => ['required', 'string'],
+            'last_name'        => ['required', 'string'],
+            'email'            => ['required', 'email'],
+            'phone'            => ['required', 'string'],
+
+            'street'           => ['required', 'string'],
+            'street_number'    => ['required', 'string'],
+            'zip'              => ['required', 'string'],
+            'city'             => ['required', 'string'],
+            'country'          => ['required', 'string'],
+        ]);
+
+        DB::beginTransaction();
+
+        try {
+            \Stripe\Stripe::setApiKey(config('services.stripe.secret'));
+
+            /**
+             * DONOR
+             */
+            $address = trim(sprintf(
+                "%s No: %s\n%s %s\n%s",
+                $request->street,
+                $request->house_number,
+                $request->zip,
+                $request->city,
+                $request->country
+            ));
+
+            // Frontta tek satır kullanmak istersem
+            // $addressSingleLine = preg_replace("/\r\n|\r|\n/", ', ', $donor->address);
+
+            $donor = Donor::updateOrCreate(
+                ['email' => $request->email],
+                [
+                    'first_name'   => $request->first_name,
+                    'last_name'    => $request->last_name,
+                    'email'        => $request->email,
+                    'phone'        => $request->phone,
+                    'address'      => $address,
+                ]
+            );
+
+            /**
+             * STRIPE CUSTOMER
+             */
+            if (! $donor->stripe_customer_id) {
+                $customer = \Stripe\Customer::create([
+                    'email' => $donor->email,
+                    'name'  => "{$donor->first_name} {$donor->last_name}",
+                ]);
+
+                $donor->update(['stripe_customer_id' => $customer->id]);
+            } else {
+                $customer = \Stripe\Customer::retrieve($donor->stripe_customer_id);
+            }
+
+            /**
+             * PAYMENT METHOD
+             */
+            \Stripe\PaymentMethod::retrieve($request->stripe_payment_method)
+                ->attach(['customer' => $customer->id]);
+
+            \Stripe\Customer::update($customer->id, [
+                'invoice_settings' => [
+                    'default_payment_method' => $request->stripe_payment_method,
+                ],
+            ]);
+
+            $clientSecret = null;
+
+            /**
+             * MEMBERSHIP – FIXED 120 €
+             */
+            $membership = Membership::create([
+                'donor_id' => $donor->id,
+                'membership_status' => 'pending',
+                'start_date'        => null,
+                'end_date'          => null,
+            ]);
+
+            $subscription = \Stripe\Subscription::create([
+                'customer' => $customer->id,
+                'expand' => ['latest_invoice.payment_intent'],
+                'payment_settings' => ['save_default_payment_method' => 'on_subscription'],
+                'payment_behavior' => 'error_if_incomplete',
+                'items' => [['price' => config('services.stripe.prices.membership_year')]],
+                'metadata' => [
+                    'type' => 'membership',
+                    'interval' => 'year',
+                    'membership_id' => (string) $membership->id,
+                ],
+                'description' => 'Association Membership',
+            ]);
+
+            // 3. Stripe subscription ID’yi Membership kaydına yaz
+            $membership->update([
+                'stripe_subscription_id' => $subscription->id,
+            ]);
+
+            // 4. İlk ödeme için client_secret döndür (frontend için)
+            $invoice        = $subscription->latest_invoice;
+            $paymentIntent  = $invoice->payment_intent ?? null;
+            $clientSecret   = $paymentIntent && is_object($paymentIntent)
+                ? $paymentIntent->client_secret
+                : null;
+
+            DB::commit();
+
+            session()->flash('member_name', $request->first_name);
+            return response()->json([
+                'success' => true,
+                'invoice_status' =>  $invoice->status,
+                'client_secret' => $clientSecret,
+            ]);
+        } catch (\Throwable $e) {
+            DB::rollBack();
+
+            Log::error('Donation failed', [
+                'error' => $e->getMessage(),
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Payment initialization failed.',
+            ], 500);
+        }
+
+        return view('website-template.membership-success');
+    }
+
     public function success(Request $request)
     {
         return view('website-template.donation-success');
+    }
+
+    public function membershipSuccess(Request $request)
+    {
+        return view('website-template.membership-success');
     }
 }

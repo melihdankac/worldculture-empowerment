@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Your Donation Confirmation</title>
+    <title>Mitgliedschaftsgenehmigung</title>
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -85,42 +85,48 @@
             @if ($logoBase64)
                 <img src="data:image/png;base64,{{ $logoBase64 }}" alt="Logo">
             @endif
-            <h1>Donation Confirmation</h1>
+            <h1>Mitgliedschaftsgenehmigung</h1>
         </div>
 
         <div class="content">
-            <p>Dear Supporter,</p>
+            <p>
+                Herzlichen Dank für deine Unterstützung
+
+                Deine einmalige Spende ist bei uns eingegangen. Wir danken dir sehr für dein Vertrauen und deine Hilfe.
+                Mit deinem Beitrag trägst du dazu bei, unsere Projekte umzusetzen und dort zu helfen, wo Hilfe dringend
+                benötigt wird.
+
+                Gemeinsam können wir helfen - Danke für deine Spende.
+
+                Herzliche Grüße von
+                Team Worldculture Empowerment e.V.
+            </p>
 
             <p>
-                Thank you for your
+                Vielen Dank für Ihre einmalige
                 <span class="highlight">
-                    one-time
+                    einmalige
                 </span>
-                donation of
+                Spende von
                 <span class="highlight">{{ number_format($donation->amount, 2) }} EUR</span>.
             </p>
 
             @if ($donation->supported_project)
                 <p>
-                    You supported the project:
+                    Sie unterstützten das Projekt:
                     <span class="highlight">{{ $donation->supported_project }}</span>
                 </p>
             @endif
 
-            <p>Your payment status:
+            <p>Ihr Zahlungsstatus:
                 <span class="highlight">{{ ucfirst($donation->payment_status) }}</span>
             </p>
 
-            <p>
-                We truly appreciate your contribution.
-                {{-- You can find your official receipt attached to this email. --}}
-            </p>
-
-            <a href="{{ url('/') }}" class="btn">Visit our website</a>
+            <a href="{{ url('/') }}" class="btn">Besuchen Sie unsere Website</a>
         </div>
 
         <div class="footer">
-            © {{ date('Y') }} World Culture Empowerment. All rights reserved.
+            © {{ date('Y') }} World Culture Empowerment. Alle Rechte vorbehalten.
         </div>
     </div>
 </body>
