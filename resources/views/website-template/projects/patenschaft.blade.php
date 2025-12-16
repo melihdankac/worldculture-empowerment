@@ -150,7 +150,7 @@
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
                             <h2 style="color: #fff;">Patenschaftsprogramm</h2>
-                            <h1> Bildung mit persönlicher Verbindung </h1>
+                            <h1> Bildung mit <br> persönlicher Verbindung </h1>
                             <p>
                                 Möchtest du Patin oder Pate werden und ein Kind direkt in seiner Bildung unterstützen?
                             </p>
@@ -409,92 +409,4 @@
             });
         })();
     </script>
-
-    {{-- <script>
-        (function() {
-            const mediaItems = document.querySelectorAll('.media-item');
-
-            // FOTOĞRAF LIGHTBOX
-            const plb = document.getElementById('photo-lightbox');
-            const plbImg = document.getElementById('plb-img');
-            const plbCaption = document.getElementById('plb-caption');
-            const plbClose = document.getElementById('plb-close');
-            const plbPrev = document.getElementById('plb-prev');
-            const plbNext = document.getElementById('plb-next');
-
-            let photoItems = Array.from(document.querySelectorAll('.photo-item img'));
-            let currentIndex = 0;
-
-            function openPhoto(index) {
-                const img = photoItems[index];
-                plbImg.src = img.src;
-                plbImg.alt = img.alt || '';
-                plbCaption.textContent = img.dataset.caption || img.alt || '';
-                plb.style.display = 'flex';
-                document.documentElement.style.overflow = 'hidden';
-                currentIndex = index;
-            }
-
-            function closePhoto() {
-                plb.style.display = 'none';
-                plbImg.src = '';
-                document.documentElement.style.overflow = '';
-            }
-
-            function nextPhoto() {
-                currentIndex = (currentIndex + 1) % photoItems.length;
-                openPhoto(currentIndex);
-            }
-
-            function prevPhoto() {
-                currentIndex = (currentIndex - 1 + photoItems.length) % photoItems.length;
-                openPhoto(currentIndex);
-            }
-
-            plbClose.addEventListener('click', closePhoto);
-            plbNext.addEventListener('click', nextPhoto);
-            plbPrev.addEventListener('click', prevPhoto);
-
-            // VİDEO LIGHTBOX
-            const vlb = document.getElementById('video-lightbox');
-            const vlbVideo = document.getElementById('vlb-video');
-            const vlbClose = document.getElementById('vlb-close');
-
-            function openVideo(url) {
-                vlbVideo.src = url;
-                vlb.style.display = 'flex';
-                document.documentElement.style.overflow = 'hidden';
-            }
-
-            function closeVideo() {
-                vlb.style.display = 'none';
-                vlbVideo.src = '';
-                document.documentElement.style.overflow = '';
-            }
-
-            vlbClose.addEventListener('click', closeVideo);
-
-            mediaItems.forEach((item, index) => {
-                if (item.classList.contains('photo-item')) {
-                    item.addEventListener('click', () => openPhoto(photoItems.indexOf(item.querySelector(
-                        'img'))));
-                } else if (item.classList.contains('video-item')) {
-                    item.addEventListener('click', () => {
-                        const videoUrl = item.querySelector('img').dataset.video;
-                        openVideo(videoUrl);
-                    });
-                }
-            });
-
-            // LIGHTBOX ESC KAPATMA
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    closePhoto();
-                    closeVideo();
-                }
-                if (e.key === 'ArrowRight') nextPhoto();
-                if (e.key === 'ArrowLeft') prevPhoto();
-            });
-        })();
-    </script> --}}
 @endsection

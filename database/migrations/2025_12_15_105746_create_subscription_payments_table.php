@@ -25,6 +25,7 @@ return new class extends Migration
 
             // Ödeme detayları
             $table->boolean('wants_invoice')->default(false);
+            $table->foreignId('invoice_address_id')->nullable()->constrained()->nullOnDelete();
             $table->decimal('amount', 10, 2);
             $table->string('currency', 10)->default('EUR');
             $table->enum('status', ['pending', 'paid', 'failed', 'refunded'])->default('pending');

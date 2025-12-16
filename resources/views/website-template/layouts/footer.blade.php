@@ -42,9 +42,19 @@
                         <!--Footer Column-->
                         <div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             <div class="footer-widget works-widget">
-                                <h3 class="footer-title">Latest Works</h3>
+                                <h3 class="footer-title">PROJEKTE</h3>
                                 <div class="widget-content">
-                                    <ul class="list">
+                                    <ul class="footer-links">
+                                        <li><a href="{{ route('frauenkooperative-noyanlar') }}">Frauenkooperative
+                                                Noyanlar</a></li>
+                                        <li><a href="{{ route('derTraumVomHoren') }}">Der Traum vom Hören</a></li>
+                                        <li><a href="{{ route('children-in-village') }}">Kinderförderung in abgelegenen
+                                                Bergdörfern der Türkei</a></li>
+                                        <li><a href="{{ route('autonomy-foundation') }}">Zukunft gestalten: Bildung &
+                                                Jugendarbeit in Istanbul</a>
+                                        </li>
+                                    </ul>
+                                    {{-- <ul class="list">
                                         <li>
                                             <h5>Food is Giving to them</h5>
                                             <p><span>July 29, 2017 BY Donald</span></p>
@@ -57,7 +67,7 @@
                                             <h5>Build a building for shelter</h5>
                                             <p><span> July 29, 2017 BY Donald</span></p>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
                             </div>
                         </div>
@@ -65,33 +75,26 @@
                 </div>
 
                 <!--Big Column-->
-                <div class="col-md-6 col-sm-12 col-xs-12">
+                {{-- <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="row clearfix">
                         <!--Footer Column-->
                         <div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             <div class="footer-widget contact-widget">
-                                <h3 class="footer-title">contact us</h3>
+                                <h3 class="footer-title">PROJEKTE</h3>
                                 <div class="widget-content">
-
                                     <ul class="footer-links">
-                                        <li><a href="{{ route('entstehungsgeschichte') }}">Entstehungsgeschichte</a>
+                                        <li><a href="{{ route('frauenkooperative-noyanlar') }}">Frauenkooperative
+                                                Noyanlar</a></li>
+                                        <li><a href="{{ route('derTraumVomHoren') }}">Der Traum vom Hören</a></li>
+                                        <li><a href="{{ route('children-in-village') }}">Kinderförderung in abgelegenen
+                                                Bergdörfern der Türkei</a></li>
+                                        <li><a href="{{ route('autonomy-foundation') }}">Zukunft gestalten: Bildung &
+                                                Jugendarbeit in Istanbul</a>
                                         </li>
-                                        <li><a href="{{ route('derTraumVomHoren') }}">
-                                            </a></li>
-                                        <li><a href="{{ route('spenden') }}">Spenden</a></li>
-                                        <li><a href="{{ route('kontakt') }}">Kontakt</a></li>
                                     </ul>
-
-                                    <div class="social-links-fa">
-                                        <a href="https://www.instagram.com/worldculture_empowerment" target="_blank"
-                                            title="Instagram">
-                                            <i style="font-size: 3rem;" class="fa fa-instagram"></i>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-
                         <!--Footer Column-->
 
                         <!--Footer Column-->
@@ -190,8 +193,10 @@
                                 </div>
                             </div>
                         </div>
+                        <!--Footer Column-->
+
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

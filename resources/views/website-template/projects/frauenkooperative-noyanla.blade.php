@@ -11,6 +11,7 @@
         .text-box p {
             text-align: justify;
             font-size: large;
+            margin-bottom: 15px;
         }
 
         .section {
@@ -136,8 +137,8 @@
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 <li data-transition="fade">
-                    <img src="{{ asset('website-template/images/projects/dream-of-hearing/bg_image.webp') }}" alt=""
-                        width="1920" height="882" data-bgposition="center center" data-bgfit="cover"
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/bg_image.jpg') }}"
+                        alt="" width="1920" height="882" data-bgposition="center center" data-bgfit="cover"
                         data-bgrepeat="no-repeat" data-bgparallax="1" />
 
                     <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="550"
@@ -148,7 +149,9 @@
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
                             {{-- <h4>Thousand of children are waiting for help!</h4> --}}
-                            <h1>Frauenkooperative „Noyanlar Kültür Sanat Evi“</h1>
+                            <h1>Frauenkooperative
+                                <br>„Noyanlar Kültür Sanat Evi“
+                            </h1>
                             <p>
                                 Schutz, Bildung und Selbstbestimmung ImMittelpunkt diesesProjektsstehtdieFrauenkooperative
                             </p>
@@ -165,47 +168,205 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset('website-template/images/projects/dream-of-hearing/1.webp') }}"
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/1.jpg') }}"
                         class="img-responsive">
                 </div>
                 <div class="col-md-6">
                     <div class="section-title">
-                        <h2 style="text-align: justify">
-                            Frauenkooperative <br> „Noyanlar Kültür Sanat Evi“ – Schutz, Bildung und Selbstbestimmung
-                            ImMittelpunkt diesesProjektsstehtdieFrauenkooperative
+                        <h2>
+                            Frauenkooperative <br> „Noyanlar Kültür Sanat Evi“ <br> Schutz, Bildung und Selbstbestimmung
                         </h2>
                     </div>
                     <div class="text-box">
                         <p>
-                            <strong>„Noyanlar Kültür Sanat Evi“</strong> in <br>
-                            Midyat, inder RegionMardin.DieZusammenarbeitbasiertaufeiner langjährigen, engen und
-                            ,dieseitvielenJahrenpersönlich vor Ort aktiv ist, .DiebeidenFrauensetzensich mit
-                            außergewöhnlichem Engagement und großerHingabefürFrauenundKinderinderRegion Mardin im Südosten
-                            der Türkei ein. GeradedurchSelinskontinuierlichePräsenzundMitarbeit vor Ort ist ein tiefes
-                            gegenseitiges Vertrauengewachsen.DiesesVertrauenistfürunsein zentraler Wert und die
-                            Grundlage unsererArbeit–dennnursokönnenwirsicherstellen,dass jede Unterstützung und
-                            jede Spende direktdortankommt,wosieamdringendstengebraucht wird: bei den Frauen und Familien
-                            selbst.
-                            Die KooperativesetztsichseitvielenJahrenfürFrauenrechte,Bildung und wirtschaftliche
-                            UnabhängigkeitvonFrauenein.DiesesProjektempowertFrauen und Kinder ganzheitlich,
-                            indem es Schutz,BildungundwirtschaftlicheUnabhängigkeitvereint und ihnen die Kraft gibt,
-                            führen und solidarische
+                            Im Mittelpunkt dieses Projekts steht die Frauenkooperative <strong>„Noyanlar Kültür Sanat
+                                Evi“</strong> in
+                            Midyat, in der Region Mardin. Die Zusammenarbeit basiert auf einer langjährigen, engen und
+                            vertrauensvollen Beziehung zwischen Selin, die seit vielen Jahren persönlich vor Ort aktiv ist,
+                            und den Gründerinnen Aysel und Ayşe. Die beiden Frauen setzen sich mit außergewöhnlichem
+                            Engagement und großer Hingabe für Frauen und Kinder in der Region Mardin im Südosten der Türkei
+                            ein. Gerade durch Selins kontinuierliche Präsenz und Mitarbeit vor Ort ist ein tiefes
+                            gegenseitiges Vertrauen gewachsen. Dieses Vertrauen ist für uns ein zentraler Wert und die
+                            Grundlage unserer Arbeit – denn nur so können wir sicherstellen, dass jede Unterstützung und
+                            jede Spende direkt dort ankommt, wo sie am dringendsten gebraucht wird: bei den Frauen und
+                            Familien selbst
                         </p>&nbsp;
+
+                        <p>
+                            Die Kooperative setzt sich seit vielen Jahren für Frauenrechte, Bildung und wirtschaftliche
+                            Unabhängigkeit von Frauen ein. Dieses Projekt empowert Frauen und Kinder ganzheitlich, indem es
+                            Schutz, Bildung und wirtschaftliche Unabhängigkeit vereint und ihnen die Kraft gibt, aus eigener
+                            Stärke heraus ein selbstbestimmtes Leben zu führen und solidarische Gemeinschaften aufzubauen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-6">
+                    <div class="text-box">
+                        <p>
+                            Die Frauen, die Teil der Kooperative sind, stammen überwiegend aus besonders vulnerablen
+                            Gruppen:Jesidische Frauen aus dem Irak, syrische Frauen mit Fluchterfahrung sowie kurdische
+                            Frauen aus der Region. Trotz unterschiedlicher Hintergründe verbindet sie ein gemeinsames Ziel:
+                            „Frauen helfen Frauen.“
+
+                        </p>
+
+                        <p>
+                            Ein wichtiger Bestandteil des Projekts ist die wirtschaftliche Stärkung der Frauen. In der
+                            Kooperative erlernen sie verschiedene Formen der Handwerkskunst, mit denen sie ein eigenes
+                            Einkommen erwirtschaften können. Dadurch gewinnen sie finanzielle Eigenständigkeit und mehr
+                            Entscheidungsfreiheit in ihrem Leben.
+                        </p>
+
+                        <p>
+                            Darüber hinaus bietet die Kooperative ein ganzheitliches Bildungsangebot:
+                        </p>
+
+                        <ul style="font-size: large; margin-bottom: 15px;">
+                            <li>
+                                <strong>• Alphabetisierungs- und Bildungskurse</strong>, um grundlegende Lese- und
+                                Schreibkompetenzen zu vermitteln
+                            </li>
+
+                            <li>
+                                <strong>• Förderung sozialer Kompetenzen und Gemeinschaft</strong>, um gegenseitige
+                                Unterstützung und Solidarität zu stärken
+                            </li>
+
+                            <li>
+                                <strong>• Ein integrierter Kindergarten</strong>, in dem die Kinder der Frauen während der
+                                Kurszeiten kostenlos betreut werden. Dies ermöglicht den Müttern eine aktive Teilnahme an
+                                Bildungs- und Qualifizierungsmaßnahmen und unterstützt gleichzeitig die frühkindliche
+                                Entwicklung der Kinder.
+                            </li>
+                        </ul>
+
+                        <p>
+                            Dieses Projekt zeigt eindrucksvoll, wie ganzheitliche Frauenarbeit langfristige Veränderungen
+                            bewirken kann - indem Frauen geschützt, gestärkt und befähigt werden, ihr Leben selbstbestimmt
+                            zu gestalten und ihre Gemeinschaft aktiv mit aufzubauen.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/2.jpg') }}"
+                        class="img-responsive">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-6">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/3.jpg') }}"
+                        class="img-responsive">
+                </div>
+                <div class="col-md-6">
+                    <div class="text-box">
+                        <h4 style="margin-top: 0px;">
+                            <strong>
+                                So helfen wir als Verein
+                            </strong>
+                        </h4>
+
+                        <p>
+                            Als Verein leisten wir konkrete, direkte und nachhaltige Unterstützung für Frauen und Kinder vor
+                            Ort.
+                            Unsere Hilfe orientiert sich an den tatsächlichen Bedürfnissen der Frauen und stärkt sie
+                            langfristig in
+                            ihrer Selbstständigkeit.
+                        </p>
+
+                        <p>
+                            Ein zentraler Beitrag war die Anschaffung einer professionellen Nähmaschine, mit der die Frauen
+                            in den
+                            Kursen das Nähen erlernen. Dadurch können sie Kleidung für sich und ihre Familien herstellen und
+                            ihre
+                            handwerklichen Fähigkeiten nutzen, um eigene Produkte zu verkaufen und ein Einkommen zu
+                            erzielen.
+                            Ergänzend dazu stellen wir Stoffe, Nähmaterialien und weitere Arbeitsutensilien für die
+                            Workshops zur
+                            Verfügung. Darüber hinaus kaufen wir dringend benötigte Hygieneartikel für die Frauen und
+                            unterstützen
+                            sie bei medizinischen Problemen, indem wir den Zugang zu notwendiger medizinischer Versorgung
+                            ermöglichen.
+                        </p>
+
+                        <p>
+                            Darüber hinaus unterstützen wir den Kindergarten der Kooperative, indem wir Spielzeug sowie
+                            Materialien
+                            für den Alltag und die frühkindliche Förderung bereitstellen. So schaffen wir einen sicheren und
+                            fördernden Raum für Kinder, während ihre Mütter an Kursen und Bildungsangeboten teilnehmen
+                            können.
+                        </p>
+
+                        <p>
+                            In akuten Notlagen helfen wir Frauen und Kindern direkt – unter anderem durch die Finanzierung
+                            von
+                            psychologischer Unterstützung, therapeutischen Angeboten sowie durch gezielte Bildungsförderung
+                            für
+                            Kinder. Unser Ansatz ist dabei stets ganzheitlich und menschenzentriert.
+                        </p>
 
                     </div>
                 </div>
             </div>
 
-            {{-- <p style="font-size: large;">Um Velid ein selbstbestimmtes Leben zu ermöglichen, sind wir auf Unterstützung
-                angewiesen.
-                Jeder Beitrag kann helfen, seinen Traum Wirklichkeit werden zu lassen. Velid hat bereits
-                bewiesen,
-                dass
-                er mit der richtigen Förderung unglaubliche Fortschritte
-                machen kann – jetzt braucht er eine Chance, sein volles Potenzial zu entfalten. Helfen Sie mit,
-                Velid
-                die Zukunft zu schenken, die er verdient. <br><br>
-                Januar 2025 </p>&nbsp; --}}
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-sm-12">
+                    <div class="text-box">
+                        <p>
+                            Durch unsere enge Kooperation ermöglichen wir nachhaltige Hilfe in den folgenden Bereichen:
+                        </p>
+
+                        <ul style="font-size: large; margin-bottom: 15px;">
+                            <li>
+                                <strong>• Bildung und Alphabetisierung</strong>
+                            </li>
+
+                            <li>
+                                <strong>• Wirtschaftliche Selbstständigkeit von Frauen</strong>
+                            </li>
+
+                            <li>
+                                <strong>• Gesunde Kindesentwicklung</strong>
+                            </li>
+
+                            <li>
+                                <strong>• Soziales Miteinander und Solidarität</strong>
+                            </li>
+                        </ul>
+
+                        <p>
+                            So tragen wir dazu bei, Frauen zu empowern, Kinder zu schützen und Gemeinschaften langfristig zu
+                            stärken.
+                        </p>
+
+                        <p>
+                            Möchtest auch du diese Frauen empowern und ihnen Perspektiven für ein selbstbestimmtes Leben
+                            eröffnen?
+                        </p>
+
+                        <p>
+                            Dann werde jetzt aktiv, unterstütze unser Projekt und sei Teil einer Bewegung, die Frauen
+                            stärkt,
+                            schützt und Zukunft möglich macht.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-6">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/4.jpg') }}"
+                        class="img-responsive">
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/5.jpg') }}"
+                        class="img-responsive">
+                </div>
+            </div>
         </div>
     </section>
     <!-- !SECTION Content -->
@@ -214,47 +375,103 @@
     <section id="media-gallery" class="section">
         <div class="container">
             <div class="media-grid grid-3">
-                <!-- FOTOĞRAF -->
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/dream-of-hearing/1.webp') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/dream-of-hearing/2.webp') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/dream-of-hearing/3.webp') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
                 <!-- VİDEO -->
-
                 <figure class="media-item video-item">
                     <video class="video-cover" {{-- poster="{{ asset('website-template/images/projects/dream-of-hearing/1.webp') }}" --}} controls>
-                        <source src="{{ asset('website-template/images/projects/dream-of-hearing/video1.mp4') }}"
+                        <source src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/video1.mp4') }}"
                             type="video/mp4" />
                         Tarayıcınız video etiketini desteklemiyor.
                     </video>
                 </figure>
 
-                <figure class="media-item video-item">
-                    <video class="video-cover" {{-- poster="{{ asset('website-template/images/projects/dream-of-hearing/2.webp') }}" --}} controls>
-                        <source src="{{ asset('website-template/images/projects/dream-of-hearing/video2.mp4') }}"
-                            type="video/mp4" />
-                        Tarayıcınız video etiketini desteklemiyor.
-                    </video>
+                <!-- FOTOĞRAF -->
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/6.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
                 </figure>
 
-                <figure class="media-item video-item">
-                    <video class="video-cover" {{-- poster="{{ asset('website-template/images/projects/dream-of-hearing/3.webp') }}" --}} controls>
-                        <source src="{{ asset('website-template/images/projects/dream-of-hearing/video3.mp4') }}"
-                            type="video/mp4" />
-                        Tarayıcınız video etiketini desteklemiyor.
-                    </video>
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/7.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
                 </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/8.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/9.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/10.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/11.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/12.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/13.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/14.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/15.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/16.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/17.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/18.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/19.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/20.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/3.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/21.jpg') }}"
+                        alt="" data-caption="" class="img-cover">
+                </figure>
+
+
+
             </div>
         </div>
     </section>

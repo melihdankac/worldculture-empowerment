@@ -14,6 +14,7 @@ class SubscriptionPayment extends Model
         'stripe_invoice_id',
         'stripe_payment_id',
         'wants_invoice',
+        'invoice_address_id',
         'amount',
         'currency',
         'status',
@@ -36,5 +37,13 @@ class SubscriptionPayment extends Model
     public function donor()
     {
         return $this->belongsTo(Donor::class); // veya User::class
+    }
+
+    /**
+     * Bağışın faturası (Donation -> Invoice)
+     */
+    public function invoices()
+    {
+        return $this->morphMany(Invoice::class, 'invoiceable');
     }
 }

@@ -106,7 +106,7 @@
                 dich da. Wir freuen uns auf alles, was wir zusammen bewegen werden.
                 <br><br>
 
-                Herzliche Grüße
+                Herzliche Grüße <br>
                 Worldculture Empowerment e.V.
             </p>
 

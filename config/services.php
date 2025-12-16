@@ -40,12 +40,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
         'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
 
-        'products' => [
-            'membership' => env('STRIPE_MEMBERSHIP_PRODUCT_ID'),
-        ],
-
         'prices' => [
-            'membership_year' => env('STRIPE_MEMBERSHIP_YEAR_PRICE_ID'),
+            'membership_year' => env('STRIPE_MEMBERSHIP_PRODUCT_PRICE_ID'),
         ],
     ],
 

@@ -54,7 +54,7 @@
                             dich da. Wir freuen uns auf alles, was wir zusammen bewegen werden.
                             <br><br>
 
-                            Herzliche Grüße
+                            Herzliche Grüße <br>
                             Worldculture Empowerment e.V.
                         </p>
                         <br><br>
@@ -69,10 +69,10 @@
                         </p>
 
                         <div class="text-center">
-                            <a href="{{ route('startseite') }}" class="btn btn-primary">
+                            <a href="{{ route('startseite') }}" class="thm-btn">
                                 Zur Startseite
                             </a>
-                            <a href="{{ route('kontakt') }}" class="btn btn-link">
+                            <a href="{{ route('kontakt') }}" class="thm-btn style-2">
                                 Kontaktieren Sie uns
                             </a>
                         </div>

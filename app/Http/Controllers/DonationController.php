@@ -158,6 +158,7 @@ class DonationController extends Controller
                         'type'     => 'donation',
                         'interval' => $request->recurring_interval,
                         'donor_id' => $donor->id,
+                        'wants_invoice' => $request->wants_invoice,
                     ],
                     'description' => $description,
                 ]);
@@ -195,7 +196,6 @@ class DonationController extends Controller
                     'success' => true,
                     'invoice_status' =>  $invoice->status,
                     'client_secret' => $clientSecret,
-                    'invoiceAddress' => $invoiceAddress,
                 ]);
             }
         } catch (\Throwable $e) {

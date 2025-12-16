@@ -239,7 +239,7 @@
 
 @section('content')
     <div class="donation-container" style="zoom: 1.3; color: var(--primary-color)">
-        <h3>Bağış Yap</h3>
+        <h3>Jetzt spenden</h3>
 
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
@@ -283,6 +283,9 @@
 
                     <input type="radio" name="ready_amount" value="100" id="amount100">
                     <label for="amount100">€100</label>
+
+                    <input type="radio" name="ready_amount" value="150" id="amount150">
+                    <label for="amount150">€150</label>
 
                     <input type="radio" name="ready_amount" value="200" id="amount200">
                     <label for="amount200">€200</label>

@@ -251,20 +251,23 @@
 @section('content')
     <div class="donation-container" style="zoom: 1.3; color: var(--primary-color)">
         <div style="text-align: center">
-            <h1>ICH INTERESSIERE MICH <br><br> FÜR EINE <br><br> MITGLIEDSCHAFT!</h1>
+            <h1>MITGLIEDSCHAFT!</h1>
         </div>
 
         <div class="text-box">
             <p>
-                Vielen Dank für Ihr Interesse an einer Fördermitgliedschaft im DRK! Wir freuen uns, dass Sie das Deutsche
-                Rote Kreuz unterstützen wollen.
+                Vielen Dank für Ihr Interesse an einer Fördermitgliedschaft bei Worldculture Empowerment e.V.!
             </p>
 
             <p>
-                Um DRK-Fördermitglied zu werden, füllen Sie bitte unten stehendes Onlineformular aus. Wir leiten Ihre Daten
-                an den zuständigen Kreisverband in Ihrer Nähe weiter. Die KollegInnen dort werden sich schon bald bei Ihnen
-                melden und Ihnen alle erforderlichen Unterlagen für Ihre DRK-Fördermitgliedschaft zukommen lassen. Ihre
-                Daten werden selbstverständlich vertraulich behandelt und nicht an Dritte weitergegeben werden.
+                Wir freuen uns sehr, dass Sie unsere Arbeit zur Stärkung von interkulturellem Austausch, Bildung und
+                Empowerment unterstützen möchten.
+                Um Fördermitglied bei Worldculture Empowerment e.V. zu werden, bitten wir Sie, das untenstehende
+                Onlineformular auszufüllen. Ihre Angaben werden an den zuständigen Ansprechpartner innerhalb unseres Vereins
+                weitergeleitet. Wir setzen uns zeitnah mit Ihnen in Verbindung und lassen Ihnen alle erforderlichen
+                Informationen und Unterlagen zu Ihrer Fördermitgliedschaft zukommen.
+                Selbstverständlich werden Ihre Daten vertraulich behandelt und ausschließlich für vereinsinterne Zwecke
+                verwendet. Eine Weitergabe an Dritte erfolgt nicht.
             </p>
 
             <p>
@@ -350,6 +353,8 @@
                 style="text-align:center; margin:20px 0; font-size:18px; font-weight:bold; color:var(--primary-color)">
                 Jahresbeitrag: 120 € <br>
                 <span style="font-size:16px; color:#555">(entspricht nur 10 € pro Monat)</span>
+                <br>
+                <span style="font-size:16px; color:#555"> 30€ Aufnahmegebühr (einmalig)</span>
             </div>
 
             <button id="submit-button" class="thm-btn style-2">

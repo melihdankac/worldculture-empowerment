@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Log;
 
 use App\Models\Donation;
 use App\Models\Invoice;
+use App\Models\InvoiceAddress;
 use App\Models\Membership;
 use App\Models\MembershipPayment;
 use App\Models\StripeEvent;
@@ -161,7 +162,6 @@ class StripeWebhookController extends Controller
         $metadata = $lineItem?->metadata ?? [];
 
         $type = $metadata['type'] ?? null;
-        $invoiceAddress = $metadata['invoiceAddress'] ?? null;
 
         /**
          * 🏅 MEMBERSHIP PAYMENT
@@ -223,7 +223,6 @@ class StripeWebhookController extends Controller
             // 1. Abonelik ana kaydını güncelle
             $subscriptionDonation = SubscriptionDonation::updateOrCreate(
                 [
-                    'stripe_subscription_id' => $invoice->subscription,
                     'donor_id'               => $metadata['donor_id'] ?? null,
                 ],
                 [
@@ -246,21 +245,22 @@ class StripeWebhookController extends Controller
                     'status'                   => 'paid',
                     'paid_at'                  => now(),
                 ]);
-
-                // event(new SubscriptionPaymentSucceeded($subscriptionPayment));
-                Log::info('🔁 Subscription payment recorded', [
-                    'subscription_id' => $invoice->subscription,
-                    'invoice_id'      => $invoice->id,
-                ]);
             }
 
             Mail::to($subscriptionPayment->subscriptionDonation->donor->email)->send(
                 new SubscriptionPaymentReceipt($subscriptionDonation)
             );
 
+            Log::info('🔁 Subscription payment recorded', [
+                'subscriptionPayment' => $subscriptionPayment->wants_invoice,
+                'invoice_id'      => $invoice->id,
+            ]);
+
             // 🔖 Fatura oluştur
-            if ($subscriptionDonation->wants_invoice) {
-                $subscriptionDonation->invoices()->create([
+            if ($metadata['wants_invoice']) {
+                $invoiceAddress = InvoiceAddress::where('donor_id', $metadata['donor_id'])->latest()->first();
+
+                $subscriptionPayment->invoices()->create([
                     'donor_id'           => $subscriptionDonation->donor_id,
                     'invoice_address_id' => $invoiceAddress->id,
                     'invoice_number'     => $this->generateInvoiceNumber(),

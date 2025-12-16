@@ -94,9 +94,9 @@
                         <div class="slide-content-box">
                             <h4>Tausende Kinder und Erdbebenopfer warten auf Hilfe!</h4>
                             <h1>Erdbebenprojekt Türkei</h1>
-                            <p>
+                            {{-- <p>
                                 Möchten Sie die von uns in der Türkei durchgeführten Projekte direkt unterstützen ?
-                            </p>
+                            </p> --}}
                         </div>
                     </div>
                 </li>
@@ -271,7 +271,7 @@
         </section>
 
         <section class="section">
-            <div class="flex-row">
+            <div class="flex-row" style="align-items: center;">
                 <div class="text-box">
                     <p>Ein Herzensprojekt, was ich zusätzlich mit Ayse zusammen ins Leben gerufen
                         habe,

@@ -66,11 +66,11 @@
                             </li>
                             <li class="dropdown"><a href="#">Projekte</a>
                                 <ul>
-                                    <li><a href="{{ route('frauenkooperative-noyanlar') }}">Frauenkooperative
-                                            Noyanlar</a></li>
+                                    <li><a href="{{ route('frauenkooperative-noyanlar') }}">Frauenkooperative -
+                                            Südosttürkei</a></li>
                                     <li><a href="{{ route('derTraumVomHoren') }}">Der Traum vom Hören</a></li>
                                     <li><a href="{{ route('children-in-village') }}">Kinderförderung in abgelegenen
-                                            Bergdörfern der Türkei</a></li>
+                                            Bergdörfern der Südost- und Osttürkei</a></li>
                                     <li><a href="{{ route('autonomy-foundation') }}">Zukunft gestalten: Bildung &
                                             Jugendarbeit in Istanbul</a>
                                     </li>
@@ -80,7 +80,7 @@
                             </li>
                             <li><a href="{{ route('werdeAktiv') }}">Werde Aktiv</a></li>
                             <li><a href="{{ route('spenden') }}">Spenden </a></li>
-                            <li><a href="{{ route('werden-sie-mitglied') }}">Werden Sie Mitglied</a></li>
+                            <li><a href="{{ route('werden-sie-mitglied') }}">Mitgliedschaft</a></li>
                             <li><a href="{{ route('kontakt') }}">Kontakt</a></li>
                         </ul>
 
@@ -95,11 +95,11 @@
                             </li>
                             <li class="dropdown"><a href="#">Projekte</a>
                                 <ul>
-                                    <li><a href="{{ route('frauenkooperative-noyanlar') }}">Frauenkooperative
-                                            Noyanlar</a></li>
+                                    <li><a href="{{ route('frauenkooperative-noyanlar') }}">Frauenkooperative -
+                                            Südosttürkei</a></li>
                                     <li><a href="{{ route('derTraumVomHoren') }}">Der Traum vom Hören</a></li>
                                     <li><a href="{{ route('children-in-village') }}">Kinderförderung in abgelegenen
-                                            Bergdörfern der Türkei</a></li>
+                                            Bergdörfern der Südost- und Osttürkei</a></li>
                                     <li><a href="{{ route('autonomy-foundation') }}">Zukunft gestalten: Bildung &
                                             Jugendarbeit in Istanbul</a>
                                     </li>
@@ -109,7 +109,7 @@
                             </li>
                             <li><a href="{{ route('werdeAktiv') }}">Werde Aktiv</a></li>
                             <li><a href="{{ route('spenden') }}">Spenden </a></li>
-                            <li><a href="{{ route('werden-sie-mitglied') }}">Werden Sie Mitglied</a></li>
+                            <li><a href="{{ route('werden-sie-mitglied') }}">Mitgliedschaft</a></li>
                             <li><a href="{{ route('kontakt') }}">Kontakt</a></li>
                         </ul>
                     </div>

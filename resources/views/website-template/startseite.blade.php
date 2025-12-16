@@ -53,7 +53,7 @@
     <section class="our-missions">
         <div class="container">
             <div class="section-title">
-                <h1>our <span>missions</span></h1>
+                <h1>Unsere <span>missions</span></h1>
                 <p style="font-size: 1.8rem; max-width: 800px; margin: 0 auto;">
                     Wir setzen uns für eine Welt ein, in der kulturelle Vielfalt geschätzt, Gleichberechtigung
                     selbstverständlich und jedes Kind geschützt und gefördert wird. Wir möchten ethnischen Minderheiten eine

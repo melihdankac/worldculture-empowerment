@@ -98,7 +98,7 @@
 
                 Gemeinsam können wir helfen - Danke für deine Spende.
 
-                Herzliche Grüße von
+                Herzliche Grüße von <br>
                 Team Worldculture Empowerment e.V.
             </p>
 
