@@ -39,21 +39,22 @@
                                 </div>
                             </div>
                         </div>
+
                         <!--Footer Column-->
                         <div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             <div class="footer-widget works-widget">
                                 <h3 class="footer-title">PROJEKTE</h3>
                                 <div class="widget-content">
                                     <ul class="footer-links">
-                                        <li><a href="{{ route('frauenkooperative-noyanlar') }}">Frauenkooperative
-                                                Noyanlar</a></li>
+                                        <li><a href="{{ route('frauenkooperative-noyanlar') }}">Frauenkooperative -
+                                                Südosttürkei</a></li>
                                         <li><a href="{{ route('derTraumVomHoren') }}">Der Traum vom Hören</a></li>
                                         <li><a href="{{ route('children-in-village') }}">Kinderförderung in abgelegenen
-                                                Bergdörfern der Türkei</a></li>
-                                        <li><a href="{{ route('autonomy-foundation') }}">Zukunft gestalten: Bildung &
-                                                Jugendarbeit in Istanbul</a>
-                                        </li>
+                                                Bergdörfern der Südost- und Osttürkei</a></li>
+                                        <li><a href="{{ route('patenschaft') }}">Patenschaftsprogramm</a></li>
                                     </ul>
+
+
                                     {{-- <ul class="list">
                                         <li>
                                             <h5>Food is Giving to them</h5>

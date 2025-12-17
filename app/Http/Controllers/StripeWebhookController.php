@@ -62,7 +62,6 @@ class StripeWebhookController extends Controller
             return response()->json(['status' => 'ignored']);
         }
 
-
         DB::transaction(function () use ($event) {
 
             match ($event->type) {

@@ -761,7 +761,7 @@ textarea {
   line-height: 20px;
   padding: 10px 20px;
   margin: 0;
-  text-transform: capitalize;
+  text-transform: math-auto;
   transition: all 500ms ease 0s;
 }
 

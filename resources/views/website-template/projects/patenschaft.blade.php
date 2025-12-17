@@ -203,31 +203,30 @@
                             in
                             Kontakt zu treten und den Bildungsweg aktiv mitzugestalten.
                         </p>
-
-                        <p>
-                            So kannst du beispielsweise durch Gespräche in englischer Sprache zur sprachlichen Entwicklung
-                            des
-                            Kindes beitragen oder Einblicke in deine eigene Kultur geben. Gleichzeitig lernst auch du die
-                            Lebensrealität, Kultur und Perspektiven des Kindes kennen. Unsere Patenschaften basieren auf
-                            gegenseitigem Respekt, Begegnung auf Augenhöhe und einem lebendigen kulturellen Austausch, bei
-                            dem
-                            beide Seiten voneinander lernen und wachsen.
-                        </p>
-
-                        <p>
-                            Derzeit kannst du ein Kind in der Türkei mit <strong>50 Euro monatlich</strong> unterstützen.
-                            Mit
-                            diesem Beitrag
-                            werden unter anderem Bücher und Schulmaterialien finanziert sowie - sofern erforderlich - der
-                            Schulbus und die Schuluniform.
-                        </p>
-
-
                     </div>
                 </div>
             </div>
 
-            <div class="text-box">
+            <div class="text-box" style="margin-top: 25px;">
+
+                <p>
+                    So kannst du beispielsweise durch Gespräche in englischer Sprache zur sprachlichen Entwicklung
+                    des
+                    Kindes beitragen oder Einblicke in deine eigene Kultur geben. Gleichzeitig lernst auch du die
+                    Lebensrealität, Kultur und Perspektiven des Kindes kennen. Unsere Patenschaften basieren auf
+                    gegenseitigem Respekt, Begegnung auf Augenhöhe und einem lebendigen kulturellen Austausch, bei
+                    dem
+                    beide Seiten voneinander lernen und wachsen.
+                </p>
+
+                <p>
+                    Derzeit kannst du ein Kind in der Türkei mit <strong>50 Euro monatlich</strong> unterstützen.
+                    Mit
+                    diesem Beitrag
+                    werden unter anderem Bücher und Schulmaterialien finanziert sowie - sofern erforderlich - der
+                    Schulbus und die Schuluniform.
+                </p>
+
                 <p>
                     Mit <strong>120 Euro monatlich</strong> ermöglichen wir darüber hinaus eine gezielte Förderung
                     durch
@@ -272,22 +271,12 @@
                 </figure>
 
                 <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/patenschaft/11.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
                     <img src="{{ asset('website-template/images/projects/patenschaft/5.jpg') }}" alt=""
                         data-caption="" class="img-cover">
                 </figure>
 
                 <figure class="media-item photo-item">
                     <img src="{{ asset('website-template/images/projects/patenschaft/6.jpg') }}" alt=""
-                        data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/patenschaft/7.jpg') }}" alt=""
                         data-caption="" class="img-cover">
                 </figure>
 
@@ -301,7 +290,48 @@
                         data-caption="" class="img-cover">
                 </figure>
 
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/patenschaft/11.jpg') }}" alt=""
+                        data-caption="" class="img-cover">
+                </figure>
 
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/patenschaft/12.jpg') }}" alt=""
+                        data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/patenschaft/13.jpg') }}" alt=""
+                        data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/patenschaft/14.jpg') }}" alt=""
+                        data-caption="" class="img-cover">
+                </figure>
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/patenschaft/15.jpg') }}" alt=""
+                        data-caption="" class="img-cover">
+                </figure>
+
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/patenschaft/16.jpg') }}" alt=""
+                        data-caption="" class="img-cover">
+                </figure>
+
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/patenschaft/17.jpg') }}" alt=""
+                        data-caption="" class="img-cover">
+                </figure>
+
+
+                <figure class="media-item photo-item">
+                    <img src="{{ asset('website-template/images/projects/patenschaft/18.jpg') }}" alt=""
+                        data-caption="" class="img-cover">
+                </figure>
             </div>
         </div>
     </section>

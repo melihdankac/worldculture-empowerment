@@ -22,7 +22,7 @@
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 <li data-transition="fade">
-                    <img src="{{ asset('website-template/images/home-page/banner/1.jpg') }}" alt="" width="1920"
+                    <img src="{{ asset('website-template/images/home-page/banner/3.jpg') }}" alt="" width="1920"
                         height="882" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
                         data-bgparallax="1">
 
@@ -33,15 +33,10 @@
                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
-                            {{-- <h4>Thousand of children are waiting for help!</h4>
-                            <h1>help the <span>poor</span> people</h1>
-                            <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
-                                doloremque la<br>udantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p> --}}
-
+                            <h1>WORLDCULTURE EMPOWERMENT e.V.</h1>
                             <h4 style="padding-left: 10rem;">Wir können nicht das Leid der Weit verhindern,<br> aber wir
                                 können daran arbeiten, es
                                 zusammen zu mindern</h4>
-                            <h1>WORLDCULTURE EMPOWERMENT e.V.</h1>
                         </div>
                     </div>
                 </li>

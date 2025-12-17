@@ -148,13 +148,9 @@
                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
-                            {{-- <h4>Thousand of children are waiting for help!</h4> --}}
                             <h1>Frauenkooperative
                                 <br>„Noyanlar Kültür Sanat Evi“
                             </h1>
-                            <p>
-                                Schutz, Bildung und Selbstbestimmung ImMittelpunkt diesesProjektsstehtdieFrauenkooperative
-                            </p>
                         </div>
                     </div>
                 </li>
@@ -421,11 +417,6 @@
                 </figure>
 
                 <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/13.jpg') }}"
-                        alt="" data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
                     <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/14.jpg') }}"
                         alt="" data-caption="" class="img-cover">
                 </figure>
@@ -437,11 +428,6 @@
 
                 <figure class="media-item photo-item">
                     <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/16.jpg') }}"
-                        alt="" data-caption="" class="img-cover">
-                </figure>
-
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/17.jpg') }}"
                         alt="" data-caption="" class="img-cover">
                 </figure>
 
@@ -460,17 +446,11 @@
                         alt="" data-caption="" class="img-cover">
                 </figure>
 
-                <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/3.jpg') }}"
-                        alt="" data-caption="" class="img-cover">
-                </figure>
 
                 <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/21.jpg') }}"
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/23.jpg') }}"
                         alt="" data-caption="" class="img-cover">
                 </figure>
-
-
 
             </div>
         </div>

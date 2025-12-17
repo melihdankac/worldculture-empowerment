@@ -251,10 +251,10 @@
 @section('content')
     <div class="donation-container" style="zoom: 1.3; color: var(--primary-color)">
         <div style="text-align: center">
-            <h1>MITGLIEDSCHAFT!</h1>
+            <h1>MITGLIEDSCHAFT</h1>
         </div>
 
-        <div class="text-box">
+        <div class="text-box" style="text-align: justify;">
             <p>
                 Vielen Dank für Ihr Interesse an einer Fördermitgliedschaft bei Worldculture Empowerment e.V.!
             </p>
@@ -423,6 +423,8 @@
                 submitButton.disabled = false;
                 return;
             }
+
+            console.log(result.client_secret);
 
             // Eğer client_secret geldiyse → confirmCardPayment yap
             if (result.client_secret) {

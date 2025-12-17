@@ -41,7 +41,8 @@ return [
         'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
 
         'prices' => [
-            'membership_year' => env('STRIPE_MEMBERSHIP_PRODUCT_PRICE_ID'),
+            'membership_year' => env('STRIPE_MEMBERSHIP_PRODUCT_PRICE_ID'), // 120 € 
+            'membership_one_time' => env('STRIPE_MEMBERSHIP_PRODUCT_PRICE_ID_ONE_TIME'), // 30 € 
         ],
     ],
 
