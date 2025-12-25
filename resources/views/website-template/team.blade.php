@@ -1,7 +1,26 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>WORLDCULTURE EMPOWERMENT</title>
+    <title>Our Team | Worldculture Empowerment e.V.</title>
+
+    <meta name="description" content="Meet the dedicated team behind Worldculture Empowerment e.V. Learn about the people who drive our humanitarian, education and empowerment projects worldwide.">
+
+    <!-- SEO: keywords (opsiyonel) -->
+    <meta name="keywords" content="NGO team, non-profit leadership, humanitarian organization team, Worldculture Empowerment team">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Our Team – Worldculture Empowerment e.V.">
+    <meta property="og:description" content="Get to know the people behind Worldculture Empowerment e.V. and the team working to create sustainable impact through humanitarian and education projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/home-page/banner/1.jpg') }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Team – Worldculture Empowerment e.V.">
+    <meta name="twitter:description" content="Meet the team behind Worldculture Empowerment e.V. and discover the people creating positive global impact.">
+
 
     <style>
         .custom-image-box {

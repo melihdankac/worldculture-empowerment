@@ -25,7 +25,7 @@
                                     </div> --}}
                                     <ul class="contact-info">
                                         <li>
-                                            <span class="fa fa-map-marker"></span>Am Rheinufer 18. 50999 Köln,
+                                            <span class="fa fa-map-marker"></span>Am Rheinufer 18, 50999 Köln,
                                             Deutschland
                                         </li>
                                         <li>
@@ -33,7 +33,7 @@
                                             contact@worldculture-empowerment.international
                                         </li>
                                         <li>
-                                            <span class="fa fa-phone"></span>0049 - 1775446737
+                                            <span class="fa fa-phone"></span>0049 - 01775446737
                                         </li>
                                     </ul>
                                 </div>

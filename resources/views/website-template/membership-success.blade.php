@@ -2,6 +2,7 @@
 
 @section('meta&title')
     <title> WORLDCULTURE EMPOWERMENT</title>
+    <meta name="robots" content="noindex, nofollow">
 
     <style>
         .payment-success-wrapper {
@@ -27,7 +28,7 @@
                     <div class="payment-success-box">
                         @if (session()->has('member_name'))
                             <h2>
-                                🎉 {{ session('member_name') }}, Herzlich willkommen in unserer Community!
+                                🎉 {{ session('member_name') }}, Herzlich Willkommen in unserer Community!
                             </h2>
                             <p>
                                 Ihre Mitgliedschaft wurde erfolgreich erstellt.
@@ -83,8 +84,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-
-@section('customScript')
 @endsection

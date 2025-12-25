@@ -45,3 +45,4 @@
 <script src="{{ asset('website-template/js/simplyCountdown.min.js') }}"></script>
 <script id="map-script" src="{{ asset('website-template/js/default-map.js') }}"></script>
 <script src="{{ asset('website-template/js/custom.js') }}"></script>
+<script src="{{ asset('website-template/js/cookie-banner.js') }}"></script>

@@ -1,2 +1,29 @@
 User-agent: *
-Disallow:
+# --- Admin & Panel ---
+Disallow: /wcepanel/
+
+# --- Authentication ---
+Disallow: /login
+Disallow: /register
+Disallow: /logout
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /confirm-password
+Disallow: /verify-email
+
+# --- Forms & Actions ---
+
+
+# --- Payment result pages (NO SEO VALUE) ---
+Disallow: /donate-success
+Disallow: /membership-success
+
+# --- System / Debug ---
+Disallow: /test-mail
+
+# --- Laravel default / tech ---
+Disallow: /storage/
+Disallow: /vendor/
+
+# --- Sitemap ---
+Sitemap: https://worldculture-empowerment.international/sitemap.xml

@@ -20,7 +20,7 @@ class MembershipPaymentReceipt extends Mailable
      * Create a new message instance.
      */
     public function __construct(
-        public Membership $membership,
+        public Membership $membershipStatus,
     ) {
         //
     }
@@ -30,7 +30,7 @@ class MembershipPaymentReceipt extends Mailable
         // Üye teşekkür makbuzu
         return $this->subject('Mitglieds-Anerkennungsquittung')
             ->view('emails.membership-receipt')
-            ->with('donation', $this->membership);
+            ->with('membershipStatus', $this->membershipStatus);
     }
 
     // /**

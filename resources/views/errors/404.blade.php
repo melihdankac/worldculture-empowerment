@@ -1,28 +1,7 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>Werde Aktiv | WORLDCULTURE EMPOWERMENT</title>
-
-    <title>Get Involved | Become Active with Worldculture Empowerment e.V.</title>
-
-    <meta name="description" content="Get involved with Worldculture Empowerment e.V. and support humanitarian and education projects through volunteering, project visits and hands-on engagement worldwide.">
-
-    <!-- SEO: keywords (opsiyonel) -->
-    <meta name="keywords" content="volunteer NGO, get involved charity, become active non-profit, NGO volunteering Germany, Worldculture Empowerment volunteer">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Get Involved – Become Active">
-    <meta property="og:description" content="Join Worldculture Empowerment e.V. and become active through volunteering, visiting projects and supporting communities directly on site.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="{{ asset('website-template/images/home-page/banner/1.jpg') }}">
-    <meta name="robots" content="index, follow">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Get Involved – Worldculture Empowerment e.V.">
-    <meta name="twitter:description" content="Become active with Worldculture Empowerment e.V. and support humanitarian projects through direct engagement and volunteering.">
-
+    <title>Werde Aktiv || WORLDCULTURE EMPOWERMENT</title>
 
     <style>
         .rev_slider_wrapper .tparrows {
@@ -40,7 +19,7 @@
             </div>
             <div class="breadcumb-wrapper">
                 <ul class="list-inline link-list">
-                    <li><a href="{{route('startseite')}}">Home</a></li>
+                    <li><a href="{{route('startseite')}}">Startseite</a></li>
                     <li>Werde Aktiv</li>
                 </ul>
             </div>
@@ -73,4 +52,35 @@
 
         </div>
     </section>
+
+    <section class="page-banner" style="background-image: url('{{ asset('website-template/images/entstehungsgeschichte/1.jpg') }}');">
+    <div class="container">
+		<div class="title">
+            <h1>4<span>0</span>4</h1>
+        </div>
+        <div class="text">
+			<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p>
+		</div>
+		<div class="breadcumb-wrapper">
+            <ul class="list-inline link-list">
+                <li><a href="{{route('startseite')}}">Home</a></li>
+                <li>404</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="error-page">
+	<div class="container">
+		<div class="inner-box">
+			<h2>Schade, dass wir es verpasst haben!!!</h2>
+			<figure class="image-box">
+				<img src="images/resources/404.png" alt="" />
+			</figure>
+			<div class="link"><a href="index.html" class="thm-btn">go to home</a></div>
+		</div>
+		
+	</div>
+
+</section>
 @endsection

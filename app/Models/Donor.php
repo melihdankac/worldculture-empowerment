@@ -33,9 +33,9 @@ class Donor extends Model
     /**
      * Üyelik (Donor -> Membership)
      */
-    public function membership()
+    public function memberships()
     {
-        return $this->hasOne(Membership::class);
+        return $this->hasMany(Membership::class);
     }
 
     /**

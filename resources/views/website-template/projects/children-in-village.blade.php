@@ -1,14 +1,25 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>WORLDCULTURE EMPOWERMENT</title>
-    {{-- <meta name="description" content="Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.">
-  <meta name="keywords" content=" worldculture, travels, partner, kundenbewertungen">
-  <meta property="og:title" content="WORLDCULTURE TRAVELS">
-  <meta property="og:description" content="{{ Str::limit("Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.", 160) }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ url()->current() }}">
-  <meta property="og:image" content="{{ asset('frontend/assets/style/images/home-page/bg-image/bg.jpg') }}"> --}}
+    <title>Hope Beyond the Cliffs – Supporting Children in Remote Mountain Villages of Turkey | Worldculture Empowerment e.V.</title>
+
+    <meta name="description" content="Support children living in remote mountain villages in eastern and southeastern Turkey. This project provides education materials, winter clothing and basic supplies to families in need.">
+
+    <meta name="keywords" content="children aid Turkey, mountain villages charity, NGO projects Turkey children, education support rural Turkey, winter clothing donation children">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hope Beyond the Cliffs - Helping Children in Remote Mountain Villages">
+    <meta property="og:description" content="Children in remote mountain villages of Turkey face poverty and limited access to education. Learn how your support can bring hope, warmth and opportunity.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/projects/children-in-village/1.jpg') }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hope Beyond the Cliffs - Children in Mountain Villages Need Support">
+    <meta name="twitter:description" content="Support children in isolated mountain villages of eastern Turkey with education, winter clothing and basic supplies.">
+
 
     <style>
         .rev_slider_wrapper .tparrows {

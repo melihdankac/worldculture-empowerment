@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
     public function send(Request $request)
     {
-        $data = $request->validate([
+        $request->validate([
             'name'    => 'required|string|max:255',
             'email'   => 'required|email',
             'phone'   => 'nullable|string|max:50',
@@ -21,13 +23,14 @@ class ContactController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'subjectText' => $request->subject,
+            'subject' => $request->subject,
             'contentMessage' => $request->message,
         ], function ($mail) {
             $mail->to('contact@worldculture-travels.com')
                 ->subject('Neue Kontaktanfrage');
         });
 
+        // Mail::to()->send(new ContactUs($request->all()));
 
         return back()->with('success', 'Ihre Nachricht wurde erfolgreich gesendet.');
     }

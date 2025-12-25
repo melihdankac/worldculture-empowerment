@@ -1,7 +1,26 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>Entstehungsgeschichte || WORLDCULTURE EMPOWERMENT </title>
+    <title>Partnerships | Collaborate with Worldculture Empowerment e.V.</title>
+
+    <meta name="description" content="Partner with Worldculture Empowerment e.V. and support humanitarian, education and empowerment projects through long-term, transparent and impactful collaborations.">
+
+    <!-- SEO: keywords (opsiyonel) -->
+    <meta name="keywords" content="NGO partnerships, corporate partnerships charity, non-profit collaboration, CSR partnerships Germany, Worldculture Empowerment partners">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Partnerships – Work with Worldculture Empowerment e.V.">
+    <meta property="og:description" content="Explore partnership opportunities with Worldculture Empowerment e.V. and collaborate on sustainable humanitarian and education projects worldwide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/partners/banner.jpg') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Partnerships – Worldculture Empowerment e.V.">
+    <meta name="twitter:description" content="Collaborate with Worldculture Empowerment e.V. through meaningful and transparent partnerships creating real impact.">
+    <meta name="robots" content="index, follow">
+
 
     <style>
         .text p {

@@ -2,31 +2,7 @@
 
 @section('meta&title')
     <title>WORLDCULTURE EMPOWERMENT</title>
-
-    <style>
-        h1,
-        h2,
-        h3 {
-            margin: 1.2em 0 0.5em;
-            line-height: 1.3;
-        }
-
-        p {
-            margin: 0.8em 0;
-        }
-
-        ul,
-        ol {
-            margin: 0.8em 0 0.8em 1.2em;
-        }
-
-        blockquote {
-            margin: 1em 0;
-            padding: 0.5em 1em;
-            border-left: 3px solid #ddd;
-            color: #555;
-        }
-    </style>
+    <meta name="robots" content="noindex, nofollow">
 @endsection
 
 @section('content')

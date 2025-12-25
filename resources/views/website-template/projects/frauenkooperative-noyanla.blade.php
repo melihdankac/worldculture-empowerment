@@ -1,7 +1,25 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>WORLDCULTURE EMPOWERMENT</title>
+    <title>Women’s Cooperative Noyanlar - Empowering Women in Turkey | Worldculture Empowerment e.V.</title>
+
+    <meta name="description" content="Support the Women’s Cooperative “Noyanlar Kültür Sanat Evi” in Mardin, Turkey. This project empowers women and children through education, protection and economic independence.">
+
+    <!-- SEO: keywords (opsiyonel) -->
+    <meta name="keywords" content="women empowerment project, NGO Turkey women, women cooperative Mardin, education projects for women, Worldculture Empowerment projects">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Women’s Cooperative Noyanlar – Empowerment Through Education">
+    <meta property="og:description" content="A women-led cooperative in Mardin, Turkey empowering women and children through education, protection and economic independence. Learn how you can support this project.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/projects/frauenkooperative-noyanla/9.jpg') }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Women’s Cooperative Noyanlar – Empowering Women">
+    <meta name="twitter:description" content="Support a women-led cooperative in Turkey that strengthens women and children through education, protection and economic independence.">
 
     <style>
         .rev_slider_wrapper .tparrows {
@@ -137,11 +155,11 @@
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 <li data-transition="fade">
-                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/bg_image.jpg') }}"
-                        alt="" width="1920" height="882" data-bgposition="center center" data-bgfit="cover"
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/9.jpg') }}" alt=""
+                        width="1920" height="882" data-bgposition="center center" data-bgfit="cover"
                         data-bgrepeat="no-repeat" data-bgparallax="1" />
 
-                    <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="550"
+                    <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="200"
                         data-transform_idle="o:1;"
                         data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
@@ -185,7 +203,7 @@
                             gegenseitiges Vertrauen gewachsen. Dieses Vertrauen ist für uns ein zentraler Wert und die
                             Grundlage unserer Arbeit – denn nur so können wir sicherstellen, dass jede Unterstützung und
                             jede Spende direkt dort ankommt, wo sie am dringendsten gebraucht wird: bei den Frauen und
-                            Familien selbst
+                            Familien selbst.
                         </p>&nbsp;
 
                         <p>
@@ -260,7 +278,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="text-box">
-                        <h4 style="margin-top: 0px;">
+                        <h4 style="margin-bottom: 20px;">
                             <strong>
                                 So helfen wir als Verein
                             </strong>
@@ -397,7 +415,7 @@
                 </figure>
 
                 <figure class="media-item photo-item">
-                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/9.jpg') }}"
+                    <img src="{{ asset('website-template/images/projects/frauenkooperative-noyanla/bg_image.jpg') }}"
                         alt="" data-caption="" class="img-cover">
                 </figure>
 

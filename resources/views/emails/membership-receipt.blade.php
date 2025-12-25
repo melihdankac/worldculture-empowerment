@@ -113,7 +113,7 @@
             <p>
                 Ihr Mitgliedschaftsstatus:
                 <strong>
-                    {{ match ($membership->membership_status) {
+                    {{ match ($membershipStatus) {
                         'pending' => 'Pending',
                         'pending_verification' => 'Pending Verification',
                         'active' => 'Active',

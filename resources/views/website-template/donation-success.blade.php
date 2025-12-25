@@ -1,12 +1,15 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>Payment Successful | WORLDCULTURE EMPOWERMENT</title>
+    <title> WORLDCULTURE EMPOWERMENT</title>
+    <meta name="robots" content="noindex, nofollow">
+
 
     <style>
         .payment-success-wrapper {
             display: table;
             width: 100%;
+            margin-top: 40px;
         }
 
         .payment-success-box {
@@ -14,17 +17,6 @@
             vertical-align: middle;
             text-align: center;
             padding: 30px;
-        }
-
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            line-height: 80px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: #e6f7ee;
-            color: #28a745;
-            font-size: 40px;
         }
     </style>
 @endsection
@@ -37,34 +29,38 @@
                 <div class="payment-success-wrapper">
                     <div class="payment-success-box">
 
-                        <!-- Icon -->
-                        <div class="success-icon">
-                            ✓
-                        </div>
+                        <h2>
+                            🎉 Vielen Dank für Ihre Unterstützung. Ihre Spende ist eingegangen.
+                        </h2>
+                        <br><br>
 
-                        <h2>Payment Successful</h2>
-
-                        <p class="text-muted">
-                            Thank you for your support! Your donation / membership payment has been
-                            successfully completed. We truly appreciate your contribution to
-                            <strong>Worldculture Empowerment</strong>.
+                        <p>
+                            Wir danken
+                            dir sehr für dein Vertrauen und deine Hilfe. Mit deinem Beitrag trägst du dazu bei, unsere
+                            Projekte
+                            umzusetzen und dort zu helfen, wo Hilfe dringend benötigt wird. Gemeinsam können wir helfen
+                            <br><br>
+                            Danke für deine Spende. Herzliche Grüße von <br>
+                            Team Worldculture Empowerment e.V.
                         </p>
+                        <br><br>
 
                         <div class="alert alert-info">
                             <span class="glyphicon glyphicon-envelope"></span>
-                            A confirmation email has been sent to your email address.
+                            Eine Bestätigungs-E-Mail wurde an Ihre E-Mail-Adresse gesendet.
                         </div>
 
                         <p class="text-muted">
-                            If you have any questions, feel free to contact us.
+                            Bei Fragen können Sie sich gerne an uns wenden.
                         </p>
+                        <br>
 
                         <div class="text-center">
-                            <a href="{{ route('startseite') }}" class="btn btn-primary">
-                                Go to Homepage
+                            <a href="{{ route('startseite') }}" class="thm-btn">
+                                Zur Startseite
                             </a>
-                            <a href="{{ route('kontakt') }}" class="btn btn-link">
-                                Contact Us
+                            <a href="{{ route('kontakt') }}" class="thm-btn style-2">
+                                Kontaktieren Sie uns
                             </a>
                         </div>
 
@@ -74,8 +70,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-
-@section('customScript')
 @endsection

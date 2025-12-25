@@ -1,14 +1,25 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>WORLDCULTURE EMPOWERMENT</title>
-    {{-- <meta name="description" content="Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.">
-  <meta name="keywords" content=" worldculture, travels, partner, kundenbewertungen">
-  <meta property="og:title" content="WORLDCULTURE TRAVELS">
-  <meta property="og:description" content="{{ Str::limit("Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.", 160) }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ url()->current() }}">
-  <meta property="og:image" content="{{ asset('frontend/assets/style/images/home-page/bg-image/bg.jpg') }}"> --}}
+    <title>Velid’s Dream of Hearing - Giving a Deaf Refugee Child a Future | Worldculture Empowerment e.V.</title>
+
+    <meta name="description" content="Velid is a 16-year-old Yazidi refugee from Iraq living in Turkey. Support his journey to hearing and speaking through life-changing therapy and a hearing aid.">
+
+    <meta name="keywords" content="child hearing aid donation, refugee child support, Yazidi genocide survivors, NGO Turkey children project, hearing therapy donation">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Velid’s Dream of Hearing – A Chance for a New Life">
+    <meta property="og:description" content="After fleeing genocide, Velid dreams of hearing and speaking. Your support can fund life-changing therapy and a hearing aid for a deaf refugee child.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/projects/dream-of-hearing/1.webp') }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Velid’s Dream of Hearing – Help Change a Life">
+    <meta name="twitter:description" content="Support a deaf Yazidi refugee child on his journey to hearing and communication through therapy and medical aid.">
+
 
     <style>
         .rev_slider_wrapper .tparrows {

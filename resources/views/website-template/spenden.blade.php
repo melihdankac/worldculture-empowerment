@@ -1,7 +1,25 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>WORLDCULTURE EMPOWERMENT</title>
+    <title>Donate | One-Time or Monthly Support | Worldculture Empowerment e.V.</title>
+
+    <meta name="description" content="Support humanitarian, education and empowerment projects by donating to Worldculture Empowerment e.V. Make a one-time, monthly or yearly donation and create lasting impact.">
+
+    <!-- SEO: keywords (opsiyonel) -->
+    <meta name="keywords" content="donate NGO, charity donation Germany, recurring donation, monthly donation charity, Worldculture Empowerment donate">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Donate Now – Support Global Empowerment Projects">
+    <meta property="og:description" content="Make a one-time, monthly or yearly donation to Worldculture Empowerment e.V. and support humanitarian and education projects worldwide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/home-page/banner/1.jpg') }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Donate to Worldculture Empowerment e.V.">
+    <meta name="twitter:description" content="Your donation supports humanitarian, education and empowerment projects worldwide. One-time or recurring donations possible.">
 
     <style>
         :root {
@@ -248,19 +266,19 @@
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
-        <form id="payment-form" action="{{ route('donation.process') }}">
+        <form id="payment-form" action="{{ route('donation.process') }}" method="POST">
             @csrf
 
             <!-- Unterstütztes Projekt -->
             <div class="form-group">
                 <label for="supported_project">Ich möchte unterstützen</label>
                 <select name="supported_project" id="supported_project" class="form-control">
-                    <option value="frauenkooperative-noyanlar">Frauenkooperative Noyanlar</option>
-                    <option value="derTraumVomHoren">Der Traum vom Hören</option>
+                    <option value="allgemeine-Projektunterstützung">Allgemeine Projektunterstützung</option>
+                    {{-- <option value="frauenkooperative-noyanlar">Frauenkooperative Noyanlar</option>
+                    <option value="der-Traum-Vom-Horen">Der Traum vom Hören</option>
                     <option value="children-in-village">Kinderförderung in abgelegenen Bergdörfern der Türkei</option>
                     <option value="autonomy-foundation">Zukunft gestalten: Bildung & Jugendarbeit in Istanbul</option>
-                    <option value="patenschaftsprogramm">Patenschaftsprogramm</option>
-                    <option value="turkeiErdbebenprojekt">Erdbebenprojekt Türkei</option>
+                    <option value="patenschaftsprogramm">Patenschaftsprogramm</option> --}}
                 </select>
             </div>
 
@@ -354,10 +372,9 @@
                 <div id="card-element" class="form-control"></div>
             </div>
 
-            <p style="font-size: 15px; color: var(--primary-color);">
+            {{-- <p style="font-size: 15px; color: var(--primary-color);">
                 Wenn Sie in Deutschland wohnen, sind Spenden ab 50 € steuerlich absetzbar.
-                Um Ihre Spendenquittung zu erhalten, geben Sie bitte unten Ihre Daten ein.
-            </p>
+            </p> --}}
 
             <!-- Steuerabzug (für Spender in Deutschland) -->
             <div id="wants-invoice-container" class="form-group" style="margin-top: 25px; display: none;">
@@ -397,7 +414,7 @@
 
                 <div class="row">
                     <div class="col-sm-12 form-group">
-                        <label for="country">Stadt *</label>
+                        <label for="country">Land *</label>
                         <input type="text" name="country" id="country" class="form-control">
                     </div>
                 </div>

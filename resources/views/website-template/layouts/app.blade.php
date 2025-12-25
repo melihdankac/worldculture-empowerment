@@ -9,6 +9,8 @@
 
 <body>
     <div class="boxed_wrapper">
+        <x-cookie-banner />
+
         @include('website-template.layouts.navigation')
 
         @yield('content')

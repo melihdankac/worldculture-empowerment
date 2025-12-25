@@ -100,3 +100,52 @@
         /* Bootstrap primary */
     }
 </style>
+<style>
+    #cookie-consent-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #f1f1f1;
+        padding: 20px;
+        text-align: center;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #cookie-management-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #f1f1f1;
+        padding: 20px;
+        text-align: center;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #cookie-container #cookie-consent-banner label,
+    #cookie-container label {
+        display: ruby-text;
+    }
+
+    #cookie-container #cookie-consent-banner button,
+    #cookie-container button {
+        display: inline;
+        margin: 5px;
+        padding: 10px 20px;
+        background: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button#reject-cookies {
+        background: #f44336 !important;
+    }
+
+    button#manage-cookies {
+        background: #555 !important;
+    }
+</style>

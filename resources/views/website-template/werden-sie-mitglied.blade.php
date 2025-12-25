@@ -1,7 +1,25 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>WORLDCULTURE EMPOWERMENT</title>
+    <title>Membership | Support Worldculture Empowerment e.V.</title>
+
+    <meta name="description" content="Become a supporting member of Worldculture Empowerment e.V. and help strengthen education, intercultural exchange and empowerment projects worldwide. Join our non-profit organization today.">
+
+    <!-- SEO: keywords (opsiyonel) -->
+    <meta name="keywords" content="NGO membership, supporting member non-profit, join NGO Germany, Worldculture Empowerment membership, become a member charity">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Become a Member – Worldculture Empowerment e.V.">
+    <meta property="og:description" content="Support education, intercultural exchange and empowerment by becoming a supporting member of Worldculture Empowerment e.V. Join our mission and create lasting impact.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/home-page/banner/1.jpg') }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Become a Member – Worldculture Empowerment e.V.">
+    <meta name="twitter:description" content="Join Worldculture Empowerment e.V. as a supporting member and help create positive global change.">
 
     <style>
         :root {
@@ -256,17 +274,20 @@
 
         <div class="text-box" style="text-align: justify;">
             <p>
-                Vielen Dank für Ihr Interesse an einer Fördermitgliedschaft bei Worldculture Empowerment e.V.!
+                Vielen Dank für Ihr Interesse an einer Mitgliedschaft bei Worldculture Empowerment e.V.!
             </p>
 
             <p>
                 Wir freuen uns sehr, dass Sie unsere Arbeit zur Stärkung von interkulturellem Austausch, Bildung und
                 Empowerment unterstützen möchten.
-                Um Fördermitglied bei Worldculture Empowerment e.V. zu werden, bitten wir Sie, das untenstehende
+                Um Fördermitglied bei Worldculture Empowerment e.V. zu werden, bitten wir Sie, 
+                {{-- das untenstehende --}}
                 Onlineformular auszufüllen. Ihre Angaben werden an den zuständigen Ansprechpartner innerhalb unseres Vereins
                 weitergeleitet. Wir setzen uns zeitnah mit Ihnen in Verbindung und lassen Ihnen alle erforderlichen
                 Informationen und Unterlagen zu Ihrer Fördermitgliedschaft zukommen.
-                Selbstverständlich werden Ihre Daten vertraulich behandelt und ausschließlich für vereinsinterne Zwecke
+                Selbstverständlich werden Ihre Daten vertraulich 
+                {{-- behandelt und ausschlie --}}
+                ßlich für vereinsinterne Zwecke
                 verwendet. Eine Weitergabe an Dritte erfolgt nicht.
             </p>
 
@@ -275,6 +296,10 @@
             </p>
         </div>
 
+        {{-- <h3>
+            Sehr bald...
+        </h3> --}}
+
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
@@ -282,7 +307,7 @@
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
 
-        <form id="payment-form" action="{{ route('membership.process') }}">
+        <form id="payment-form" action="{{ route('membership.process') }}" method="POST">
             @csrf
 
             <!-- Name / E-Mail -->
@@ -352,7 +377,7 @@
             <div class="price-info"
                 style="text-align:center; margin:20px 0; font-size:18px; font-weight:bold; color:var(--primary-color)">
                 Jahresbeitrag: 120 € <br>
-                <span style="font-size:16px; color:#555">(entspricht nur 10 € pro Monat)</span>
+                {{-- <span style="font-size:16px; color:#555">(entspricht nur 10 € pro Monat)</span> --}}
                 <br>
                 <span style="font-size:16px; color:#555"> 30€ Aufnahmegebühr (einmalig)</span>
             </div>
@@ -424,8 +449,7 @@
                 return;
             }
 
-            console.log(result.client_secret);
-
+            console.log(result);
             // Eğer client_secret geldiyse → confirmCardPayment yap
             if (result.client_secret) {
                 const {

@@ -1,7 +1,25 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>WORLDCULTURE EMPOWERMENT</title>
+    <title>Child Sponsorship Program - Education with Personal Connection | Worldculture Empowerment e.V.</title>
+
+    <meta name="description" content="Support a child’s education through our sponsorship program in Turkey. Build a personal connection and help children from disadvantaged backgrounds access education and opportunities.">
+
+    <meta name="keywords" content="child sponsorship Turkey, education sponsorship program, sponsor a child NGO, education support Turkey, monthly child sponsorship">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Child Sponsorship Program – Education with Personal Connection">
+    <meta property="og:description" content="Become a sponsor and support a child’s education while building a meaningful personal connection.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/projects/patenschaft/banner/banner.jpg') }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Child Sponsorship Program – Education with Personal Connection">
+    <meta name="twitter:description" content="Support education through a child sponsorship program and create a lasting personal connection.">
+
 
     <style>
         .rev_slider_wrapper .tparrows {

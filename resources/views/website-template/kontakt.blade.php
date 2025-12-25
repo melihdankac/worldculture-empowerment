@@ -1,7 +1,25 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>KONTAKT || WORLDCULTURE EMPOWERMENT</title>
+    <title>Contact Us | Worldculture Empowerment e.V.</title>
+
+    <meta name="description" content="Get in touch with Worldculture Empowerment e.V. Contact us for volunteering, membership, partnerships or general inquiries. We look forward to hearing from you.">
+
+    <!-- SEO: keywords (opsiyonel) -->
+    <meta name="keywords" content="contact NGO, charity contact Germany, non-profit contact, Worldculture Empowerment contact">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Worldculture Empowerment e.V.">
+    <meta property="og:description" content="Have questions or want to get involved? Contact Worldculture Empowerment e.V. to learn more about volunteering, membership or partnerships.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/home-page/banner/1.jpg') }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Worldculture Empowerment e.V.">
+    <meta name="twitter:description" content="Reach out to Worldculture Empowerment e.V. for volunteering, membership and partnership opportunities.">
 
     <style>
         .social-links-fa {

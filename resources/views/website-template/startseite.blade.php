@@ -1,14 +1,26 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>WORLDCULTURE EMPOWERMENT</title>
-    {{-- <meta name="description" content="Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.">
-  <meta name="keywords" content=" worldculture, travels, partner, kundenbewertungen">
-  <meta property="og:title" content="WORLDCULTURE TRAVELS">
-  <meta property="og:description" content="{{ Str::limit("Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.", 160) }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ url()->current() }}">
-  <meta property="og:image" content="{{ asset('frontend/assets/style/images/home-page/bg-image/bg.jpg') }}"> --}}
+    <title>Worldculture Empowerment e.V.</title>
+
+    <meta name="description" content="Worldculture Empowerment e.V. is a German non-profit organization supporting humanitarian, education and cultural projects worldwide. Donate, volunteer or become a member and help create global impact.">
+
+    <!-- SEO: keywords artık kritik değil ama zararı yok -->
+    <meta name="keywords" content="non-profit organization, humanitarian aid, cultural projects, NGO Germany, donate NGO, volunteer international, worldculture empowerment">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Worldculture Empowerment e.V. – Empowering Cultures, Changing Lives">
+    <meta property="og:description" content="Support humanitarian, education and cultural projects worldwide. Donate, volunteer or become a member of Worldculture Empowerment e.V. and make a real impact.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/home-page/banner/1.jpg') }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter (opsiyonel ama önerilir) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Worldculture Empowerment e.V.">
+    <meta name="twitter:description" content="A German non-profit organization empowering cultures through humanitarian and education projects worldwide.">
+
     <style>
         .rev_slider_wrapper .tparrows {
             display: none !important;
@@ -22,11 +34,11 @@
         <div id="slider1" class="rev_slider" data-version="5.0">
             <ul>
                 <li data-transition="fade">
-                    <img src="{{ asset('website-template/images/home-page/banner/3.jpg') }}" alt="" width="1920"
+                    <img src="{{ asset('website-template/images/home-page/banner/4.jpg') }}" alt="" width="1920"
                         height="882" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
                         data-bgparallax="1">
 
-                    <div class="tp-caption  tp-resizeme" data-x="center" data-hoffset="15" data-y="top" data-voffset="680"
+                    <div class="tp-caption  tp-resizeme" data-x="center" data-hoffset="15" data-y="top" data-voffset="720"
                         data-transform_idle="o:1;"
                         data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
@@ -34,9 +46,9 @@
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
                             <h1>WORLDCULTURE EMPOWERMENT e.V.</h1>
-                            <h4 style="padding-left: 10rem;">Wir können nicht das Leid der Weit verhindern,<br> aber wir
+                            {{-- <h4 style="padding-left: 10rem;">Wir können nicht das Leid der Weit verhindern,<br> aber wir
                                 können daran arbeiten, es
-                                zusammen zu mindern</h4>
+                                zusammen zu mindern</h4> --}}
                         </div>
                     </div>
                 </li>
@@ -48,7 +60,7 @@
     <section class="our-missions">
         <div class="container">
             <div class="section-title">
-                <h1>Unsere <span>missions</span></h1>
+                <h2 style="font-size: 40px; font-weight: 700;">UNSERE <span>MISSION</span></h2>
                 <p style="font-size: 1.8rem; max-width: 800px; margin: 0 auto;">
                     Wir setzen uns für eine Welt ein, in der kulturelle Vielfalt geschätzt, Gleichberechtigung
                     selbstverständlich und jedes Kind geschützt und gefördert wird. Wir möchten ethnischen Minderheiten eine
@@ -56,7 +68,8 @@
                     Krisen oder Diskriminierung leiden, faire Zukunftschancen eröffnen.
                     Gemeinsam mit Partnern weltweit arbeiten wir daran, nachhaltige Strukturen zu schaffen und Menschen zu
                     befähigen, ihr Leben und ihre Gemeinschaften selbstbestimmt zu gestalten - für eine gerechte, friedliche
-                    und solidarische Zukunft.
+                    und solidarische Zukunft. <br><br>
+                    Wir können nicht das Leid der Weit verhindern, aber wir können daran arbeiten, es zusammen zu mindern
                 </p>
             </div>
 

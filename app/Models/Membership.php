@@ -46,22 +46,6 @@ class Membership extends Model
         return $this->belongsTo(Donor::class);
     }
 
-    /**
-     * Üyelik için yapılan ödeme (Donation)
-     */
-    public function donation()
-    {
-        return $this->belongsTo(Donation::class);
-    }
-
-    /**
-     * Üyelikle ilişkili fatura
-     */
-    public function invoice()
-    {
-        return $this->hasOne(Invoice::class, 'membership_id');
-    }
-
     /* ------------------------- Query Scopes ------------------------- */
 
     public function scopeActive($query)
@@ -109,5 +93,16 @@ class Membership extends Model
             'approved_by' => $adminId,
             'approved_at' => now(),
         ]);
+    }
+
+    public function blocksNewApplication(): ?string
+    {
+        return match ($this->membership_status) {
+            'pending' => 'Ihre Mitgliedschaftsanfrage wurde erhalten. Die Zahlung wird noch erwartet.',
+            'pending_verification' => 'Es liegt bereits eine Mitgliedschaftsanfrage vor, die auf die Bestätigung des Vereins wartet.',
+            'active' => 'Sie haben bereits eine aktive Mitgliedschaft.',
+            'cancelled' => 'Ihre Mitgliedschaft wurde gekündigt.',
+            default => null,
+        };
     }
 }

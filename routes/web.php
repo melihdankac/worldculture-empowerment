@@ -7,10 +7,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StripeWebhookController;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\DonationReceipt;
-use App\Models\Donation;
-
+use Illuminate\Support\Facades\Artisan;
 // Route::get('/', function () {
 //     return view('website-template.home-page');
 //     // return view('welcome');
@@ -29,13 +26,13 @@ Route::get('/kontakt', [FrontendController::class, 'kontakt'])->name('kontakt');
 // Projects
 Route::get('/frauenkooperative-noyanlar', [FrontendController::class, 'frauenkooperativeNoyanlar'])->name('frauenkooperative-noyanlar');
 Route::get('/derTraumVomHoren', [FrontendController::class, 'derTraumVomHoren'])->name('derTraumVomHoren');
-Route::get('/turkeiErdbebenprojekt', [FrontendController::class, 'turkeiErdbebenprojekt'])->name('turkeiErdbebenprojekt');
-Route::get('/patenschaft', [FrontendController::class, 'patenschaft'])->name('patenschaft');
 Route::get('/children-in-village', [FrontendController::class, 'childrenVillage'])->name('children-in-village');
 Route::get('/autonomy-foundation', [FrontendController::class, 'autonomyFoundation'])->name('autonomy-foundation');
+Route::get('/patenschaft', [FrontendController::class, 'patenschaft'])->name('patenschaft');
+Route::get('/turkeiErdbebenprojekt', [FrontendController::class, 'turkeiErdbebenprojekt'])->name('turkeiErdbebenprojekt');
 
 // Policys
-Route::get('/satzungDesVereins', [FrontendController::class, 'satzungDesVereins'])->name('satzungDesVereins');
+Route::get('/satzung-des-vereins', [FrontendController::class, 'satzungDesVereins'])->name('satzungDesVereins');
 Route::get('/impressum', [FrontendController::class, 'impressum'])->name('impressum');
 Route::get('/datenschutzerklarung', [FrontendController::class, 'datenschutzerklarung'])->name('datenschutzerklarung');
 
@@ -53,12 +50,13 @@ Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle'])
     ->withoutMiddleware([VerifyCsrfToken::class])
     ->name('stripe.webhook');
 
+// Route::get('/__config-refresh/{token}', function ($token) {
+//     abort_unless($token === 'f8a9d3e2-4a17-41b9-bc71-9f6c1c2d9a77', 403);
+//     Artisan::call('config:clear');
+//     Artisan::call('config:cache');
 
-Route::get('/test-mail', function () {
-    $donation = Donation::first();
-    Mail::to('melihdankac@gmail.com')->send(new DonationReceipt($donation));
-    return response()->json(['message' => 'Test mail gönderildi!']);
-});
+//     return 'CONFIG OK';
+// });
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

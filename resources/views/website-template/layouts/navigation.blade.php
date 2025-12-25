@@ -3,7 +3,7 @@
         <div class="column left">
             <ul class="top-bar-text">
                 <li><i class="icon fa fa-envelope"></i>contact@worldculture-empowerment.international</li>
-                {{-- <li><i class="icon fa fa-phone"></i>0049 - 1775446737</li> --}}
+                {{-- <li><i class="icon fa fa-phone"></i>0049 - 01775446737</li> --}}
             </ul>
         </div>
         <div class="column center">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li><a href="{{ route('startseite') }}">Home</a></li>
+                            <li><a href="{{ route('startseite') }}">Startseite</a></li>
                             <li class="dropdown"><a href="#">Über Uns</a>
                                 <ul>
                                     <li><a href="{{ route('entstehungsgeschichte') }}">Entstehungsgeschichte</a></li>
@@ -85,7 +85,7 @@
                         </ul>
 
                         <ul class="mobile-menu clearfix">
-                            <li><a href="{{ route('startseite') }}">Home</a></li>
+                            <li><a href="{{ route('startseite') }}">Startseite</a></li>
                             <li class="dropdown"><a href="#">Über Uns</a>
                                 <ul>
                                     <li><a href="{{ route('entstehungsgeschichte') }}">Entstehungsgeschichte</a></li>

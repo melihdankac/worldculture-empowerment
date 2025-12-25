@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('currency', 10)->default('EUR');
             $table->enum('recurring_interval', ['month', 'year']);
             $table->string('stripe_subscription_id')->nullable();
-            $table->enum('status', ['active', 'cancelled', 'expired'])->default('active');
+            $table->enum('status', ['pending', 'active', 'cancelled', 'expired'])->default('active');
             $table->timestamp('started_at')->nullable();
             $table->timestamp('ended_at')->nullable();
             $table->timestamps();

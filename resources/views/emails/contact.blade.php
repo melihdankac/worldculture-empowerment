@@ -90,7 +90,7 @@
                 <p><span class="label">Name:</span> {{ $name }}</p>
                 <p><span class="label">Email:</span> {{ $email }}</p>
                 <p><span class="label">Phone:</span> {{ $phone }}</p>
-                <p><span class="label">Subject:</span> {{ $subjectText }}</p>
+                <p><span class="label">Subject:</span> {{ $subject }}</p>
             </div>
 
             <h2>Message</h2>

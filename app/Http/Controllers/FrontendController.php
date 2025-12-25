@@ -22,13 +22,6 @@ class FrontendController extends Controller
         return view('website-template.entstehungsgeschichte');
     }
 
-    /**
-     * Display a listing of the resource.
-     */
-    public function vorstand()
-    {
-        return view('website-template.vorstand');
-    }
 
     /**
      * Display a listing of the resource.

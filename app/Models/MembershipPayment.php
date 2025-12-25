@@ -22,6 +22,9 @@ class MembershipPayment extends Model
         'receipt_sent_at',
     ];
 
+    /**
+     * Bağışın faturası (MembershipPayment -> Invoice)
+     */
     public function invoices()
     {
         return $this->morphMany(Invoice::class, 'invoiceable');

@@ -1,14 +1,23 @@
 @extends('website-template.layouts.app')
 
 @section('meta&title')
-    <title>WORLDCULTURE EMPOWERMENT</title>
-    {{-- <meta name="description" content="Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.">
-  <meta name="keywords" content=" worldculture, travels, partner, kundenbewertungen">
-  <meta property="og:title" content="WORLDCULTURE TRAVELS">
-  <meta property="og:description" content="{{ Str::limit("Komm mit uns auf Reisen und erlebe die unterschiedlichsten Farben, Traditionen, Geschmäcker, Bräuche und Kulturen dieser Welt. Werde Teil der Worldculture Travels Community und triff Frauen aus aller Welt - wir bringen Euch zusammen.", 160) }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ url()->current() }}">
-  <meta property="og:image" content="{{ asset('frontend/assets/style/images/home-page/bg-image/bg.jpg') }}"> --}}
+   <title>Earthquake Relief Project Turkey | Worldculture Empowerment e.V.</title>
+    <meta name="description" content="Read how our earthquake relief project in Turkey supported families, children, and women through humanitarian aid, psychological support, and long-term community empowerment.">
+
+    <meta name="keywords" content="earthquake relief Turkey NGO, humanitarian aid Turkey earthquake, earthquake impact report NGO, disaster relief transparency">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Earthquake Relief Project Turkey – Real Help, Real Impact">
+    <meta property="og:description" content="A transparent impact report on our earthquake relief work in Turkey, supporting families, children, and women beyond emergency aid.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('website-template/images/projects/der-Traum-Vom-Horen/3.jpg') }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Earthquake Relief Project Turkey – Impact Report">
+    <meta name="twitter:description" content="How humanitarian aid, education, and community support helped earthquake survivors in Turkey.">
 
     <style>
         .rev_slider_wrapper .tparrows {
