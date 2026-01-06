@@ -16,19 +16,21 @@
             </ul>
         </div>
         <div class="column right">
-            <a class="thm-btn" href="{{ route('spenden') }}">
-                Spenden
-            </a>
-            {{-- <ul class="login-info">
+            <ul class="login-info">
+                <a style="margin-right: 2rem;" class="thm-btn" href="{{ route('spenden') }}">
+                    Spenden
+                </a>
                 <li>
-                    <i class="icon flaticon-world-1"></i>
-                    <a href="#">DE</a> | <a href="#">EN</a>
+                    {{-- <i class="icon flaticon-world-1"></i> --}}
+                    <i class="fa fa-language"></i>
+                    {{-- <i class="icon fas fa-globe"></i> --}}
+                    <a class="translate" data-lang="de" href="#">DE |</a>
+                    <a class="translate" data-lang="en" href="#">EN</a>
                 </li>
                 @auth
-                    <li><a href="{{ route('login') }}"><i class="icon fa fa-arrow-circle-down"></i>login</a></li>
-                    <li><a href="{{ route('register') }}"><i class="icon fa fa-user"></i>signup</a></li>
+                    <li><a href="{{ route('login') }}"><i class="icon fa fa-user"></i>login</a></li>
                 @endauth
-            </ul> --}}
+            </ul>
         </div>
     </div>
 </header>

@@ -3,14 +3,17 @@
 @section('meta&title')
     <title>Membership | Support Worldculture Empowerment e.V.</title>
 
-    <meta name="description" content="Become a supporting member of Worldculture Empowerment e.V. and help strengthen education, intercultural exchange and empowerment projects worldwide. Join our non-profit organization today.">
+    <meta name="description"
+        content="Become a supporting member of Worldculture Empowerment e.V. and help strengthen education, intercultural exchange and empowerment projects worldwide. Join our non-profit organization today.">
 
     <!-- SEO: keywords (opsiyonel) -->
-    <meta name="keywords" content="NGO membership, supporting member non-profit, join NGO Germany, Worldculture Empowerment membership, become a member charity">
+    <meta name="keywords"
+        content="NGO membership, supporting member non-profit, join NGO Germany, Worldculture Empowerment membership, become a member charity">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Become a Member – Worldculture Empowerment e.V.">
-    <meta property="og:description" content="Support education, intercultural exchange and empowerment by becoming a supporting member of Worldculture Empowerment e.V. Join our mission and create lasting impact.">
+    <meta property="og:description"
+        content="Support education, intercultural exchange and empowerment by becoming a supporting member of Worldculture Empowerment e.V. Join our mission and create lasting impact.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('website-template/images/home-page/banner/1.jpg') }}">
@@ -19,7 +22,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Become a Member – Worldculture Empowerment e.V.">
-    <meta name="twitter:description" content="Join Worldculture Empowerment e.V. as a supporting member and help create positive global change.">
+    <meta name="twitter:description"
+        content="Join Worldculture Empowerment e.V. as a supporting member and help create positive global change.">
 
     <style>
         :root {
@@ -263,13 +267,19 @@
             font-weight: bold;
             margin-bottom: 15px;
         }
+
+        @media (max-width: 768px) {
+            .custom-title {
+                font-size: 3rem !important;
+            }
+        }
     </style>
 @endsection
 
 @section('content')
     <div class="donation-container" style="zoom: 1.3; color: var(--primary-color)">
         <div style="text-align: center">
-            <h1>MITGLIEDSCHAFT</h1>
+            <h1 class="custom-title">MITGLIEDSCHAFT</h1>
         </div>
 
         <div class="text-box" style="text-align: justify;">
@@ -280,12 +290,12 @@
             <p>
                 Wir freuen uns sehr, dass Sie unsere Arbeit zur Stärkung von interkulturellem Austausch, Bildung und
                 Empowerment unterstützen möchten.
-                Um Fördermitglied bei Worldculture Empowerment e.V. zu werden, bitten wir Sie, 
+                Um Fördermitglied bei Worldculture Empowerment e.V. zu werden, bitten wir Sie,
                 {{-- das untenstehende --}}
                 Onlineformular auszufüllen. Ihre Angaben werden an den zuständigen Ansprechpartner innerhalb unseres Vereins
                 weitergeleitet. Wir setzen uns zeitnah mit Ihnen in Verbindung und lassen Ihnen alle erforderlichen
                 Informationen und Unterlagen zu Ihrer Fördermitgliedschaft zukommen.
-                Selbstverständlich werden Ihre Daten vertraulich 
+                Selbstverständlich werden Ihre Daten vertraulich
                 {{-- behandelt und ausschlie --}}
                 ßlich für vereinsinterne Zwecke
                 verwendet. Eine Weitergabe an Dritte erfolgt nicht.

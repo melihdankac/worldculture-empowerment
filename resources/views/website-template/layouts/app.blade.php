@@ -10,6 +10,7 @@
 <body>
     <div class="boxed_wrapper">
         <x-cookie-banner />
+        <div id="google_translate_element" style="display: none;"></div>
 
         @include('website-template.layouts.navigation')
 
@@ -28,20 +29,5 @@
         @yield('customScript')
     </div>
 </body>
-
-{{-- <body class="font-sans antialiased">
-    <x-cookie-banner />
-
-    <div id="google_translate_element" style="display: none;"></div>
-
-    <div class="min-h-screen bg-gray-100 text-justify">
-        <!-- Page Content -->
-        @yield('content')
-
-    </div>
-
-    @include('website-template.layouts.scripts')
-    @yield('customScript')
-</body> --}}
 
 </html>

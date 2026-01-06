@@ -637,7 +637,8 @@ textarea {
 }
 
 .top-bar .login-info li i {
-  color: #ff2e3d;
+  color: #83a7d9;
+  /* color: #ff2e3d; */
   margin-right: 12px;
   font-size: 14px;
   position: relative;

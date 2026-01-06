@@ -3,14 +3,17 @@
 @section('meta&title')
     <title>Entstehungsgeschichte | Worldculture Empowerment e.V.</title>
 
-    <meta name="description" content="Learn about the origins of Worldculture Empowerment e.V. and how years of voluntary engagement, transparency and sustainable impact led to the creation of our non-profit organization in Germany.">
+    <meta name="description"
+        content="Learn about the origins of Worldculture Empowerment e.V. and how years of voluntary engagement, transparency and sustainable impact led to the creation of our non-profit organization in Germany.">
 
     <!-- SEO: keywords opsiyonel -->
-    <meta name="keywords" content="Worldculture Empowerment history, NGO origin story, non-profit Germany, humanitarian organization background, empowerment projects">
+    <meta name="keywords"
+        content="Worldculture Empowerment history, NGO origin story, non-profit Germany, humanitarian organization background, empowerment projects">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Our Story – The Origin of Worldculture Empowerment e.V.">
-    <meta property="og:description" content="Discover how Worldculture Empowerment e.V. was founded through years of voluntary work, international experience and the vision to create transparent and impactful humanitarian projects.">
+    <meta property="og:description"
+        content="Discover how Worldculture Empowerment e.V. was founded through years of voluntary work, international experience and the vision to create transparent and impactful humanitarian projects.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('website-template/images/entstehungsgeschichte/2.jpg') }}">
@@ -19,7 +22,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Story Behind Worldculture Empowerment e.V.">
-    <meta name="twitter:description" content="From voluntary engagement to real impact: discover the story and values behind Worldculture Empowerment e.V.">
+    <meta name="twitter:description"
+        content="From voluntary engagement to real impact: discover the story and values behind Worldculture Empowerment e.V.">
 
     <style>
         .text p {
@@ -32,12 +36,17 @@
             /* font-size: large; */
         }
 
-        @media (max-width: 1199px){
-            .single-cause .content-box  {
+        @media (max-width: 1199px) {
+            .single-cause .content-box {
                 padding: 0px 15px 30px !important;
             }
         }
-        
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem !important;
+            }
+        }
     </style>
 @endsection
 
@@ -47,7 +56,7 @@
         style="background-image: url('{{ asset('website-template/images/entstehungsgeschichte/1.jpg') }}');">
         <div class="container">
             <div class="title">
-                <h1>Entstehungsgeschichte</h1>
+                <h1 class="hero-title">Entstehungsgeschichte</h1>
             </div>
             <div class="breadcumb-wrapper">
                 <ul class="list-inline link-list">
@@ -66,7 +75,7 @@
             <figure class="image-box">
                 <img src="{{ asset('website-template/images/entstehungsgeschichte/2.jpg') }}" alt="" />
             </figure>
-            <div class="content-box" >  
+            <div class="content-box">
                 <div class="title">
                     <h2>
                         Entstehungsgeschichte <br> von <span>Worldculture Empowerment e.V.</span>

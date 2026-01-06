@@ -46,3 +46,74 @@
 <script id="map-script" src="{{ asset('website-template/js/default-map.js') }}"></script>
 <script src="{{ asset('website-template/js/custom.js') }}"></script>
 <script src="{{ asset('website-template/js/cookie-banner.js') }}"></script>
+
+
+<!-- SECTION - Google Translate -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const savedLang = localStorage.getItem("selectedLanguage");
+
+        // Sayfa yüklendikten sonra Google Translate banner'ını gizle
+        let count = 0;
+        const intervalId = setInterval(function() {
+            const elements = document.querySelectorAll('.skiptranslate');
+            elements.forEach(el => el.style.display = 'none');
+            count++;
+            if (count === 5) clearInterval(intervalId);
+        }, 500);
+
+        // Sayfa ilk açıldığında, 'de' hariç bir dil kaydedilmişse çeviri uygula
+        if (savedLang && savedLang !== "de") {
+            setTimeout(() => {
+                translatePage(savedLang);
+                document.body.style.marginTop = '-40px';
+            }, 1000);
+        }
+
+        // Dil seçimi butonlarına tıklama işlemleri
+        document.querySelectorAll(".translate").forEach(function(element) {
+            element.addEventListener("click", function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute("data-lang");
+
+                if (lang === "de") {
+                    // Orijinal Almanca'ya dön: çeviri çerezini sil ve reload
+                    localStorage.removeItem("selectedLanguage");
+                    // Çeviriyi nötrle (asıl kritik satır)
+                    document.cookie =
+                        "googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+                    location.reload();
+                    return;
+                }
+
+                // Diğer diller için Google Translate'i uygula
+                localStorage.setItem("selectedLanguage", lang);
+                translatePage(lang);
+
+                // SkipTranslate'leri gizle
+                const elements = document.querySelectorAll('.skiptranslate');
+                elements.forEach(el => el.style.display = 'none');
+                document.body.style.marginTop = '-40px';
+            });
+        });
+
+        function translatePage(lang) {
+            const selectElement = document.querySelector(".goog-te-combo");
+            if (selectElement) {
+                selectElement.value = lang;
+                selectElement.dispatchEvent(new Event("change"));
+            } else {
+                console.warn("Google Translate yüklenmedi!");
+            }
+        }
+    });
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'de',
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- !SECTION - Google Translate -->

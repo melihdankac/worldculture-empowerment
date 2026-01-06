@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StripeWebhookController;
@@ -67,6 +68,7 @@ Route::middleware('auth')->name('wcepanel.')->prefix('wcepanel')->group(function
     Route::get('/dashboard', function () {
         return view('admin-template.dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/memberships', [MembershipController::class, 'index'])->name('memberships');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

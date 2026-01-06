@@ -3,14 +3,17 @@
 @section('meta&title')
     <title>Worldculture Empowerment e.V.</title>
 
-    <meta name="description" content="Worldculture Empowerment e.V. is a German non-profit organization supporting humanitarian, education and cultural projects worldwide. Donate, volunteer or become a member and help create global impact.">
+    <meta name="description"
+        content="Worldculture Empowerment e.V. is a German non-profit organization supporting humanitarian, education and cultural projects worldwide. Donate, volunteer or become a member and help create global impact.">
 
     <!-- SEO: keywords artık kritik değil ama zararı yok -->
-    <meta name="keywords" content="non-profit organization, humanitarian aid, cultural projects, NGO Germany, donate NGO, volunteer international, worldculture empowerment">
+    <meta name="keywords"
+        content="non-profit organization, humanitarian aid, cultural projects, NGO Germany, donate NGO, volunteer international, worldculture empowerment">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Worldculture Empowerment e.V. – Empowering Cultures, Changing Lives">
-    <meta property="og:description" content="Support humanitarian, education and cultural projects worldwide. Donate, volunteer or become a member of Worldculture Empowerment e.V. and make a real impact.">
+    <meta property="og:description"
+        content="Support humanitarian, education and cultural projects worldwide. Donate, volunteer or become a member of Worldculture Empowerment e.V. and make a real impact.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('website-template/images/home-page/banner/1.jpg') }}">
@@ -19,11 +22,18 @@
     <!-- Twitter (opsiyonel ama önerilir) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Worldculture Empowerment e.V.">
-    <meta name="twitter:description" content="A German non-profit organization empowering cultures through humanitarian and education projects worldwide.">
+    <meta name="twitter:description"
+        content="A German non-profit organization empowering cultures through humanitarian and education projects worldwide.">
 
     <style>
         .rev_slider_wrapper .tparrows {
             display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.8rem !important;
+            }
         }
     </style>
 @endsection
@@ -45,7 +55,7 @@
                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
-                            <h1>WORLDCULTURE EMPOWERMENT e.V.</h1>
+                            <h1 class="notranslate hero-title" translate="no">WORLDCULTURE EMPOWERMENT e.V.</h1>
                             {{-- <h4 style="padding-left: 10rem;">Wir können nicht das Leid der Weit verhindern,<br> aber wir
                                 können daran arbeiten, es
                                 zusammen zu mindern</h4> --}}
@@ -69,7 +79,7 @@
                     Gemeinsam mit Partnern weltweit arbeiten wir daran, nachhaltige Strukturen zu schaffen und Menschen zu
                     befähigen, ihr Leben und ihre Gemeinschaften selbstbestimmt zu gestalten - für eine gerechte, friedliche
                     und solidarische Zukunft. <br><br>
-                    Wir können nicht das Leid der Weit verhindern, aber wir können daran arbeiten, es zusammen zu mindern
+                    Wir können nicht das Leid der Weit verhindern, aber wir können daran arbeiten, es zusammen zu mindern.
                 </p>
             </div>
 

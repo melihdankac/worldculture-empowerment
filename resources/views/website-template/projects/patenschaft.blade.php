@@ -3,13 +3,16 @@
 @section('meta&title')
     <title>Child Sponsorship Program - Education with Personal Connection | Worldculture Empowerment e.V.</title>
 
-    <meta name="description" content="Support a child’s education through our sponsorship program in Turkey. Build a personal connection and help children from disadvantaged backgrounds access education and opportunities.">
+    <meta name="description"
+        content="Support a child’s education through our sponsorship program in Turkey. Build a personal connection and help children from disadvantaged backgrounds access education and opportunities.">
 
-    <meta name="keywords" content="child sponsorship Turkey, education sponsorship program, sponsor a child NGO, education support Turkey, monthly child sponsorship">
+    <meta name="keywords"
+        content="child sponsorship Turkey, education sponsorship program, sponsor a child NGO, education support Turkey, monthly child sponsorship">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Child Sponsorship Program – Education with Personal Connection">
-    <meta property="og:description" content="Become a sponsor and support a child’s education while building a meaningful personal connection.">
+    <meta property="og:description"
+        content="Become a sponsor and support a child’s education while building a meaningful personal connection.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('website-template/images/projects/patenschaft/banner/banner.jpg') }}">
@@ -18,7 +21,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Child Sponsorship Program – Education with Personal Connection">
-    <meta name="twitter:description" content="Support education through a child sponsorship program and create a lasting personal connection.">
+    <meta name="twitter:description"
+        content="Support education through a child sponsorship program and create a lasting personal connection.">
 
 
     <style>
@@ -147,6 +151,17 @@
             border: none;
             border-radius: 6px;
         }
+
+        @media (max-width: 768px) {
+            .sub-title {
+                line-height: 1 !important;
+                font-size: 2rem !important;
+            }
+
+            .sup-desc {
+                font-size: 1rem !important;
+            }
+        }
     </style>
 @endsection
 
@@ -157,8 +172,8 @@
             <ul>
                 <li data-transition="fade">
                     <img src="{{ asset('website-template/images/projects/patenschaft/banner/banner.jpg') }}"
-                        alt="Patenschaftsprogramm" width="1920" height="882" data-bgposition="top center" data-bgfit="cover"
-                        data-bgrepeat="no-repeat" data-bgparallax="1" />
+                        alt="Patenschaftsprogramm" width="1920" height="882" data-bgposition="top center"
+                        data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1" />
 
                     <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="15" data-y="top" data-voffset="150"
                         data-transform_idle="o:1;"
@@ -167,9 +182,9 @@
                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;" data-splitin="none" data-splitout="none"
                         data-responsive_offset="on" data-start="700">
                         <div class="slide-content-box">
-                            <h2 style="color: #fff;">Patenschaftsprogramm</h2>
+                            <h2 style="color: #fff;" class="sub-title">Patenschaftsprogramm</h2>
                             <h1> Bildung mit <br> persönlicher Verbindung </h1>
-                            <p>
+                            <p class="sup-desc">
                                 Möchtest du Patin oder Pate werden und ein Kind direkt in seiner Bildung unterstützen?
                             </p>
                         </div>

@@ -47,7 +47,7 @@ class ProcessMembershipAfterPayment implements ShouldQueue
                 new MembershipPaymentReceipt($membershipStatus)
             );
 
-            Log::info('Webhook Membership Email gönderildi Tamam!');
+            Log::info('Job da Membership Email gönderildi Tamam!');
 
             $membershipPayment = MembershipPayment::where('membership_id', $membership->id)
                 ->where('status', 'paid')
@@ -60,24 +60,30 @@ class ProcessMembershipAfterPayment implements ShouldQueue
         }
 
 
-
         // 🔖 Fatura oluştur
         $membershipPayment = MembershipPayment::where('membership_id', $membership->id)->latest()->first();
-        $invoiceAddress = InvoiceAddress::where('donor_id', $membership->donor_id)->latest()->first();
 
-        if ($membership->donor) {
-            $membershipPayment->invoices()->create([
-                'donor_id'           => $membership->donor_id,
-                'invoice_address_id' => $invoiceAddress,
-                'invoice_number'     => $this->generateInvoiceNumber(),
-                'status'             => 'issued',
-                'issue_date'         => now(),
-                'amount'             => $membershipPayment->amount,
-                'currency'           => $membershipPayment->currency,
-            ]);
+        if ($membershipPayment->invoices()->where('status', 'issued')->exists()) {
+            Log::info('Invoice already exists for this donation.');
+        } else {
+            $invoiceAddress = InvoiceAddress::where('donor_id', $membership->donor_id)->latest()->first();
+
+            if ($invoiceAddress) {
+                $membershipPayment->invoices()->create([
+                    'donor_id'           => $membership->donor_id,
+                    'invoice_address_id' => $invoiceAddress->id,
+                    'invoice_number'     => $this->generateInvoiceNumber(),
+                    'status'             => 'issued',
+                    'issue_date'         => now(),
+                    'amount'             => $membershipPayment->amount,
+                    'currency'           => $membershipPayment->currency,
+                ]);
+
+                Log::info('Job da Membership Faturası oluşturuldu!');
+            } else {
+                Log::info('Invoice address not found');
+            }
         }
-
-        Log::info('Webhook Membership Faturası oluşturuldu!');
     }
 
 

@@ -1,6 +1,6 @@
 @extends('admin-template.layouts.app')
 @section('meta&title')
-    <title> Dashboard | WORLDCULTURE TRAVELS</title>
+    <title> Dashboard | WORLDCULTURE EMPOWERMENT</title>
 @endsection
 
 @section('content')
@@ -15,7 +15,6 @@
             <br>
             Sol sidebar'daki menülerden ilgili sayfalara ulaşabilirsin.
         </h4>
-
 
         <br>
         <br>
@@ -47,6 +46,7 @@
             Wp'den temanın html halini de yolladım.
         </h5>
     </div>
+
     <div class="row">
         <div class="col-sm-12">
             <div class="page-title-box d-md-flex justify-content-md-between align-items-center">

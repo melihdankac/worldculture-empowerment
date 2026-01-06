@@ -31,6 +31,13 @@
                           <a class="nav-link" href="{{ route('wcepanel.dashboard') }}">
                               <i class="iconoir-report-columns menu-icon"></i>
                               <span>Dashboard</span>
+                          </a>
+                      </li><!--end nav-item-->
+
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ route('wcepanel.memberships') }}">
+                              <i class="iconoir-report-columns menu-icon"></i>
+                              <span>Memberships</span>
                               <span class="badge text-bg-info ms-auto">New</span>
                           </a>
                       </li><!--end nav-item-->

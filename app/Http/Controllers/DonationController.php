@@ -207,7 +207,7 @@ class DonationController extends Controller
 
                 $subscription = \Stripe\Subscription::create([
                     'customer' => $customer->id,
-                    // 'expand'   => ['latest_invoice.payment_intent'],
+                    'expand'   => ['latest_invoice.confirmation_secret'],
                     'payment_settings' => ['save_default_payment_method' => 'on_subscription'],
                     'payment_behavior' => 'default_incomplete',
                     'items' => [['price' => $price->id]],
@@ -243,10 +243,7 @@ class DonationController extends Controller
                 ]);
 
                 $invoice = $subscription->latest_invoice;
-                // $paymentIntent = $invoice->payment_intent ?? null;
-                // $clientSecret = $paymentIntent?->client_secret;
-
-                return response()->json($invoice);
+                $clientSecret = $invoice?->confirmation_secret?->client_secret;
             }
 
             Log::info('Donate Log Number: 104', [

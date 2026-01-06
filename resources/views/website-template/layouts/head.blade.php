@@ -11,11 +11,27 @@
 <link rel="stylesheet" href="{{ asset('website-template/fonts/flaticon.css') }}">
 
 <!-- Logo -->
-<link rel="icon" sizes="180x180" href="{{ asset('website-template/images/favicon/logo_header_180x180.png') }}">
-<link rel="icon" type="image/png" href="{{ asset('website-template/images/favicon/logo_header_32x32.png') }}"
-    sizes="32x32">
-<link rel="icon" type="image/png" href="{{ asset('website-template/images/favicon/logo_header_16x16.png') }}"
-    sizes="16x16">
+{{-- <link rel="icon" type="image/png" sizes="180x180"
+    href="{{ asset('website-template/images/favicon/logo_header_180x180.png') }}">
+
+<link rel="icon" type="image/png" sizes="32x32"
+    href="{{ asset('website-template/images/favicon/logo_header_32x32.png') }}">
+
+<link rel="icon" type="image/png" sizes="16x16"
+    href="{{ asset('website-template/images/favicon/logo_header_16x16.png') }}"> --}}
+
+
+<!-- Google favicon -->
+<link rel="icon" type="image/png" sizes="48x48"
+    href="{{ asset('website-template/images/favicon/logo_header_48x48.png') }}">
+
+<link rel="icon" type="image/png" sizes="96x96"
+    href="{{ asset('website-template/images/favicon/logo_header_96x96.png') }}">
+
+<!-- Apple -->
+<link rel="apple-touch-icon" sizes="180x180"
+    href="{{ asset('website-template/images/favicon/logo_header_180x180.png') }}">
+
 
 <!-- Meta tags -->
 <meta name="author" content="Selin Schäfer">

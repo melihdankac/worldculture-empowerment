@@ -3,7 +3,7 @@
 
 <head>
     @yield('meta&title')
-    <title>Admin | WORLDCULTURE TRAVELS</title>
+    <title>Admin | WORLDCULTURE EMPOWERMENT</title>
 
     @include('admin-template.layouts.head')
 </head>
