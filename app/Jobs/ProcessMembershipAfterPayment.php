@@ -59,9 +59,11 @@ class ProcessMembershipAfterPayment implements ShouldQueue
             //throw $th;
         }
 
-
         // 🔖 Fatura oluştur
-        $membershipPayment = MembershipPayment::where('membership_id', $membership->id)->latest()->first();
+        $membershipPayment = MembershipPayment::where('membership_id', $membership->id)
+            ->where('stripe_payment_id', $this->intentID)
+            ->where('status', 'paid')
+            ->latest()->first();
 
         if ($membershipPayment->invoices()->where('status', 'issued')->exists()) {
             Log::info('Invoice already exists for this donation.');

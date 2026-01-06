@@ -28,7 +28,7 @@
                     <a class="translate" data-lang="en" href="#">EN</a>
                 </li>
                 @auth
-                    <li><a href="{{ route('login') }}"><i class="icon fa fa-user"></i>login</a></li>
+                    <li><a href="{{ route('wcepanel.dashboard') }}"><i class="icon fa fa-user"></i>login</a></li>
                 @endauth
             </ul>
         </div>

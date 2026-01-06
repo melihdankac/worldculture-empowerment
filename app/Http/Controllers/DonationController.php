@@ -216,6 +216,7 @@ class DonationController extends Controller
                         'interval' => $request->recurring_interval,
                         'donor_id' => $donor->id,
                         'wants_invoice' => $request->wants_invoice,
+                        'invoice_address_id' => $invoiceAddress?->id,
                     ],
                     'description' => $request->recurring_interval === 'year'
                         ? 'Yearly donation subscription'
@@ -238,7 +239,7 @@ class DonationController extends Controller
                     'started_at'             => now(),
                 ]);
 
-                Log::info('Subscriptio nDonation Created', [
+                Log::info('Subscription Donation Created', [
                     'subscriptionDonation ID' => $subscriptionDonation->id,
                 ]);
 

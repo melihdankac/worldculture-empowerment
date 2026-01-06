@@ -7,6 +7,8 @@ use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StripeWebhookController;
+use App\Models\Donation;
+use App\Models\SubscriptionDonation;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Artisan;
 // Route::get('/', function () {
@@ -59,15 +61,23 @@ Route::post('/stripe/webhook', [StripeWebhookController::class, 'handle'])
 //     return 'CONFIG OK';
 // });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->name('wcepanel.')->prefix('wcepanel')->group(function () {
 
     Route::get('/dashboard', function () {
         return view('admin-template.dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
+
+    Route::get('/donations', function () {
+        $donations = Donation::with('donor')->get();
+        return view('admin-template.donations', compact('donations'));
+    })->middleware(['auth', 'verified'])->name('donations');
+
+    Route::get('/subscriptions', function () {
+        $subscriptionDonation = SubscriptionDonation::with('donor', 'payments')->get();
+        return view('admin-template.subscriptions', compact('subscriptionDonation'));
+    })->middleware(['auth', 'verified'])->name('subscriptions');
+
     Route::get('/memberships', [MembershipController::class, 'index'])->name('memberships');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -61,11 +61,6 @@ class ProcessOneTimeAfterPayment implements ShouldQueue
             }
         }
 
-        // 📥 Makbuz gönderildi olarak işaretle
-        $donation->update([
-            'receipt_sent_at'     => now(),
-        ]);
-
         // 📧 MAIL
         try {
             Mail::to($donation->donor->email)
@@ -76,20 +71,35 @@ class ProcessOneTimeAfterPayment implements ShouldQueue
                 => 'Job kısmında One Time Donation Email gönderildi Tamam! ',
             ]);
 
+            // 📥 Makbuz gönderildi olarak işaretle
+            $donation->update([
+                'receipt_sent_at' => now(),
+            ]);
+
             EmailLog::create([
-                'donor_id' => $donation->id,
+                'donor_id' => $donation->donor_id,
                 'donation_id' => $donation->id,
-                'to_email' => $donation->id,
-                'subject' => $donation->id,
-                'body' => $donation->id,
-                'status' => $donation->id,
-                'error_message' => $donation->id,
+                'to_email' => $donation->donor->email,
+                'subject' => 'Your donation receipt',
+                'body' => view('emails.receipt_html', compact('donation'))->render(),
+                'status' => 'sent',
+                'error_message' => null,
             ]);
 
             Log::channel('daily')->info('✅ Job başarıyla bitti', [
                 'job' => self::class,
             ]);
         } catch (\Throwable $th) {
+            EmailLog::create([
+                'donor_id' => $donation->donor_id,
+                'donation_id' => $donation->id,
+                'to_email' => $donation->donor->email,
+                'subject' => 'Your donation receipt',
+                'body' => view('emails.receipt_html', compact('donation'))->render(),
+                'status' => 'failed',
+                'error_message' => $th->getMessage(),
+            ]);
+
             Log::channel('daily')->error('🔴 Job hata aldı', [
                 'job' => self::class,
                 'message' => $th->getMessage(),
@@ -100,7 +110,7 @@ class ProcessOneTimeAfterPayment implements ShouldQueue
 
         Log::info('Job Log Number: 503', [
             'Message: '
-            => 'Job kısmında işlemler bitti! Logları kontrol ederek her şeyin sorunsuz olduğundan emin ol! ',
+            => 'Tek seferlik bağış işlemi için job kısmında işlemler bitti! Logları kontrol ederek her şeyin sorunsuz olduğundan emin olabilirsin! ',
         ]);
 
         // 📢 EVENT

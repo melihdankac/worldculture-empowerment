@@ -4,13 +4,13 @@
       <div class="brand">
           <a href="{{ route('wcepanel.dashboard') }}" class="logo">
               <span>
-                  <img src="{{ asset('frontend/assets/style/images/logo_wct_white.png') }}" alt="logo-small"
+                  <img src="{{ asset('website-template/images/favicon/logo_header_48x48.png') }}" alt="logo-small"
                       class="logo-sm">
               </span>
               <span class="">
-                  <img src="{{ asset('frontend/assets/style/images/logo_wct_white.png') }}" alt="logo-large"
+                  <img src="{{ asset('website-template/images/favicon/logo_header_96x96.png') }}" alt="logo-large"
                       class="logo-lg logo-light">
-                  <img src="{{ asset('frontend/assets/style/images/logo_wct_white.png') }}" alt="logo-large"
+                  <img src="{{ asset('website-template/images/favicon/logo_header_96x96.png') }}" alt="logo-large"
                       class="logo-lg logo-dark">
               </span>
           </a>
@@ -36,11 +36,27 @@
 
                       <li class="nav-item">
                           <a class="nav-link" href="{{ route('wcepanel.memberships') }}">
-                              <i class="iconoir-report-columns menu-icon"></i>
+                              <i class="iconoir-community menu-icon"></i>
                               <span>Memberships</span>
                               <span class="badge text-bg-info ms-auto">New</span>
                           </a>
                       </li><!--end nav-item-->
+
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ route('wcepanel.donations') }}">
+                              <i class="iconoir-donate menu-icon"></i>
+                              <span>Donations</span>
+                              <span class="badge text-bg-info ms-auto">New</span>
+                          </a>
+                      </li><!--end nav-item-->
+
+                      {{-- <li class="nav-item">
+                          <a class="nav-link" href="{{ route('wcepanel.subscriptions') }}">
+                              <i class="iconoir-user-love menu-icon"></i>
+                              <span>Subscriptions</span>
+                              <span class="badge text-bg-info ms-auto">New</span>
+                          </a>
+                      </li><!--end nav-item--> --}}
 
                   </ul><!--end navbar-nav--->
 

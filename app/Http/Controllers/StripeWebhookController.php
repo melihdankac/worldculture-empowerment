@@ -2,28 +2,23 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Http\Controllers\Controller;
-use App\Jobs\ProcessMembershipAfterPayment;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\DonationReceipt;
-use App\Mail\SubscriptionPaymentReceipt;
-use App\Mail\MembershipPaymentReceipt;
 use App\Jobs\ProcessOneTimeAfterPayment;
+use App\Jobs\ProcessMembershipAfterPayment;
+use App\Jobs\ProcessSubscriptionAfterPayment;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-use App\Models\Donation;
 use App\Models\Invoice;
-use App\Models\InvoiceAddress;
+use App\Models\Donation;
 use App\Models\Membership;
-use App\Models\MembershipPayment;
 use App\Models\StripeEvent;
-use App\Models\SubscriptionDonation;
+use App\Models\MembershipPayment;
 use App\Models\SubscriptionPayment;
+use App\Models\SubscriptionDonation;
 
-use Stripe\Webhook;
 use Stripe\Stripe;
 
 class StripeWebhookController extends Controller
@@ -105,80 +100,6 @@ class StripeWebhookController extends Controller
         return response()->json(['status' => 'ok']);
     }
 
-    // public function handle(Request $request)
-    // {
-    //     Stripe::setApiKey(config('services.stripe.secret'));
-    //     Log::info('webhook çalıştı!');
-    //     Log::info('Webhook Log Number: 401', [
-    //         'Message: '
-    //         => 'webhook çalıştı! ',
-    //     ]);
-    //     $payload   = $request->getContent();
-    //     $signature = $request->header('Stripe-Signature');
-
-    //     try {
-    //         $event = Webhook::constructEvent(
-    //             $payload,
-    //             $signature,
-    //             config('services.stripe.webhook_secret')
-    //         );
-    //     } catch (\Throwable $e) {
-    //         Log::error('❌ Stripe webhook signature error', [
-    //             'message' => $e->getMessage(),
-    //         ]);
-    //         return response()->json(['error' => 'Invalid signature'], 400);
-    //     }
-
-    //     Log::info('⚡ Stripe webhook received', [
-    //         'event_id' => $event->id,
-    //         'type'     => $event->type,
-    //     ]);
-
-    //     // ✅ Idempotency
-    //     if (StripeEvent::where('stripe_event_id', $event->id)->exists()) {
-    //         Log::info('🔁 Stripe event already processed', [
-    //             'event_id' => $event->id
-    //         ]);
-    //         return response()->json(['status' => 'ignored']);
-    //     }
-
-    //     DB::transaction(function () use ($event) {
-    //         Log::info('Webhook Log Number: 402', [
-    //             'Event Type' => $event->type,
-    //             'Message: '
-    //             => 'Webhookta DB transaction başladı ',
-    //         ]);
-
-    //         match ($event->type) {
-
-    //             // ✅ ONE-TIME DONATION & Membership
-    //             'payment_intent.succeeded' =>
-    //             $this->handlePaymentIntentSucceeded($event->data->object),
-
-    //             // ✅ SUBSCRIPTIONS (MONTH / YEAR / MEMBERSHIP)
-    //             'invoice.finalized' =>
-    //             $this->handleInvoicePaymentSucceeded($event->data->object),
-    //             // 'invoice.payment_succeeded' =>
-    //             // $this->handleInvoicePaymentSucceeded($event->data->object),
-
-    //             // ✅ SUBSCRIPTION CANCEL
-    //             'customer.subscription.deleted' =>
-    //             $this->handleSubscriptionDeleted($event->data->object),
-
-    //             default => Log::info('ℹ Stripe event ignored', [
-    //                 'type' => $event->type,
-    //             ]),
-    //         };
-
-    //         StripeEvent::create([
-    //             'stripe_event_id' => $event->id,
-    //             'type'            => $event->type,
-    //             'processed_at'    => now(),
-    //         ]);
-    //     });
-
-    //     return response()->json(['status' => 'ok']);
-    // }
 
     /**
      * ---------------------------------------
@@ -357,24 +278,28 @@ class StripeWebhookController extends Controller
             ]);
 
             // 1. Abonelik ana kaydını güncelle
-            $subscriptionDonation = SubscriptionDonation::updateOrCreate(
-                [
-                    'donor_id'               => $metadata['donor_id'] ?? null,
-                ],
-                [
-                    'amount'             => $invoice->amount_paid / 100,
-                    'currency'           => strtoupper($invoice->currency),
-                    'recurring_interval' => $metadata['interval'] ?? null,
-                    'status'             => 'active',
-                    'started_at'         => $invoice->status === 'paid' ? now() : null,
-                    // ended_at burada güncellenmez, iptal/expire webhooklarında set edilir
-                ]
-            );
-            Log::info('Webhook SubscriptionDonation Update or Create!');
+            $subscriptionDonation = SubscriptionDonation::where('donor_id', $metadata['donor_id'])
+                ->where('stripe_subscription_id', $invoice->subscription)
+                ->where('recurring_interval', $metadata['interval'] ?? null)
+                ->where('status', 'pending')
+                ->latest()->first()
+                ->update([
+                    'status' => $invoice->status === 'paid' ? 'active' : 'cancelled',
+                    'started_at' => $invoice->status === 'paid' ? now() : null,
+                ]);
 
+            if (! $subscriptionDonation) {
+                Log::warning('⚠️ The monthly/annual donation process was successfully completed, but no pending donations were found.', [
+                    'invoice_id' => $invoice->id,
+                    'donor_id'       => $metadata['donor_id'],
+                ]);
+                return;
+            }
+
+            Log::info('Webhook SubscriptionDonation Update!');
 
             if ($subscriptionDonation) {
-                $subscriptionPayment = SubscriptionPayment::create([
+                SubscriptionPayment::create([
                     'subscription_donation_id' => $subscriptionDonation->id,
                     'stripe_invoice_id'        => $invoice->id,
                     'stripe_payment_id'        => $invoice->payment_intent,
@@ -382,35 +307,16 @@ class StripeWebhookController extends Controller
                     'currency'                 => strtoupper($invoice->currency),
                     'status'                   => 'paid',
                     'paid_at'                  => now(),
+                    'invoice_address_id'       => $metadata['invoice_address_id'] ?? null,
+                    'wants_invoice'            => $metadata['wants_invoice'] ?? null,
                 ]);
+
                 Log::info('Webhook subscriptionPayment Create!');
             }
 
-            Mail::to($subscriptionPayment->subscriptionDonation->donor->email)->send(
-                new SubscriptionPaymentReceipt($subscriptionDonation)
-            );
-
-            Log::info('Webhook Aylık/Yıllık bağış Mail gönderildi!');
-
-            Log::info('🔁 Subscription payment recorded', [
-                'subscriptionPayment' => $subscriptionPayment->wants_invoice,
-                'invoice_id'      => $invoice->id,
-            ]);
-
-            // 🔖 Fatura oluştur
-            if ($metadata['wants_invoice']) {
-                $invoiceAddress = InvoiceAddress::where('donor_id', $metadata['donor_id'])->latest()->first();
-
-                $subscriptionPayment->invoices()->create([
-                    'donor_id'           => $subscriptionDonation->donor_id,
-                    'invoice_address_id' => $invoiceAddress->id,
-                    'invoice_number'     => $this->generateInvoiceNumber(),
-                    'status'             => 'issued',
-                    'issue_date'         => now(),
-                    'amount'             => $subscriptionDonation->amount,
-                    'currency'           => $subscriptionDonation->currency,
-                ]);
-            }
+            $subscriptionDonationID = $subscriptionDonation->id;
+            $invoiceID = $invoice->id;
+            ProcessSubscriptionAfterPayment::dispatch($subscriptionDonationID, $invoiceID);
         }
 
         Log::info('Webhook Log Number: 422', [
@@ -421,7 +327,7 @@ class StripeWebhookController extends Controller
 
     /**
      * ---------------------------------------
-     * SUBSCRIPTION CANCEL
+     * SUBSCRIPTION CANCEL (Şuanda Kullanılmıyor)
      * ---------------------------------------
      */
     protected function handleSubscriptionDeleted($subscription)
